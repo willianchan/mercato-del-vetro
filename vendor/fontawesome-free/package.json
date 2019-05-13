@@ -2,7 +2,7 @@
   "_args": [
     [
       "@fortawesome/fontawesome-free@5.8.2",
-      "C:\\Users\\Chan\\Desktop\\mercato-del-vetro"
+      "C:\\Users\\Marcello_Gamer\\Documents\\Website da empresa Mercato Del Vetro - Fábrica de Vidros\\mercato-del-vetro"
     ]
   ],
   "_from": "@fortawesome/fontawesome-free@5.8.2",
@@ -27,7 +27,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.8.2.tgz",
   "_spec": "5.8.2",
-  "_where": "C:\\Users\\Chan\\Desktop\\mercato-del-vetro",
+  "_where": "C:\\Users\\Marcello_Gamer\\Documents\\Website da empresa Mercato Del Vetro - Fábrica de Vidros\\mercato-del-vetro",
   "author": {
     "name": "Dave Gandy",
     "email": "dave@fontawesome.com",

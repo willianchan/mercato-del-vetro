@@ -30,8 +30,10 @@
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-shrink");
+      $("#logo").addClass("logo-shrink");
     } else {
       $("#mainNav").removeClass("navbar-shrink");
+      $("#logo").removeClass("logo-shrink");
     }
   };
   // Collapse now if page is not at top
