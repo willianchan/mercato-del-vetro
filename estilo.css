@@ -2,48 +2,76 @@
     margin: 0;
     padding: 0;
     border: 0;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
 }
-/* componentes da barra supeior*/
 
-.logo{
-    height: 40px;
-    width: auto;
-    display:inline-block;
-    margin-left: 10px;
-    margin-top: 10px;
+
+/* componentes da barra supeior*/
+html {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
 }
-.wallpeperBanner{
-    background-image:url(background3.jpg);
+
+
+.logo {
+    height: 120px;
+    width: auto;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.banner {
+    background-image: url(background3.jpg);
     width: 100%;
-    height: 500px;
-    object-fit:cover;
+    height: 100vh;
+    object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; 
+    background-position: center center;
     position: relative;
 }
 
-.menu{
+.transparenciaBanner {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.menu {
     /*background: rgba(0,0,0,0.5);*/
     width: 100%;
-    height: 64.5px;
+    height: 130px;
+    margin-bottom: 12vh;
 }
-.botaoMenu{
+
+
+.botaoMenu {
     float: right;
     display: inline-block;
-    padding: 20px 40px 20px 40px;
+    padding: 20px 20px 20px 20px;
     color: white;
-    text-decoration:none;
-    font-family: 'Raleway', sans-serif;
-    font-size: 15px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-top: 0px;
 }
-.botaoMenu:hover{
-    background: rgba(0,0,0,0.5);
-    transition:background-color 0.5s;
+
+.botaoMenu:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s;
     color: white;
 }
 
+navbar-light {
+    color: white;
+}
+
+
 /*componentes do banner*/
+
 
 /*.banner{
     background-image:url(background3.jpg);
@@ -55,39 +83,112 @@
     background-position: center center; 
 }*/
 
-.transparenciaBanner{
-    background: rgba(0,0,0,0.5);
-    width: 100%;
-    height: 100%;
-}
-.nome{
-    color:white;
+.textoBanner {
+    color: white;
     text-align: center;
-    font-size: 50px;
-    padding-top: 80px;
-    font-family: 'Raleway', sans-serif;
-}
-.textoBanner{
-    color:white;
-    text-align: center;
-    font-size: 50px;
-    padding-top: 50px;
-    font-family: 'Raleway', sans-serif;
+    height: 65px;
 }
 
-.divBotaoBanner{
-    padding-top: 80px;
+@media (min-width: 0px) {
+    .textoBanner {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 576px) {
+    .textoBanner {
+        font-size: 30px;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    .textoBanner {
+        font-size: 40px;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    .textoBanner {
+        font-size: 50px;
+    }
+}
+
+.divBotaoBanner {
     display: table;
     margin: 0 auto;
+    margin-top: 50px;
+    
 }
-.botaoBanner{
-    color:white;
+
+.botaoBanner {
+    border: 2.5px solid #DCDCDC;
+    color: #DCDCDC;
     text-align: center;
-    font-size: 20px;
-    background-color: rgb(20,20,20);
-    text-decoration: rgb(20,20,20);
-    border-radius: 50px;
-    padding: 20px 40px 20px 40px;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 15px 25px;
+}
+
+#hamburger .navbar-toggler-icon {
+    background-color: white !important;
+}
+
+#hamburger:hover,
+#hamburger.is-active {
+    background: white;
+}
+
+#hamburger:hover .navbar-toggler-icon,
+#hamburger:focus .navbar-toggler-icon {
+    background: #FFF;
+}
+
+.sessao {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #033E8C;
+    margin-bottom: 80px;
+    font-size: 40px;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+}
+
+.paragrafo {
+    font-size: 18px;
+    text-align: center;
+    margin:0 auto;
+    margin-bottom: 50px;
+    width: 80%;
+    
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+}
+
+.icone {
+    display: inline-block;
+    width: 100%;
+    font-size: 50px;
+    color: #033E8C;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3{
+    text-align: center;
+    color: darkblue;
+}
+h4{
+    text-align: center;
 }
 
 
@@ -101,79 +202,96 @@ body{
     background-size: cover; 
 }*/
 
+
 /*componentes do portifolio=======================================================================*/
-.tituloPortifolio{
+
+
+.sessaoPortifolio{
+    background-color: #f4f4f4;
+}
+.tituloPortifolio {
     font-size: 40px;
     text-align: center;
     margin-top: 30px;
-    font-family: 'Roboto Condensed', sans-serif;
-    color:rgb(27, 27, 27);
+    
+    color: rgb(27, 27, 27);
 }
-.portifolioGrid{
-    display: grid;
-    height: 400px;
-    width: 99%;
-    grid-template-columns: 25fr 25fr 25fr 25fr;
-    margin: 0 auto;
-    grid-gap: 3px;
-    margin-top: 30px;
+.containerPortifolio {
 }
-.ajusteZoom{
+
+.ajusteZoom {
     overflow: hidden;
+    margin-bottom: 20px;
 }
-.imagemPortifolio{
+
+.test {
+    background-color: blue;
+}
+
+.imagemPortifolio {
     width: 100%;
-    height: 100%;
-    object-fit:cover;
+    height: 400px;
+    object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; 
+    background-position: center center;
     position: relative;
     max-width: 100%;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
-.imagemPortifolio:hover{
+
+.imagemPortifolio:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
-.imagemPortifolio>.textoPortifolio{
+
+.imagemPortifolio>.textoPortifolio {
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
-.imagemPortifolio:hover>.textoPortifolio{
+
+.imagemPortifolio:hover>.textoPortifolio {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
     bottom: 40px;
 }
-.box{
-    background-image:url(box.jpg);
-}
-.mesa{
-    background-image:url(mesa.jpg);
 
+.box {
+    background-image: url(box.jpg);
 }
-.porta{
-    background-image:url(porta.jpg);
+
+.mesa {
+    background-image: url(mesa.jpg);
 }
-.sacada{
-    background-image:url(sacada.png);
+
+.porta {
+    background-image: url(porta.jpg);
 }
-.textoPortifolio{
+
+.sacada {
+    background-image: url(sacada.png);
+}
+
+
+.textoPortifolio {
     bottom: 5px;
     position: absolute;
     text-align: center;
     width: 100%;
-    font-size: 40px;
+    font-size: 35px;
     color: white;
     max-width: 100%;
 }
+
+
 /*Tipos de vidro==============================================================================*/
-.gridTiposDeVidro{
+
+.gridTiposDeVidro {
     display: grid;
     height: 400px;
     width: 100%;
@@ -181,46 +299,53 @@ body{
     grid-gap: 3px;
     margin-top: 50px;
 }
-.tituloTiposDeVidro{
+
+.tituloTiposDeVidro {
     font-size: 40px;
-    color:rgb(27, 27, 27);
+    color: rgb(27, 27, 27);
     margin-top: 60px;
 }
 
+
 /*Porque comprar com a gente====================================================================*/
-.wallpaperConvencimento{
+
+.wallpaperConvencimento {
     background-image: url(background3.jpg);
-    object-fit:cover;
+    object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; 
+    background-position: center center;
     position: relative;
     height: 600px;
     width: 100%;
 }
-.vazioConvencimento{
+
+.vazioConvencimento {
     height: 70px;
 }
-.fraseDepoimento{
+
+.fraseDepoimento {
     display: table;
     margin-top: 70px;
     font-family: 'Neuton', serif;
     font-style: italic;
-    color:white;
+    color: white;
     font-size: 60px;
-    font-style:italic;
+    font-style: italic;
     margin: 0 auto;
 }
-.autorDepoimento{
+
+.autorDepoimento {
     font-family: 'Neuton', serif;
-    color:white;
+    color: white;
     font-size: 30px;
     text-align: center;
     text-align: right;
     margin-right: 10px;
     margin-top: 5px;
 }
-.gridDoConvencimento{
+
+.gridDoConvencimento {
     display: grid;
     height: 400px;
     width: 80%;
@@ -228,98 +353,138 @@ body{
     grid-template-columns: 50fr 50fr;
     grid-template-rows: 50fr 50fr;
 }
-.convencimento p{
+
+.convencimento p {
     margin-top: 20px;
     font-size: 30px;
     text-align: center;
-    color:white;
+    color: white;
 }
-.imagemConvencimento{
+
+.imagemConvencimento {
     margin-top: 40px;
     height: 60px;
     width: auto;
     display: block;
     margin-left: auto;
-	margin-right: auto;
+    margin-right: auto;
 }
 
-.rodape{
+.rodape {
     margin-top: 40px;
     font-size: 20px;
     color: white;
     bottom: 3px;
     margin-left: 0px;
 }
-section{
-    font-family: 'Roboto Condensed', sans-serif;
+
+section {
+    
 }
 
-
-
-
-.produto{
-    border-bottom: 2px solid #00000063;
+.produto {
+    /*border-bottom: 2px solid #00000063;
     padding-bottom: 10px;
+    margin-top: 20px;*/
+    margin-left: 30px;
+}
+
+#vidroLaminado {}
+
+.div-imagem {
+    text-align: center;
+}
+
+.imagem {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
     margin-top: 20px;
 }
 
-.div-imagem{
-    text-align: center;
+.titulo {
+    
+    font-size: 40px;
 }
 
-.imagem{
-    max-width: 50%;
+.descricao {
+    
+    margin-top: 30px;
+    font-size: 22px;
+}
+
+.produtos {
     
 }
 
-.titulo{
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
-.descricao{
-    font-family: 'Roboto Condensed', sans-serif;
-}
-.tituloProdutos{
-    color:white;
+.tituloProdutos {
+    color: white;
     text-align: center;
     font-size: 50px;
     padding-top: 50px;
-    font-family: 'Raleway', sans-serif;
 }
 
-.wallpeperBannerProduto{
-    background-image:url(background3.jpg);
+.wallpeperBannerProduto {
+    background-image: url(background3.jpg);
     width: 100%;
     height: 200px;
-    object-fit:cover;
+    object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; 
+    background-position: center center;
     position: relative;
-    font-family: 'Raleway', sans-serif;
 }
-html {
-	overflow-y: auto;
-	scroll-behavior: smooth;
-}
-#navBar{
+
+
+
+#navBar {
     position: fixed;
+    width: 100%;
 }
-#divNavBar{
-    
+
+#divNavBar {
     background-color: #f7f7f7;
 }
-#vidroLaminado{
+
+.produtosGrid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 15fr 85fr;
+    grid-gap: 10px;
+    height: 100%;
+    width: 90%;
+}
+
+.tiposDeVidro {
+    height: 90vh;
+    display: grid;
+    margin-top: 20px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.sideMenu {
+    display: inline-block;
+    padding: 20px 20px;
+    color: rgba(0, 0, 0, 0.5);
+    ;
+    text-decoration: #f7f7f7;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+    text-align: left;
+    text-align: center;
     
 }
 
-.produtosGrid{
-	display: grid;
-    grid-gap: 20px;
-    grid-template-rows: 1fr;
-	grid-template-columns: 15fr 85fr;
+#vidroInsulado {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
 }
 
-.tiposDeVidro{
-    height: 90vh;
+.sideMenu:hover {
+    color: black;
+    transition: color 0.9s,
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Mercato del vetro</title>
@@ -7,50 +8,179 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed,Neuton:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-    <section class="wallpeperBanner">
-        
+    <section class="banner">
+
         <div class="transparenciaBanner">
-            <header class="menu">
-                <img class="logo" src="logobranco.png">
-                <a class="botaoMenu" href="index.html">CONTATO</a>
-                <a class="botaoMenu" href="portifolio.html">PORTIFÓLIO</a>
-                <a class="botaoMenu" href="produtos.html">PRODUTOS</a>
-                <a class="botaoMenu" href="index.html">HOME</a> 
-            </header>
-                <p class="nome">MERCADO DEL VETRO</p>
-                <p class="textoBanner">ENCOMENDE O VIDRO A SUA MANEIRA</p>
-                <div class="divBotaoBanner">
-                    <a class="botaoBanner" href="https://www.facebook.com/jairmessias.bolsonaro/">Faça o orçamento</a>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <img class="logo" src="logo.png">
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-6 col-6">
+                        <nav class="navbar navbar-expand-md navbar-light menu">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                                aria-label="Toggle navigation" id="hamburger">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="botaoMenu" href="index.html">HOME <span
+                                                class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="botaoMenu" href="produtos.html">PRODUTOS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="botaoMenu dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            PORTIFÓLIO
+                                        </a>
+                                        <div class="dropdown-menu botaoMenu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="botaoMenu" href="index.html">CONTATO</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
                 </div>
-                
+            </div>
+
+            <div class="textoBanner">MERCADO DEL VETRO</div>
+            <div class="textoBanner">ENCOMENDE O VIDRO A SUA MANEIRA</div>
+            <div class="divBotaoBanner">
+                <a class="botaoBanner" href="https://www.facebook.com/jairmessias.bolsonaro/">FAÇA SEU ORÇAMENTO</a>
+            </div>
+
         </div>
     </section>
-    <p class="tituloPortifolio">CONHEÇA NOSSOS PRODUTOS</p>
-    <section class="portifolioGrid">
-        <a class="ajusteZoom" href="portifolio.html">
-            <div class="imagemPortifolio box">
-                <p class="textoPortifolio">BOXES</p>
-            </div>
-        </a>
-        <a class="ajusteZoom" href="portifolio.html">
-            <div class="imagemPortifolio sacada">
-                <p class="textoPortifolio">SACADAS</p>
-            </div>
-        </a>
-        <a class="ajusteZoom" href="portifolio.html">
-            <div class="imagemPortifolio mesa">
-                <p class="textoPortifolio">MESAS</p>
+
+    <section class="sessao">
+        <h2 class="subtitulo">
+            A QUALIDADE É INDISPENSÁVEL
+        </h2>
+        <p class="paragrafo">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec fermentum lectus. Duis placerat pretium
+            arcu, ut mollis nulla porta a. Aenean in sem in ante varius vestibulum. Etiam sit amet accumsan mauris. Duis
+            mollis molestie sapien, sed convallis
+            tellus viverra eu. Duis lacinia ex ut nunc accumsan viverra. Donec velit est, suscipit quis odio eget,
+            interdum malesuada odio. Integer quis urna sapien. Etiam odio justo, porttitor nec fringilla ac, tincidunt
+            id justo.
+        </p>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <i class="fas fa-heart icone"></i>
+                    <h4>Qualidade</h4>
+                    <p class="paragrafo">
+                        Mussum Ipsum, cacilds vidis litro abertis.
+                        Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <i class="fas fa-dollar-sign icone"></i>
+                    <h4>Preço acessível</h4>
+                    <p class="paragrafo">
+                            Aenean sit amet nisi. Praesent malesuada urna nisi, quis volutpat erat hendrerit non.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <i class="fas fa-clock icone"></i>
+                    <h4>Rápida entrega</h4>
+                    <p class="paragrafo">
+                            Mé faiz elementum girarzis, nisi eros vermeio. 
+                            Quem num gosta di mim que vai caçá sua turmis!
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <i class="fas fa-thumbs-up icone"></i>
+                    <h4>Confiável</h4>
+                    <p class="paragrafo">
+                            Detraxit consequat et quo num tendi nada. Admodum accumsan disputationi eu sit.
+                    </p>
+                </div>
             </div>
         </div>
-        <a class="ajusteZoom" href="portifolio.html">
-            <div class="imagemPortifolio porta">
-                <p class="textoPortifolio">PORTAS</p>
-            </div>
-        </a>
     </section>
+    <section class="sessao sessaoPortifolio">
+        <div class="container--fluid">
+            <div class="row no-gutters">
+                <div class="col-lg-12 col-md-12 col-sm-12  ">
+                    <h2 class="subtitulo">CONHEÇA NOSSOS PRODUTOS</h2>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="ajusteZoom">
+                        <a href="portifolio.html">
+                            <div class="imagemPortifolio box">
+                                <p class="textoPortifolio">BOXES</p>
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="ajusteZoom">
+                        <a href="portifolio.html">
+
+                            <div class="imagemPortifolio sacada">
+                                <p class="textoPortifolio">SACADAS</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="ajusteZoom">
+                        <a href="portifolio.html">
+                            <div class="imagemPortifolio mesa">
+                                <p class="textoPortifolio">MESAS</p>
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="ajusteZoom">
+                        <a href="portifolio.html">
+                            <div class="imagemPortifolio porta">
+                                <p class="textoPortifolio">PORTAS</p>
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
     <section class="gridTiposDeVidro">
         <div class="tituloTiposDeVidro">
             CONHEÇA OS TIPOS DE VIDRO QUE NÓS TRABALHAMOS
@@ -58,32 +188,8 @@
         <div class="osTiposDeVidro">
             AAAAAAAAAAAA
         </div>
-    </section> 
-    <section class="wallpaperConvencimento">
-        <div class="vazioConvencimento"></div>
-        <div class="fraseDepoimento">
-            "Muito bom, qualidade impecável"
-            <p class="autorDepoimento">Willian Chan</p>
-        </div>
-        <section class="gridDoConvencimento">
-            <div class="convencimento">
-                <img class="imagemConvencimento" src="like.png">
-                <p>Qualidade</p>
-            </div> 
-            <div class="convencimento">
-                <img class="imagemConvencimento" src="like.png">
-                <p>Preço acessível</p>
-            </div>
-            <div class="convencimento">
-                <img class="imagemConvencimento" src="like.png">
-                <p>Rápida entrega</p>
-            </div>
-            <div class="convencimento">
-                <img class="imagemConvencimento" src="like.png">
-                <p>Confiável</p>
-            </div>
-            <div class="rodape">Rodapé</div>
-        </section>
     </section>
+
 </body>
+
 </html>
