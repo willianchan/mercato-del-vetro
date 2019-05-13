@@ -1,38 +1,673 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Mercato del vetro</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mercato del Vetro</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- slick -->
+  <link rel="stylesheet" type="text/css" href="./slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/index.min.css" rel="stylesheet">
+
 </head>
 
-<body>
-    <header class="menu">
-        <img class="logo" src="logo.png">
-        <a class="botaoMenu" href="index.html">CONTATO</a>
-        <a class="botaoMenu" href="portifolio.html">PORTIFÓLIO</a>
-        <a class="botaoMenu" href="index.html">PRODUTOS</a>
-        <a class="botaoMenu" href="index.html">HOME</a> 
-    </header>
-    <section class="banner">
-        <div class="transparencia">
-            <p class="textoBanner">ENCOMENDE O VIDRO A SUA MANEIRA</p>
-            <div class="divBotaoBanner">
-                <a class="botaoBanner" href="https://www.facebook.com/jairmessias.bolsonaro/">Faça o orçamento</a>
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top">Del Vetro</a> -->
+      <a class="js-scroll-trigger" href="#page-top"><img class="logo" src="./img/logo_del_vetro.png"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#servicos">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#vidros">Vidros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#produtos">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#sobre">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contato">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in">Bem vindo à Del Vetro!</div>
+        <div class="intro-heading text-uppercase">Encomende seu vidro</div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#servicos">Orçamento</a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Serviços -->
+  <section class="page-section" id="servicos">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Serviços</h2>
+          <h3 class="section-subheading text-muted">Porque escolher a Del Vetro?</h3>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-medal fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Qualidade</h4>
+          <p class="text-muted">Na <strong>Del Vetro</strong> visamos qualidade em primeiro lugar</p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-money-bill-alt fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Preço</h4>
+          <p class="text-muted">Preços <strong>competitivos</strong> no mercado</p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="far fa-clock fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Tempo</h4>
+          <p class="text-muted">Tempo de entrega diferenciado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vidros Grid -->
+  <section class="bg-light page-section" id="vidros">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">vidros</h2>
+          <h3 class="section-subheading text-muted">Conheça os principais tipos de vidro</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 vidros-item">
+          <a class="vidros-link" data-toggle="modal" href="#vidrosModal1">
+            <div class="vidros-hover">
+              <div class="vidros-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
             </div>
+            <img class="img-fluid" src="img/vidros/01-thumbnail.jpg" alt="">
+          </a>
+          <div class="vidros-caption">
+            <h4>Vidro Float</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet</p>
+          </div>
         </div>
-    </section>
-    <section class="section2">
-        <div id="div2s2">
-            <p>
-                    <br><br>Lorem ipsum dolor sit amet<br><br><br>
-            </p>
+        <div class="col-md-4 col-sm-6 vidros-item">
+          <a class="vidros-link" data-toggle="modal" href="#vidrosModal2">
+            <div class="vidros-hover">
+              <div class="vidros-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/vidros/02-thumbnail.jpg" alt="">
+          </a>
+          <div class="vidros-caption">
+            <h4>Vidro Laminado</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet</p>
+          </div>
         </div>
-        <div id="div1s2">
-            <p>Curabitur posuere mi efficitur, commodo ipsum sed, dictum sapien. Etiam ut orci aliquet, finibus mauris sed, gravida nibh. Duis sollicitudin, neque eleifend dignissim viverra, eros ligula dignissim nunc, quis aliquet sem nulla at odio.
-                <br><br><br><br><br><br><br><br><br><br>Fusce ornare tellus nec odio elementum, a tincidunt erat egestas. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec et arcu nec lorem dignissim dapibus fringilla nec diam. Curabitur eu felis purus. Aliquam et dui volutpat, vestibulum quam eu, iaculis diam. Praesent faucibus dapibus eros, ac congue nisl rhoncus pellentesque. Etiam volutpat accumsan volutpat. Aliquam cursus mollis eros vitae varius.</p>
-        </div>       
-    </section>
+        <div class="col-md-4 col-sm-6 vidros-item">
+          <a class="vidros-link" data-toggle="modal" href="#vidrosModal3">
+            <div class="vidros-hover">
+              <div class="vidros-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/vidros/03-thumbnail.jpg" alt="">
+          </a>
+          <div class="vidros-caption">
+            <h4>Vidro Temperado</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 vidros-item">
+          <a class="vidros-link" data-toggle="modal" href="#vidrosModal4">
+            <div class="vidros-hover">
+              <div class="vidros-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/vidros/04-thumbnail.jpg" alt="">
+          </a>
+          <div class="vidros-caption">
+            <h4>Vidro Antifogo</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 vidros-item">
+          <a class="vidros-link" data-toggle="modal" href="#vidrosModal5">
+            <div class="vidros-hover">
+              <div class="vidros-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/vidros/05-thumbnail.jpg" alt="">
+          </a>
+          <div class="vidros-caption">
+            <h4>Vidro Blindado</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 vidros-item">
+          <a class="vidros-link" data-toggle="modal" href="#vidrosModal6">
+            <div class="vidros-hover">
+              <div class="vidros-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/vidros/06-thumbnail.jpg" alt="">
+          </a>
+          <div class="vidros-caption">
+            <h4>Vidro Bisotê</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section class="page-section" id="produtos">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">Produtos</h2>
+      <h3 class="section-subheading text-muted">Conheça nossos produtos</h3>
+    </div>
+    <div class="container slider">
+      <div>
+        <img class="img-fluid" src="img/vidros/01-thumbnail.jpg" alt="">
+      </div>
+      <div>
+        <img class="img-fluid" src="img/vidros/02-thumbnail.jpg" alt="">
+      </div>
+      <div>
+        <img class="img-fluid" src="img/vidros/03-thumbnail.jpg" alt="">
+      </div>
+      <div>
+        <img class="img-fluid" src="img/vidros/04-thumbnail.jpg" alt="">
+      </div>
+      <div>
+        <img class="img-fluid" src="img/vidros/05-thumbnail.jpg" alt="">
+      </div>
+      <div>
+        <img class="img-fluid" src="img/vidros/06-thumbnail.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section class="bg-light page-section" id="sobre">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Sobre</h2>
+          <h3 class="section-subheading text-muted">Conheça um pouco da nossa história</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="timeline">
+            <li>
+              <div class="timeline-image">
+                <img class="rounded-circle img-fluid" src="img/sobre/1.jpg" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>2017</h4>
+                  <h4 class="subheading">Criação da Del Vetro</h4>
+                </div>
+                <div class="timeline-body">
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
+                    eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et
+                    ea quo dolore laudantium consectetur!</p>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image">
+                <img class="rounded-circle img-fluid" src="img/sobre/2.jpg" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>Junho 2018</h4>
+                  <h4 class="subheading">Novas Contratações</h4>
+                </div>
+                <div class="timeline-body">
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
+                    eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et
+                    ea quo dolore laudantium consectetur!</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="timeline-image">
+                <img class="rounded-circle img-fluid" src="img/sobre/3.jpg" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>Janeiro 2019</h4>
+                  <h4 class="subheading">Nova Localização</h4>
+                </div>
+                <div class="timeline-body">
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
+                    eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et
+                    ea quo dolore laudantium consectetur!</p>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image">
+                <img class="rounded-circle img-fluid" src="img/sobre/4.jpg" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>2019</h4>
+                  <h4 class="subheading">Novo Forno</h4>
+                </div>
+                <div class="timeline-body">
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
+                    eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et
+                    ea quo dolore laudantium consectetur!</p>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image">
+                <h4>Seja Parte
+                  <br>da Nossa
+                  <br>História!</h4>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section class="page-section" id="contato">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Contato</h2>
+          <h3 class="section-subheading text-muted">Fale com a gente</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <form id="contactForm" name="sentMessage" novalidate="novalidate">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input class="form-control" id="name" type="text" placeholder="Nome *" required="required"
+                    data-validation-required-message="Por favor insira seu nome.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" id="email" type="email" placeholder="Email *" required="required"
+                    data-validation-required-message="Por favor insira seu email.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" id="phone" type="tel" placeholder="Telefone *" required="required"
+                    data-validation-required-message="Por favor insira seu telefone.">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <textarea class="form-control" id="message" placeholder="Mensagem *" required="required"
+                    data-validation-required-message="Por favor insira sua mensagem."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-lg-12 text-center">
+                <div id="success"></div>
+                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase"
+                  type="submit">Enviar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <span class="copyright">Copyright &copy; Mercato Del Vetro 2019</span>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-inline social-buttons">
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-inline quicklinks">
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vidros Modals -->
+
+  <!-- Modal 1 -->
+  <div class="vidros-modal modal fade" id="vidrosModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Vidro Float</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="img/vidros/01-full.jpg" alt="">
+                <p>Vidro float é uma folha de vidro produzido através de uma massa de vidro fundido flutuante sobre um
+                  leito de estanho liquefeito. Este método dá a espessura uniforme da chapa e superfícies muito planas,
+                  com faces perfeitamente paralelas.</p>
+                <ul class="list-inline">
+                  <li>Preço: Lorem ipsum</li>
+                  <li>Resistência: Lorem ipsum</li>
+                  <li>Composição: Lorem ipsum</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="vidros-modal modal fade" id="vidrosModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Vidro Laminado</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="img/vidros/02-full.jpg" alt="">
+                <p>Vidro composto por duas ou mais peças de vidro intercaladas com uma camada intermediária. O fator de
+                  segurança se dá pela elasticidade do material, garantindo resistência e no caso de quebra, cacos de
+                  vidro não se desprendem do material. A superfície do vidro permanece intransponível.</p>
+                <ul class="list-inline">
+                  <li>Preço: Lorem ipsum</li>
+                  <li>Resistência: Lorem ipsum</li>
+                  <li>Composição: Lorem ipsum</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div class="vidros-modal modal fade" id="vidrosModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Vidro Temperado</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="img/vidros/03-full.jpg" alt="">
+                <p>Vidro de segurança que apresenta resistência térmica e mecânica cerca de cinco vezes maior que os
+                  demais vidros. Além disso, quando quebra, o vidro se estilhaça em pequenos pedaços não pontiagudos e
+                  muito menos cortantes que o vidro comum, reduzindo substancialmente o risco de ferimentos ao usuário.
+                </p>
+                <ul class="list-inline">
+                  <li>Preço: Lorem ipsum</li>
+                  <li>Resistência: Lorem ipsum</li>
+                  <li>Composição: Lorem ipsum</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div class="vidros-modal modal fade" id="vidrosModal4" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Vidro Antifogo</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="img/vidros/04-full.jpg" alt="">
+                <p>Os vidros resistentes ao fogo, sem malha metálica, são vidros laminados compostos por várias lâminas
+                  intercaladas com material químico transparente, que se funde e dilata em caso de incêndio. Essa reação
+                  se ativa quando a temperatura de uma das faces do vidro atinge 120ºC.</p>
+                <ul class="list-inline">
+                  <li>Preço: Lorem ipsum</li>
+                  <li>Resistência: Lorem ipsum</li>
+                  <li>Composição: Lorem ipsum</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div class="vidros-modal modal fade" id="vidrosModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Vidro Blindado</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="img/vidros/05-full.jpg" alt="">
+                <p>O vidro blindado é um dos tipos de vidros de segurança, já que este é resistente à balas.
+
+                  Em sua composição temos camadas de vidro comum, intercaladas com outros tipos de moléculas,
+                  principalmente, de vidro laminado com polímeros, policarbonato e polivinilbutiral.
+
+                  O vidro laminado é capaz de criar vidros muito mais resistentes, principalmente, quanto atingidos por
+                  projéteis, consegue amortecer o impacto e evitando danos físicos e materiais.
+
+                  É bastante utilizado no comércio e em locais que se faz preciso muita proteção.</p>
+                <ul class="list-inline">
+                  <li>Preço: Lorem ipsum</li>
+                  <li>Resistência: Lorem ipsum</li>
+                  <li>Composição: Lorem ipsum</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div class="vidros-modal modal fade" id="vidrosModal6" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Vidro Bisotê</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="img/vidros/06-full.jpg" alt="">
+                <p>O vidro bisotado ou bisotê é um dos mais procurados no mercado, atualmente. Ele é um grande aliado
+                  para qualquer tipo de decoração.
+
+                  O grande diferencial desse estilo de vidro é que as bordas trabalhadas e chanfradas, proporcionando um
+                  acabamento final delicado e diferenciado.</p>
+                <ul class="list-inline">
+                  <li>Preço: Lorem ipsum</li>
+                  <li>Resistência: Lorem ipsum</li>
+                  <li>Composição: Lorem ipsum</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- slick -->
+  <script type="text/javascript" src="./slick/slick.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/index.min.js"></script>
+
+  <script src="js/slick.min.js"></script>
+
 </body>
+
 </html>
