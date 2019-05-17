@@ -26,14 +26,51 @@
     offset: 56
   });
 
+  
+
   // Collapse Navbar
-  var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-shrink");
-      $("#logo").addClass("logo-shrink");
-    } else {
-      $("#mainNav").removeClass("navbar-shrink");
-      $("#logo").removeClass("logo-shrink");
+ var navbarCollapse = function() {
+    if ($(window).scrollTop()>450) {
+      document.getElementById('showNavBar').innerHTML =  '<nav class="navbar navbar-expand-lg navbar-dark navbar-shrink fixed-top" id="mainNav">\
+      <div class="container">\
+          <a class="js-scroll-trigger" href="#page-top"><img class="logo-shrink" id="logo"\
+                  src="./img/logo_del_vetro.png"></a>\
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"\
+              data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"\
+              aria-label="Toggle navigation">\
+              Menu\
+              <i class="fas fa-bars"></i>\
+          </button>\
+          <div class="collapse navbar-collapse" id="navbarResponsive">\
+              <ul class="navbar-nav text-uppercase ml-auto">\
+                  <li class="nav-item">\
+                      <a class="nav-link js-scroll-trigger" href="#servicos">Serviços</a>\
+                  </li>\
+                  <li class="nav-item">\
+                      <a class="nav-link js-scroll-trigger" href="#vidros">Vidros</a>\
+                  </li>\
+                  <li class="nav-item">\
+                      <a class="nav-link js-scroll-trigger" href="#produtos">Produtos</a>\
+                  </li>\
+                  <li class="nav-item">\
+                      <a class="nav-link js-scroll-trigger" href="#sobre">Sobre</a>\
+                  </li>\
+                  <li class="nav-item">\
+                      <a class="nav-link js-scroll-trigger" href="#contato">Contato</a>\
+                  </li>\
+              </ul>\
+          </div>\
+      </div>\
+  </nav>';
+      //$("#mainNav").addClass("navbar-shrink");
+      //$("#mainNav").addClass("fixed-top");
+      //$("#logo").addClass("logo-shrink");
+    } else if($(window).scrollTop()<450){
+      document.getElementById('showNavBar').innerHTML =  '';
+      //$removeShrunkNav();
+      //$("#mainNav").removeClass("navbar-shrink");
+      //$("#mainNav").removeClass("fixed-top");
+      //$("#logo").removeClass("logo-shrink");
     }
   };
   // Collapse now if page is not at top
