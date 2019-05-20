@@ -21,8 +21,8 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- slick -->
-    <link rel="stylesheet" type="text/css" href="./slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="./vendor/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="./vendor/slick/slick-theme.css" />
 
     <!-- Custom styles for this template -->
     <link href="css/index.min.css" rel="stylesheet">
@@ -32,43 +32,42 @@
 <body id="page-top">
 
     <!-- Navigation -->
-    <div id="showNavBar"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark top" id="mainNav">
+        <div class="container">
+            <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top">Del Vetro</a> -->
+            <a class="js-scroll-trigger" href="#page-top"><img class="logo" id="logo"
+                    src="./img/logo_del_vetro.png"></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#vidros">Vidros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#produtos">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Header -->
     <header class="masthead">
         <div class="dark">
-                <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
-                        <div class="container">
-                            <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top">Del Vetro</a> -->
-                            <a class="js-scroll-trigger" href="#page-top"><img class="logo" id="logo"
-                                    src="./img/logo_del_vetro.png"></a>
-                            <button class="navbar-toggler navbar-toggler-right" id="button" type="button" data-toggle="collapse"
-                                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                                Menu
-                                <i class="fas fa-bars"></i>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarResponsive">
-                                <ul class="navbar-nav text-uppercase ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link js-scroll-trigger" href="#servicos">Serviços</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link js-scroll-trigger" href="#vidros">Vidros</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link js-scroll-trigger" href="#produtos">Produtos</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link js-scroll-trigger" href="#sobre">Sobre</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link js-scroll-trigger" href="#contato">Contato</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
             <div class="container">
                 <div class="intro-text">
                     <div class="intro-lead-in">Bem vindo à Del Vetro!</div>
@@ -136,10 +135,10 @@
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="img/vidros/01-thumbnail.jpg" alt="">
+                        <img class="img-fluid" src="img/vidros/bisote-thumbnail.jpg" alt="">
                     </a>
                     <div class="vidros-caption">
-                        <h4>Vidro Float</h4>
+                        <h4>Bisotê</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
@@ -150,10 +149,10 @@
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="img/vidros/02-thumbnail.jpg" alt="">
+                        <img class="img-fluid" src="img/vidros/decorativo-thumbnail.jpg" alt="">
                     </a>
                     <div class="vidros-caption">
-                        <h4>Vidro Laminado</h4>
+                        <h4>Decorativo</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
@@ -164,10 +163,10 @@
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="img/vidros/03-thumbnail.jpg" alt="">
+                        <img class="img-fluid" src="img/vidros/espelho-thumbnail.jpg" alt="">
                     </a>
                     <div class="vidros-caption">
-                        <h4>Vidro Temperado</h4>
+                        <h4>Espelho</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
@@ -178,10 +177,10 @@
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="img/vidros/04-thumbnail.jpg" alt="">
+                        <img class="img-fluid" src="img/vidros/temperado-thumbnail.jpg" alt="">
                     </a>
                     <div class="vidros-caption">
-                        <h4>Vidro Antifogo</h4>
+                        <h4>Temperado</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
@@ -192,27 +191,27 @@
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="img/vidros/05-thumbnail.jpg" alt="">
+                        <img class="img-fluid" src="img/vidros/laminado-thumbnail.jpg" alt="">
                     </a>
                     <div class="vidros-caption">
-                        <h4>Vidro Blindado</h4>
+                        <h4>Laminado</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 vidros-item">
-                        <a class="vidros-link" data-toggle="modal" href="#vidrosModal2">
-                            <div class="vidros-hover">
-                                <div class="vidros-hover-content">
-                                    <i class="fas fa-plus fa-3x"></i>
-                                </div>
+                    <a class="vidros-link" data-toggle="modal" href="#vidrosModal6">
+                        <div class="vidros-hover">
+                            <div class="vidros-hover-content">
+                                <i class="fas fa-plus fa-3x"></i>
                             </div>
-                            <img class="img-fluid" src="img/vidros/02-thumbnail.jpg" alt="">
-                        </a>
-                        <div class="vidros-caption">
-                            <h4>Vidro Laminado</h4>
-                            <p class="text-muted">Lorem ipsum dolor sit amet</p>
                         </div>
+                        <img class="img-fluid" src="img/vidros/float-thumbnail.jpg" alt="">
+                    </a>
+                    <div class="vidros-caption">
+                        <h4>Float</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet</p>
                     </div>
+                </div>
             </div>
         </div>
     </section>
@@ -383,7 +382,7 @@
     </section>
 
     <!-- Contato -->
-<section class="page-section" id="contato">
+    <section class="page-section" id="contato">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -446,18 +445,13 @@
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#">
+                            <a href="https://www.facebook.com/mercatodelvetro/">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-linkedin-in"></i>
+                            <a href="https://www.instagram.com/mercato.delvetro/">
+                                <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                     </ul>
@@ -492,14 +486,12 @@
                         <div class="col-lg-8 mx-auto">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2 class="text-uppercase">Vidro Float</h2>
+                                <h2 class="text-uppercase">Vidro Bisotê</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="img/vidros/01-full.jpg" alt="">
-                                <p>Vidro float é uma folha de vidro produzido através de uma massa de vidro fundido
-                                    flutuante sobre um
-                                    leito de estanho liquefeito. Este método dá a espessura uniforme da chapa e
-                                    superfícies muito planas,
-                                    com faces perfeitamente paralelas.</p>
+                                <img class="img-fluid d-block mx-auto" src="img/vidros/bisote.jpg" alt="">
+                                <p>O bisotê é um acabamento feito através de um desbaste chanfrado das bordas dos vidros
+                                    e espelhos. Este desbaste cria uma “moldura” que imprime maior leveza, graciosidade
+                                    e beleza às peças trabalhadas.</p>
                                 <ul class="list-inline">
                                     <li>Preço: Lorem ipsum</li>
                                     <li>Resistência: Lorem ipsum</li>
@@ -530,14 +522,12 @@
                         <div class="col-lg-8 mx-auto">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2 class="text-uppercase">Vidro Laminado</h2>
+                                <h2 class="text-uppercase">Vidro Decorativo</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="img/vidros/02-full.jpg" alt="">
-                                <p>Vidro composto por duas ou mais peças de vidro intercaladas com uma camada
-                                    intermediária. O fator de
-                                    segurança se dá pela elasticidade do material, garantindo resistência e no caso de
-                                    quebra, cacos de
-                                    vidro não se desprendem do material. A superfície do vidro permanece intransponível.
+                                <img class="img-fluid d-block mx-auto" src="img/vidros/decorativo.jpg" alt="">
+                                <p>Dispomos de soluções únicas e inovadoras em vidros decorativos, soluções inspiradoras
+                                    e diferenciadas para projetos de arquitetura, design de interiores, movelaria e
+                                    outros.
                                 </p>
                                 <ul class="list-inline">
                                     <li>Preço: Lorem ipsum</li>
@@ -569,16 +559,10 @@
                         <div class="col-lg-8 mx-auto">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2 class="text-uppercase">Vidro Temperado</h2>
+                                <h2 class="text-uppercase">Espelho</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="img/vidros/03-full.jpg" alt="">
-                                <p>Vidro de segurança que apresenta resistência térmica e mecânica cerca de cinco vezes
-                                    maior que os
-                                    demais vidros. Além disso, quando quebra, o vidro se estilhaça em pequenos pedaços
-                                    não pontiagudos e
-                                    muito menos cortantes que o vidro comum, reduzindo substancialmente o risco de
-                                    ferimentos ao usuário.
-                                </p>
+                                <img class="img-fluid d-block mx-auto" src="img/vidros/espelho.jpg" alt="">
+                                <p>Nenhuma descrição fornecida.</p>
                                 <ul class="list-inline">
                                     <li>Preço: Lorem ipsum</li>
                                     <li>Resistência: Lorem ipsum</li>
@@ -609,14 +593,10 @@
                         <div class="col-lg-8 mx-auto">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2 class="text-uppercase">Vidro Antifogo</h2>
+                                <h2 class="text-uppercase">Vidro Temperado</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="img/vidros/04-full.jpg" alt="">
-                                <p>Os vidros resistentes ao fogo, sem malha metálica, são vidros laminados compostos por
-                                    várias lâminas
-                                    intercaladas com material químico transparente, que se funde e dilata em caso de
-                                    incêndio. Essa reação
-                                    se ativa quando a temperatura de uma das faces do vidro atinge 120ºC.</p>
+                                <img class="img-fluid d-block mx-auto" src="img/vidros/temperado.jpg" alt="">
+                                <p>Este vidro caracteriza-se por possuir maior resistência a impactos e altas variações de  temperatura. O processo de têmpera consiste elevar a temperatura do vidro até cerca de 600°C e resfriá-lo rapidamente. Isso faz com que ele fique até cinco vezes mais resistente a impactos. Ao ser quebrado, ele se estilhaça em pequenos pedaços, diminuindo o risco de causar ferimentos nas pessoas.</p>
                                 <ul class="list-inline">
                                     <li>Preço: Lorem ipsum</li>
                                     <li>Resistência: Lorem ipsum</li>
@@ -647,21 +627,10 @@
                         <div class="col-lg-8 mx-auto">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2 class="text-uppercase">Vidro Blindado</h2>
+                                <h2 class="text-uppercase">Vidro Laminado</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="img/vidros/05-full.jpg" alt="">
-                                <p>O vidro blindado é um dos tipos de vidros de segurança, já que este é resistente à
-                                    balas.
-
-                                    Em sua composição temos camadas de vidro comum, intercaladas com outros tipos de
-                                    moléculas,
-                                    principalmente, de vidro laminado com polímeros, policarbonato e polivinilbutiral.
-
-                                    O vidro laminado é capaz de criar vidros muito mais resistentes, principalmente,
-                                    quanto atingidos por
-                                    projéteis, consegue amortecer o impacto e evitando danos físicos e materiais.
-
-                                    É bastante utilizado no comércio e em locais que se faz preciso muita proteção.</p>
+                                <img class="img-fluid d-block mx-auto" src="img/vidros/laminado.jpg" alt="">
+                                <p>Considerado um vidro de segurança, o laminado pode ser composto por uma ou mais lâminas de vidro unidas por uma ou mais camadas de PVB (polivinil butiral). Quando quebrado, os fragmentos do vidro ficam presos ao PVB,  reduzindo ou evitando riscos de acidentes.</p>
                                 <ul class="list-inline">
                                     <li>Preço: Lorem ipsum</li>
                                     <li>Resistência: Lorem ipsum</li>
@@ -692,16 +661,10 @@
                         <div class="col-lg-8 mx-auto">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2 class="text-uppercase">Vidro Bisotê</h2>
+                                <h2 class="text-uppercase">Vidro Float</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="img/vidros/06-full.jpg" alt="">
-                                <p>O vidro bisotado ou bisotê é um dos mais procurados no mercado, atualmente. Ele é um
-                                    grande aliado
-                                    para qualquer tipo de decoração.
-
-                                    O grande diferencial desse estilo de vidro é que as bordas trabalhadas e chanfradas,
-                                    proporcionando um
-                                    acabamento final delicado e diferenciado.</p>
+                                <img class="img-fluid d-block mx-auto" src="img/vidros/float.jpg" alt="">
+                                <p>Mais de 90% dos vidros fabricados no Brasil são produzidos pelo processo de flutuação ou "float glass". O vidro ainda em estado líquido é despejado sobre uma camada de estanho derretido. O vidro flutua e se espalha sobre o estanho formando uma lâmina lisa e contínua. Com esta técnica é possível criar placas de vidros de diversas dimensões, espessuras e perfeitamente planas.</p>
                                 <ul class="list-inline">
                                     <li>Preço: Lorem ipsum</li>
                                     <li>Resistência: Lorem ipsum</li>
@@ -725,19 +688,19 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="./vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="./js/jqBootstrapValidation.min.js"></script>
+    <script src="./js/contact_me.min.js"></script>
 
     <!-- slick -->
-    <script type="text/javascript" src="./slick/slick.min.js"></script>
+    <script type="text/javascript" src="./vendor/slick/slick.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/index.min.js"></script>
+    <script src="./js/index.min.js"></script>
 
-    <script src="js/slick.min.js"></script>
+    <script src="./js/slick.min.js"></script>
 
 </body>
 
