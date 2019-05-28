@@ -32,6 +32,30 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
 }
 
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
 .page-section {
   padding: 70px 0
 }
@@ -118,9 +142,23 @@ img::-moz-selection {
   position: fixed;
 }
 
-#mainNav {
-  background-color: #212529
+.mainNav {
+  background-color: transparent;
+  transition: all 0.5s;
 }
+
+.black-on-show{
+  background-color: #212529;
+  opacity: 0.9;
+  transition: all 0.5s;
+}
+#mainNav.navbar-shrink {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #212529;
+  opacity: 0.9;
+}
+
 
 #mainNav .navbar-toggler {
   font-size: 12px;
@@ -148,6 +186,7 @@ img::-moz-selection {
   padding: .75em 0;
   letter-spacing: 1px;
   color: #fff;
+  text-align: center;
   font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
 }
 
@@ -155,8 +194,20 @@ img::-moz-selection {
   color: #fed136
 }
 
+img.logo {
+  height: 68px;
+  width: auto;
+  display: inline-block;
+}
+@media (min-width:768px) {
+  img.logo {
+    height: 120px;
+    width: auto;
+    display: inline-block;
+  }
+}
 @media (min-width:992px) {
-  #mainNav {
+  .mainNav {
     padding-top: 15px;
     padding-bottom: 25px;
     -webkit-transition: padding-top .3s, padding-bottom .3s;
@@ -182,13 +233,13 @@ img::-moz-selection {
     font-size: 1.25em;
     padding: 12px 0
   }
-  #mainNav.navbar-shrink .logo-shrink {
-    height: 68px;
-    width: auto;
-    display: inline-block;
-  }
 }
 
+#mainNav.navbar-shrink .logo-shrink {
+  height: 68px;
+  width: auto;
+  display: inline-block;
+}
 header.masthead {
   text-align: center;
   color: #fff;
@@ -715,12 +766,6 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   background-color: #0000000d!important
 }
 
-img.logo {
-  height: 120px;
-  width: auto;
-  display: inline-block;
-}
-
 html, body {
   margin: 0;
   padding: 0;
@@ -885,3 +930,4 @@ html, body {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+

@@ -30,7 +30,7 @@
 
   // Collapse Navbar
   var navbarCollapse = function () {
-    if ($(window).scrollTop() > 840) {
+    if ($(window).scrollTop() > 250) {
       if (!isNavBarShown) {
         $(".navbar").hide();
       }
@@ -50,6 +50,18 @@
       isNavBarShown = false;
     }
   };
+  $("#navbar-btn").click(function(){
+    var elemento = document.getElementById('mainNav');
+    if(!elemento.classList.contains("black-on-show")){
+      $("#mainNav").addClass("black-on-show");
+    }
+    else{
+      $("#mainNav").removeClass("black-on-show");
+      
+      
+      
+    }
+  });
   // Collapse now if page is not at top
   navbarCollapse();
   // Collapse the navbar when page is scrolled
