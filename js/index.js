@@ -50,6 +50,11 @@
       isNavBarShown = false;
     }
   };
+  var modalShrink = function(){
+    if($(window).width<768){
+      $("modal-dialog").addClass("modal-dialog-shrink");
+    }
+  };
   $("#navbar-btn").click(function(){
     var elemento = document.getElementById('mainNav');
     if(!elemento.classList.contains("black-on-show")){
