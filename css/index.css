@@ -65,6 +65,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 15px
 }
+@media(min-width:576){
+  .page-section h2.section-heading {
+    font-size: 35px;
+    margin-top: 0;
+    margin-bottom: 12px
+  }
+}
 
 .page-section h3.section-subheading {
   font-size: 16px;
@@ -88,8 +95,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-xl {
-  font-size: 18px;
-  padding: 20px 40px
+  font-size: 15px;
+  padding: 16.7px 33.3px
+}
+@media(min-width: 576px){
+  .btn-xl {
+    font-size: 18px;
+    padding: 20px 40px
+  } 
 }
 
 .btn-primary {
@@ -201,6 +214,13 @@ img.logo {
 }
 @media (min-width:768px) {
   img.logo {
+    height: 80px;
+    width: auto;
+    display: inline-block;
+  }
+}
+@media (min-width:992px) {
+  img.logo {
     height: 120px;
     width: auto;
     display: inline-block;
@@ -253,34 +273,97 @@ header.masthead {
 .dark {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 100%;
+  min-height: 350px;
+  height: 70vh;
 }
 
 header.masthead .intro-text {
-  padding-top: 17.5vh;
-  padding-bottom: 12.5vh
+  padding-top: calc(15vh + 40px);
 }
 
 header.masthead .intro-text .intro-lead-in {
-  font-size: 22px;
+  font-size: 20px;
   font-style: italic;
   line-height: 22px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
 }
 
 header.masthead .intro-text .intro-heading {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 500;
   line-height: 50px;
   margin-bottom: 25px;
   font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
 }
-
+@media(min-width: 576px){
+  .dark {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    min-height: 400px;
+    height: 400px;
+  }
+  header.masthead .intro-text .intro-heading {
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 50px;
+    margin-bottom: 25px;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+  }
+  header.masthead .intro-text .intro-lead-in {
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+    margin-bottom: 25px;
+    font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+  }
+}
 @media (min-width:768px) {
+  .dark {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    min-height: 550px;
+    height: 400px;
+  }
+
   header.masthead .intro-text {
-    padding-top: 35vh;
-    padding-bottom: 25vh;
+    padding-top: calc(24vh + 40px);
+  }
+  .dark {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+  }
+  header.masthead .intro-text .intro-lead-in {
+    font-size: 33px;
+    font-style: italic;
+    line-height: 40px;
+    margin-bottom: 25px;
+    font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+  }
+  header.masthead .intro-text .intro-heading {
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 75px;
+    margin-bottom: 50px;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+  }
+} 
+@media (min-width:992px) {
+  .dark {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    min-height: 500px;
+    height: 400px;
+  }
+
+  header.masthead .intro-text {
+    padding-top: calc(30vh + 50px);
+  }
+  .dark {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
   }
   header.masthead .intro-text .intro-lead-in {
     font-size: 40px;
@@ -325,7 +408,7 @@ header.masthead .intro-text .intro-heading {
   -webkit-transition: all ease .5s;
   transition: all ease .5s;
   opacity: 0;
-  background: rgba(254, 209, 54, .9)
+  background: rgba(254, 209, 54, .5)
 }
 
 #vidros .vidros-item .vidros-link .vidros-hover:hover {
@@ -388,10 +471,10 @@ header.masthead .intro-text .intro-heading {
 .vidros-modal .modal-dialog {
   margin-top: 1rem;
   margin-bottom: 0;
-  max-width: 100vw
+  max-width: 100vw;
 }
 .modal-backdrop {
-  background-color:white;
+  background-color:transparent;
   opacity: 1!important
 }
 @media (min-width: 768px){
@@ -422,8 +505,16 @@ header.masthead .intro-text .intro-heading {
 .vidros-modal .modal-content {
   padding: 50px 0;
   text-align: center;
+  background: white;
+  border: 0;
 }
-
+@media (min-width: 768px){
+  .vidros-modal .modal-dialog {
+    background: transparent;
+    border: 4px solid rgba(0,0,0,.2);
+  }
+  
+}
 .vidros-modal .modal-content h2 {
   font-size: 3em;
   margin-bottom: 50px
@@ -456,7 +547,7 @@ header.masthead .intro-text .intro-heading {
 .vidros-modal .close-modal {
   /*top: 15px;*/
   width: 100%;
-  height: 30px;
+  height: 50px;
   cursor: pointer;
   position: fixed;
   top: 0;
@@ -480,9 +571,10 @@ header.masthead .intro-text .intro-heading {
 }
 
 .vidros-modal .close-modal .externo{
-  margin-left: 3px;
+  margin-top:10px;
+  margin-left: 10px;
   color: black;
-  font-size: 30px;
+  font-size: 35px;
   display: inline-block;
   z-index: 1000;
   width: 100%;
@@ -721,7 +813,27 @@ header.masthead .intro-text .intro-heading {
   margin-bottom: 0;
   text-transform: none
 }
-
+@media(max-width: 576px){
+  h4{
+    font-size: 1.4rem;
+  }
+  .fa-4x {
+    font-size: 3em;
+  }
+  .page-section {
+    padding: 50px 0px;
+}
+  .section-subheading{
+    margin-bottom: 50px!important;
+  }
+  #vidros .vidros-item .vidros-caption{
+    padding: 15px;
+  }
+  .modal-dialog {
+    max-width: 500px;
+    margin: 0 auto;
+}
+}
 .team-member p {
   margin-top: 0
 }
