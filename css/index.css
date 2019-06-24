@@ -381,16 +381,17 @@ header.masthead .intro-text .intro-heading {
   }
 }
 
-.service-heading {
-  margin: 15px 0;
-  text-transform: none
-}
-.itens-portifolio{
-  margin-bottom: 30px;
-}
+
 #vidros .vidros-item {
   right: 0;
-  margin: 0 0 15px
+  margin: 0 0 10px
+}
+.vidros-moldura{
+  height: 300px;
+  max-height: 300px;
+  width: auto;
+  display: inline-block;
+
 }
 
 #vidros .vidros-item .vidros-link {
@@ -503,22 +504,29 @@ header.masthead .intro-text .intro-heading {
 }
 
 .vidros-modal .modal-content {
-  padding: 50px 0;
+  padding: 33px 0;
   text-align: center;
   background: white;
   border: 0;
+}
+.vidros-modal .modal-content h2 {
+  font-size: 3em;
+  margin-bottom: 50px
 }
 @media (min-width: 768px){
   .vidros-modal .modal-dialog {
     background: transparent;
     border: 4px solid rgba(0,0,0,.2);
   }
-  
+  .vidros-modal .modal-content {
+    padding: 50px 0;
+  }
+  .vidros-modal .modal-content h2 {
+    font-size: 3em;
+    margin-bottom: 75px
+  }
 }
-.vidros-modal .modal-content h2 {
-  font-size: 3em;
-  margin-bottom: 50px
-}
+
 
 .vidros-modal .modal-content p {
   margin-bottom: 30px
@@ -548,7 +556,6 @@ header.masthead .intro-text .intro-heading {
   /*top: 15px;*/
   width: 100%;
   height: 50px;
-  cursor: pointer;
   position: fixed;
   top: 0;
   background-color: white;
@@ -562,7 +569,6 @@ header.masthead .intro-text .intro-heading {
   left: -8px;
   width: 50px;
   height: 30px;
-  cursor: pointer;
   position: fixed;
   background-color: transparent;
   color: white
@@ -577,14 +583,16 @@ header.masthead .intro-text .intro-heading {
   font-size: 35px;
   display: inline-block;
   z-index: 1000;
-  width: 100%;
+  cursor: pointer;
 }
 @media(min-width:768px){
   .vidros-modal .close-modal .externo{
     text-align: center;
     color: white;
     font-size: 30px;
-    display: inline-block
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
   }
   .vidros-modal .close-modal:hover {
     opacity: .3
@@ -1071,45 +1079,110 @@ html, body {
   width: 80%;
 }
 
+.service-heading {
+  margin: 15px 0;
+  text-transform: none
+}
+.small-modal-container{
+  max-width: 100%;
+}
+
 .img-produtos{
-  min-width:100%;
-  min-height: 100%;
+  width:100%;
+  height: 100%;
   object-fit: cover;
 }
 .fill{
-  width: 400px;
+  min-width: 333px;
+  min-height: 187px;
+  width: 333px;
+  height: 187px;
+  max-width: 333px;
+  max-height: 187px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding-left: 0;
+  padding-right: 0;
 }
-@media (min-width:768px) {
+@media (min-width:576px) {
   .fill {
-    height: 190px;
+    min-width: 240px;
+    min-height: 135px;
+    width: 240px;
+    height: 135px;
+    max-width: 240px;
+    max-height: 135px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;
+    margin-bottom: 9px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 9px;
+    margin-right: 9px;
+  }
+}
+@media (min-width:768px) {
+  .fill {
+    min-width: 285px;
+    min-height: 160px;
+    width: 285px;
+    height: 160px;
+    max-width: 285px;
+    max-height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
 @media (min-width:992px) {
   .fill  {
-    height: 220px;
+    min-width: 248px;
+    min-height: 140px;
+    width: 248px;
+    height: 140px;
+    max-width: 248px;
+    max-height: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;   
+    margin-bottom: 7px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 7px;
+    margin-right: 7px;
   }
 }
 
 @media (min-width:1200px) {
   .fill {
-    height: 250px;
+    min-width: 300px;
+    min-height: 169px;
+    width: 300px;
+    height: 169px;
+    max-width: 300px;
+    max-height: 169px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
