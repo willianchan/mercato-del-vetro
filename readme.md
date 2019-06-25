@@ -31,7 +31,7 @@ gulp watch
 ```
 
 ## UX
-O site foi desenvolvido como uma Single Page Application, pois ao visitar diversos sites de vidraçarias foi descoberto que muitas delas têm muitas informações no campo de vista, o que causa uma poluição visual e também dificulta a navegação do usuário na página.
+O site foi desenvolvido como uma Single Page, pois ao visitar diversos sites de vidraçarias foi descoberto que muitas delas têm muitas informações no campo de vista, o que causa uma poluição visual e também dificulta a navegação do usuário na página.
 
 Desse modo, o desenvolvimento foi focado em uma página minimalista em que o usuário consiga chegar em qualquer lugar do site com no máximo 3 cliques e que seja fácil para o mesmo identificar cada seção e seu conteúdo.
 ### Cores
