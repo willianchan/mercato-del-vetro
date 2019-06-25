@@ -1,6 +1,6 @@
 {
     "name": "mercato-del-vetro",
-    "version": "0.9.0",
+    "version": "1.0.0",
     "description": "Website vitrine para fornecer informações sobre a empresa Mercato Del Vetro.",
     "main": "./dist/index.html",
     "scripts": {
@@ -16,11 +16,10 @@
         "@fortawesome/fontawesome-free": "^5.8.2",
         "bootstrap": "^4.3.1",
         "jquery": "^3.4.1",
-        "jquery.easing": "^1.4.1",
         "slick-carousel": "^1.8.1"
     },
     "devDependencies": {
-        "browser-sync": "2.26.5",
+        "browser-sync": "^2.26.7",
         "del": "4.1.1",
         "gulp": "4.0.2",
         "gulp-clean-css": "4.2.0",

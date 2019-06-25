@@ -33,11 +33,8 @@ function modules() {
   // Font Awesome
   var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
     .pipe(gulp.dest('./dist/vendor'));
-  // jQuery Easing
-  var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
-    .pipe(gulp.dest('./dist/vendor/jquery-easing'));
   // Slick
-  var jqueryEasing = gulp.src('./node_modules/slick-carousel/slick/**')
+  var slick = gulp.src('./node_modules/slick-carousel/slick/**')
     .pipe(gulp.dest('./dist/vendor/slick'));
   // jQuery
   var jquery = gulp.src([
@@ -45,7 +42,7 @@ function modules() {
     '!./node_modules/jquery/dist/core.js'
   ])
     .pipe(gulp.dest('./dist/vendor/jquery'));
-  return merge(bootstrap, fontAwesome, jquery, jqueryEasing);
+  return merge(bootstrap, fontAwesome, slick, jquery);
 }
 
 // HTML task
