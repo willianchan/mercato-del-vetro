@@ -1,6 +1,9 @@
 # Mercato Del Vetro
 
-Website da empresa Mercato Del Vetro
+Projeto para a matéria Linguagens de Programação II - Website da empresa Mercato Del Vetro
+
+* Willian Chan 16.01095-7
+* Marcello Scatena Junior 16.01472-3
 
 ## Instalação
 
