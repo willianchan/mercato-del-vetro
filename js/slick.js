@@ -1,3 +1,5 @@
+
+
 $('.slider').slick({
     dots: true,
     infinite: true,
@@ -44,4 +46,12 @@ $('.slider').slick({
       // settings: "unslick"
       // instead of a settings object
     ]
+  });
+  $('.img-slider').slick({
+    dots: false,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    initialSlide: 3
   });
