@@ -18,42 +18,41 @@
   });
   $('.modal').on('shown.bs.modal', function (e) {
     $('.img-slider').resize();
-});
+  });
   // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').click(function () {
     $('.navbar-collapse').collapse('hide');
   });
 
   $('body').on('hidden.bs.modal', function () {
-    if($('.modal.in').length > 0)
-    {
-        $('body').addClass('modal-open');
+    if ($('.modal.in').length > 0) {
+      $('body').addClass('modal-open');
     }
-});
-$(document).ready(function () {
+  });
+  $(document).ready(function () {
 
-  $('.modal').on("hidden.bs.modal", function (e) { //fire on closing modal box
-         if ($('.modal:visible').length) { // check whether parent modal is opend after child modal close
-             $('body').addClass('modal-open'); // if open mean length is 1 then add a bootstrap css class to body of the page
-         }
-     });
- });
- $(document).ready(function () {
-
-
-      $(document).on('show.bs.modal', '.modal', function (event) {
-          var zIndex = 1040 + (10 * $('.modal:visible').length);
-          $(this).css('z-index', zIndex);
-          setTimeout(function() {
-              $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
-          }, 0);
-      });
+    $('.modal').on("hidden.bs.modal", function (e) { //fire on closing modal box
+      if ($('.modal:visible').length) { // check whether parent modal is opend after child modal close
+        $('body').addClass('modal-open'); // if open mean length is 1 then add a bootstrap css class to body of the page
+      }
+    });
+  });
+  $(document).ready(function () {
 
 
-});
- $('.img-slider').slick('setPosition');
- //this code segment will activate parent modal dialog 
- //after child modal box close then scroll problem will automatically fixed
+    $(document).on('show.bs.modal', '.modal', function (event) {
+      var zIndex = 1040 + (10 * $('.modal:visible').length);
+      $(this).css('z-index', zIndex);
+      setTimeout(function () {
+        $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+      }, 0);
+    });
+
+
+  });
+  $('.img-slider').slick('setPosition');
+  //this code segment will activate parent modal dialog 
+  //after child modal box close then scroll problem will automatically fixed
 
   // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
@@ -83,21 +82,21 @@ $(document).ready(function () {
       isNavBarShown = false;
     }
   };
-  var modalShrink = function(){
-    if($(window).width<768){
+  var modalShrink = function () {
+    if ($(window).width < 768) {
       $("modal-dialog").addClass("modal-dialog-shrink");
     }
   };
-  $("#navbar-btn").click(function(){
+  $("#navbar-btn").click(function () {
     var elemento = document.getElementById('mainNav');
-    if(!elemento.classList.contains("black-on-show")){
+    if (!elemento.classList.contains("black-on-show")) {
       $("#mainNav").addClass("black-on-show");
     }
-    else{
+    else {
       $("#mainNav").removeClass("black-on-show");
-      
-      
-      
+
+
+
     }
   });
   // Collapse now if page is not at top
@@ -112,5 +111,17 @@ $(document).ready(function () {
   $('.portfolio-modal').on('hidden.bs.modal', function (e) {
     $('.navbar').removeClass('d-none');
   })
+  // Initialize and add the map
+  var initMap = function () {
+    // The location of Uluru
+    var uluru = { lat: -23.4960314, lng: 46.8878587};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+      document.getElementById('map'), { zoom: 17, center: uluru });
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({ position: uluru, map: map });
+  }
+  initMap();
+
 
 })(jQuery); // End of use strict

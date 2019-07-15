@@ -29,12 +29,12 @@
 
 </head>
 
-<body id="page-top">
+<body id="orcamento">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark top mainNav" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark top mainNav" id="mainNav">
         <div class="container">
-            <a class="js-scroll-trigger" href="#page-top"><img class="logo" id="logo"
+            <a class="js-scroll-trigger" href="#orcamento"><img class="logo" id="logo"
                     src="./img/logo_del_vetro.png"></a>
             <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
@@ -45,16 +45,19 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#servicos">Serviços</a>
+                        <a class="nav-link js-scroll-trigger" href="#orcamento">Orçamento</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#vidros">Vidros</a>
+                        <a class="nav-link js-scroll-trigger" href="#diferenciais">Diferenciais</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#produtos">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#sobre">Sobre</a>
+                        <a class="nav-link js-scroll-trigger" href="#aplicacoes">Aplicações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#novidades">Novidades</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#contato">Contato</a>
@@ -80,12 +83,11 @@
 
 
     <!-- Serviços -->
-    <section class="page-section" id="servicos">
+    <section class="page-section" id="diferenciais">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Serviços</h2>
-                    <h3 class="section-subheading text-muted">Porque escolher a Del Vetro?</h3>
+                    <h2 class="section-heading text-uppercase no-sub">Por que a Del Vetro?</h2>
                 </div>
             </div>
             <div class="row text-center">
@@ -95,7 +97,10 @@
                         <i class="fas fa-medal fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Qualidade</h4>
-                    <p class="text-muted">Na <strong>Del Vetro</strong> visamos qualidade em primeiro lugar</p>
+                    <p class="text-muted">Na <strong>Del Vetro</strong> visamos qualidade em primeiro lugar.<br><a
+                            href="#qualidadeModal" data-toggle="modal" class="click-link">Saiba mais <i
+                                class="fas fa-search-plus"></i></a>
+                    </p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -103,7 +108,8 @@
                         <i class="fas fa-money-bill-alt fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Preço</h4>
-                    <p class="text-muted">Preços <strong>competitivos</strong> no mercado</p>
+                    <p class="text-muted">Preços <strong>competitivos</strong> no mercado<br><a href="#precoModal"
+                            data-toggle="modal" class="click-link">Saiba mais <i class="fas fa-search-plus"></i></a></p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -111,19 +117,20 @@
                         <i class="far fa-clock fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Tempo</h4>
-                    <p class="text-muted">Tempo de entrega diferenciado para cada produto</p>
+                    <p class="text-muted">Tempo de entrega diferenciado para cada produto<br><a href="#tempoModal"
+                            data-toggle="modal" class="click-link">Saiba mais <i class="fas fa-search-plus"></i></a></p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Vidros Grid -->
-    <section class="bg-light page-section" id="vidros">
+    <section class="bg-light page-section" id="produtos">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">vidros</h2>
-                    <h3 class="section-subheading text-muted">Conheça os principais tipos de vidro</h3>
+                    <h2 class="section-heading text-uppercase">Produtos</h2>
+                    <h3 class="section-subheading text-muted">Conheça nossos produtos</h3>
                 </div>
             </div>
             <div class="row">
@@ -210,10 +217,10 @@
     </section>
 
     <!-- Produtos -->
-    <section class="page-section" id="produtos">
+    <section class="page-section" id="aplicacoes">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Produtos</h2>
-            <h3 class="section-subheading text-muted">Conheça nossos produtos</h3>
+            <h2 class="section-heading text-uppercase">Aplicações</h2>
+            <h3 class="section-subheading text-muted">Como nossos produtos são utilizados</h3>
         </div>
         <div class="container slider">
             <div class="zoom">
@@ -222,16 +229,6 @@
                         <h4 class="texto-produtos">BOXES</h4 class="texto-produtos">
                     </div>
                 </a>
-            </div>
-            <div class="zoom">
-                <div>
-                    <a class="vidros-link" data-toggle="modal" href="#mesasModal">
-                        <div class="img-fluid imgSlider imgSlider2">
-
-                            <h4 class="texto-produtos">MESAS</h4 class="texto-produtos">
-                        </div>
-                    </a>
-                </div>
             </div>
             <div class="zoom">
                 <div>
@@ -278,12 +275,11 @@
 
 
     <!-- Sobre -->
-    <section class="bg-light page-section" id="sobre">
+    <section class="bg-light page-section" id="novidades">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Sobre</h2>
-                    <h3 class="section-subheading text-muted">Conheça um pouco da nossa história</h3>
+                    <h2 class="section-heading text-uppercase no-sub">Novidades</h2>
                 </div>
             </div>
             <div class="row">
@@ -327,24 +323,6 @@
                         </li>
                         <li>
                             <div class="timeline-image">
-                                <img class="rounded-circle img-fluid" src="img/sobre/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Janeiro 2019</h4>
-                                    <h4 class="subheading">Nova Localização</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum
-                                        eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero
-                                        unde, sed, incidunt et
-                                        ea quo dolore laudantium consectetur!</p> -->
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="img/sobre/4.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
@@ -363,9 +341,8 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <h4>Seja Parte
-                                    <br>da Nossa
-                                    <br>História!</h4>
+                                <h4>Texto
+                                    <br>a determinar</h4>
                             </div>
                         </li>
                     </ul>
@@ -379,35 +356,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Contato</h2>
-                    <h3 class="section-subheading text-muted">Fale com a gente</h3>
+                    <h2 class="section-heading text-uppercase no-sub">Contato</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 text-primary">
+            <div class="row text-center">
+                <div class="col-md-6 col-sm-12">
                     <div class="row">
                         <div class="col-md-6">
-                            <h1 style="font-family: Montserrat; color: white; font-size: 36px">Mercato Del Vetro</h1>
-                            <p style="font-family: Roboto Slab; color: white">Vidros comuns e espelhos cortados
-                                lapidados ou bisotados podem ser retirados em até três horas após a confirmação do
-                                pedido, se forem feitos até às 14 horas. Após este horário, os pedidos podem ser
-                                retirados no dia seguinte na parte da manhã.
-                                <br><br> Temperados e laminados ficam disponíveis sete dias úteis após sua confirmação,
-                                entretanto, temos conseguido disponibilizar os produtos em até três dias úteis.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <h1 style="font-family: Montserrat; color: white; font-size: 30px">Localização</h1>
-                            <p style="font-family: Roboto Slab; color: white">Rua Indonésia, 298, Barueri, Brazil
-                                06408160</p>
-                            <h1 style="font-family: Montserrat; color: white; font-size: 30px">Telefone</h1>
-                            <p style="font-family: Roboto Slab; color: white">(11) 4766-4447</p>
-                            <h1 style="font-family: Montserrat; color: white; font-size: 30px">Email</h1>
-                            <p style="font-family: Roboto Slab; color: white">fernando@mercatodelvetro.com.br</p>
-                        </div>
 
-
+                            <h1 style="font-family: Montserrat; color: white; font-size: 30px"><i
+                                    class="far fa-envelope"></i> Email</h1>
+                            <p style="font-family: Roboto Slab; color: white; margin-bottom: 20px;">
+                                contato@mercatodelvetro.com.br</p>
+                            <h1 style="font-family: Montserrat; color: white; font-size: 30px"><i
+                                    class="fas fa-tty"></i> Telefone</h1>
+                            <p style="font-family: Roboto Slab; color: white; margin-bottom: 20px;">(11) 4766-4447</p>
+                            <h1 style="font-family: Montserrat; color: white; font-size: 30px"><i
+                                    class="fab fa-whatsapp"></i> WhatsApp</h1>
+                            <p style="font-family: Roboto Slab; color: white;margin-bottom: 8px">(11) 94229-1635</p>
+                            <p style="font-family: Roboto Slab; color: white; margin-bottom: 20px">(11) 94258-3525</p>
+                        </div>
                     </div>
                 </div>
+                <div class="col-md-6 col-sm-12 padding-ajust">
+                    <h1 style="font-family: Montserrat; color: white; font-size: 30px"><i
+                            class="fas fa-map-marker-alt"></i> Localização</h1>
+                    <p style="font-family: Roboto Slab; color: white; margin-bottom: 20px">Rua Indonésia, 298, Barueri,
+                        Brasil
+                        06408160</p>
+                    <div id="map"></div>
+                    <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAw4b8QAm2tKlnUrA0T-gp2IQSwde6uyqc&callback=initMap">
+                        </script>
+                </div>
+
             </div>
         </div>
     </section>
@@ -416,9 +398,10 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <span class="footer-span">Copyright &copy; Mercato Del Vetro 2019</span>
                 </div>
+                <!--
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item">
@@ -433,7 +416,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-4">
+                -->
+                <div class="col-md-6">
                     <span class="footer-span">Desenvolvimento <a href="">Marcello</a> e <a
                             href="https://www.linkedin.com/in/willianchan/">Willian</a> Powered by <a
                             href="https://maua.br/">MAUA</a></span>
@@ -451,7 +435,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="container">
-                    <div class="modal-body">
+                    <div class="modal-body modal-reduce-width">
                         <h2 class="text-uppercase">Vidro Bisotê</h2>
                         <img class="img-fluid d-block mx-auto vidros-moldura" src="img/vidros/bisote.jpg" alt="">
                         <p>O bisotê é um acabamento feito através de um desbaste chanfrado das bordas dos vidros
@@ -473,7 +457,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="container">
-                    <div class="modal-body">
+                    <div class="modal-body modal-reduce-width">
                         <h2 class="text-uppercase">Vidro Decorativo</h2>
                         <img class="img-fluid d-block mx-auto vidros-moldura" src="img/vidros/decorativo.jpg" alt="">
                         <p>Dispomos de soluções únicas e inovadoras em vidros decorativos, soluções inspiradoras
@@ -496,7 +480,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="container">
-                    <div class="modal-body">
+                    <div class="modal-body modal-reduce-width">
                         <h2 class="text-uppercase">Espelho</h2>
                         <img class="img-fluid d-block mx-auto vidros-moldura" src="img/vidros/espelho.jpg" alt="">
                         <p>Na Mercato Del Vetro você tem à sua disposição o espelho Mirox Premium, o legítimo
@@ -523,7 +507,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="container">
-                    <div class="modal-body">
+                    <div class="modal-body modal-reduce-width">
                         <h2 class="text-uppercase">Vidro Temperado</h2>
                         <img class="img-fluid d-block mx-auto vidros-moldura" src="img/vidros/temperado.jpg" alt="">
                         <p>Este vidro caracteriza-se por possuir maior resistência a impactos e altas variações
@@ -547,7 +531,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="container">
-                    <div class="modal-body">
+                    <div class="modal-body modal-reduce-width">
                         <h2 class="text-uppercase">Vidro Laminado</h2>
                         <img class="img-fluid d-block mx-auto vidros-moldura" src="img/vidros/laminado.jpg" alt="">
                         <p>Considerado um vidro de segurança, o laminado pode ser composto por uma ou mais
@@ -570,7 +554,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="container">
-                    <div class="modal-body">
+                    <div class="modal-body modal-reduce-width">
                         <h2 class="text-uppercase">Vidro Float</h2>
                         <img class="img-fluid d-block mx-auto vidros-moldura" src="img/vidros/float.jpg" alt="">
                         <p>Mais de 90% dos vidros fabricados no Brasil são produzidos pelo processo de flutuação
@@ -872,6 +856,82 @@
             <div class="modal-body">
                 <div class="row justify-content-center">
                     <span class="height-ajust"></span><img class="img-open-modal" src="img/produtos/boxes/11.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vidros-modal modal fade" id="qualidadeModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="close-modal" data-dismiss="modal">
+            <i class="fas fa-times externo"></i>
+        </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="modal-body modal-reduce-width">
+                        <h2 class="text-uppercase">Qualidade</h2>
+                        <img class="img-fluid d-block mx-auto vidros-moldura" src="img/qualidade.jpeg" alt="">
+                        <p style="text-align:left">Nós da Mercato Del Vetro reconhecemos que nosso sucesso depende da
+                            capacidade de satisfazermos os requisitos dos nossos clientes e dentre eles a exigência por
+                            qualidade destaca-se como item de fundamental importância. Para isso:<br>
+                            &#9679 Monitoramos continuamente nossos processos internos a fim de identificar e ajustar
+                            qualquer não conformidade de nossos produtos. <br><br>
+                            &#9679 Nossos colaboradores são motivados a ter uma ação positiva para melhoria contínua da
+                            qualidade.<br>
+                            &#9679 Asseguramo-nos de receber matéria-prima de qualidade dos nossos fornecedores.<br>
+                            &#9679 Medimos continuamente a satisfação dos nossos clientes. Incentivamos que eles
+                            colaborem ativamente conosco através de críticas construtivas e sugestões de melhoria.
+                        </p>
+                        <button class="btn btn-primary" data-dismiss="modal" type="button">
+                            <i class="fas fa-times"></i>
+                            Fechar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vidros-modal modal fade" id="precoModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="close-modal" data-dismiss="modal">
+            <i class="fas fa-times externo"></i>
+        </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="modal-body modal-reduce-width">
+                        <h2 class="text-uppercase">preços competitivos</h2>
+                        <img class="img-fluid d-block mx-auto vidros-moldura" src="img/preco.jpeg" alt="">
+                        <p style="text-align:left">Além da qualidade, nossos produtos incorporam preços competitivos que
+                            garantem aos nossos clientes efetuarem suas vendas com margens lucrativas frente aos seus
+                            concorrentes do mercado. </p>
+                        <button class="btn btn-primary" data-dismiss="modal" type="button">
+                            <i class="fas fa-times"></i>
+                            Fechar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vidros-modal modal fade" id="tempoModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="close-modal" data-dismiss="modal">
+            <i class="fas fa-times externo"></i>
+        </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="modal-body modal-reduce-width">
+                        <h2 class="text-uppercase">Tempo de entrega</h2>
+                        <img class="img-fluid d-block mx-auto vidros-moldura" src="img/tempo.jpeg" alt="">
+                        <p style="text-align:left">Vidros comuns e espelhos cortados lapidados ou bisotados podem ser
+                            retirados em até três horas após a confirmação do pedido, se forem feitos até às 14 horas.
+                            Após este horário, os pedidos podem ser retirados no dia seguinte na parte da manhã.
+                            Temperados e laminados ficam disponíveis sete dias úteis após sua confirmação, entretanto,
+                            temos conseguido disponibilizar os produtos em até três dias úteis.</p>
+                        <button class="btn btn-primary" data-dismiss="modal" type="button">
+                            <i class="fas fa-times"></i>
+                            Fechar</button>
+                    </div>
+
                 </div>
             </div>
         </div>
