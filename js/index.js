@@ -16,6 +16,7 @@
       }
     }
   });
+  
   $('.modal').on('shown.bs.modal', function (e) {
     $('.img-slider').resize();
   });
