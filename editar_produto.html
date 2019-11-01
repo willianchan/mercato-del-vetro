@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<link href="dist/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+<link href="dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="dist/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Adicionar produto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="dist/css/index.min.css" rel="stylesheet">
+</head>
+
+<body onload="init();">
+    <script src="./js/editar_produto.js"></script>
+    <section class="page-section bg-light" style="min-height: 100vh;">
+        <div class="containerInput">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-heading text-uppercase text-center" style="margin-bottom: 50px;">Editar
+                        produto</h2>
+                    <div style="margin-bottom: 5px; margin-top: 15px;">Nome do produto</div>
+                    <div><input type="text" name="" class="input" rows="1" style="height:1.5em;" id="titulo" value="cu"></div>
+                    <div style="margin-bottom: 5px; margin-top: 15px;">Texto de descrição</div>
+                    <div><textarea type="text" name="" class="input" rows="1" style="height:1em;" id="texto"></textarea></div>
+                    <div style="margin-bottom: 5px; margin-top: 15px;">Imagem (colocar opcao de arrastar)</div>
+                    <div><input type="text" name="" class="input" rows="1" style="height:1.5em;" id="imagem"></div>
+                    <div style="margin-bottom: 10px; margin-top: 10px;"><a class="btn btn-primary btn-md textoBranco"
+                         onclick="editar()">Editar</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

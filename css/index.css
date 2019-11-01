@@ -56,6 +56,40 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.containerInput {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .containerInput {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .containerInput {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .containerInput {
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .containerInput {
+    max-width: 570px;
+  }
+}
+.input{
+  width: 100%
+}
 .page-section {
   padding: 70px 0
 }
@@ -389,6 +423,11 @@ header.masthead .intro-text .intro-heading {
   right: 0;
   margin: 0 0 10px
 }
+
+#admProdutos .vidros-item {
+  right: 0;
+  margin: 0 0 10px
+}
 .vidros-moldura{
   height: 300px;
   max-height: 300px;
@@ -398,6 +437,14 @@ header.masthead .intro-text .intro-heading {
 }
 
 #produtos .vidros-item .vidros-link {
+  position: relative;
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  cursor: pointer
+}
+
+#admProdutos .vidros-item .vidros-link {
   position: relative;
   display: block;
   max-width: 300px;
@@ -415,7 +462,20 @@ header.masthead .intro-text .intro-heading {
   background: rgba(254, 209, 54, .5)
 }
 
+#admProdutos .vidros-item .vidros-link .vidros-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+  opacity: 0;
+  background: rgba(254, 209, 54, .5)
+}
+
 #produtos .vidros-item .vidros-link .vidros-hover:hover {
+  opacity: 1
+}
+#admProdutos .vidros-item .vidros-link .vidros-hover:hover {
   opacity: 1
 }
 
@@ -429,16 +489,38 @@ header.masthead .intro-text .intro-heading {
   text-align: center;
   color: #fff
 }
+#admProdutos .vidros-item .vidros-link .vidros-hover .vidros-hover-content {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 20px;
+  margin-top: -12px;
+  text-align: center;
+  color: #fff
+}
 
 #produtos .vidros-item .vidros-link .vidros-hover .vidros-hover-content i {
   margin-top: -12px
 }
-
+#admProdutos .vidros-item .vidros-link .vidros-hover .vidros-hover-content i {
+  margin-top: -12px
+}
 #produtos .vidros-item .vidros-link .vidros-hover .vidros-hover-content h3, #produtos .vidros-item .vidros-link .vidros-hover .vidros-hover-content h4 {
+  margin: 0
+}
+#admProdutos .vidros-item .vidros-link .vidros-hover .vidros-hover-content h3, #produtos .vidros-item .vidros-link .vidros-hover .vidros-hover-content h4 {
   margin: 0
 }
 
 #produtos .vidros-item .vidros-caption {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 25px;
+  text-align: center;
+  background-color: #fff
+}
+#admProdutos .vidros-item .vidros-caption {
   max-width: 300px;
   margin: 0 auto;
   padding: 25px;
@@ -450,8 +532,18 @@ header.masthead .intro-text .intro-heading {
   margin: 0;
   text-transform: none
 }
+#admProdutos .vidros-item .vidros-caption h4 {
+  margin: 0;
+  text-transform: none
+}
 
 #produtos .vidros-item .vidros-caption p {
+  font-size: 16px;
+  font-style: italic;
+  margin: 0;
+  font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+#admProdutos .vidros-item .vidros-caption p {
   font-size: 16px;
   font-style: italic;
   margin: 0;
@@ -461,9 +553,15 @@ header.masthead .intro-text .intro-heading {
 #produtos * {
   z-index: 2
 }
+#admProdutos * {
+  z-index: 2
+}
 
 @media (min-width:768px) {
   #produtos .vidros-item {
+    margin: 0 0 40px
+  }
+  #admProdutos .vidros-item {
     margin: 0 0 40px
   }
 }
@@ -868,13 +966,20 @@ header.masthead .intro-text .intro-heading {
   margin-bottom: 50px;
   text-align: center
 }
-
+.margin50{
+  margin-top:70px; 
+}
+.margin100{
+  margin-top:100px; 
+}
 .team-member img {
   width: 225px;
   height: 225px;
   border: 7px solid #fff
 }
-
+.margin_top{
+  margin-top: 10px;
+}
 .team-member h4 {
   margin-top: 25px;
   margin-bottom: 0;
@@ -896,6 +1001,9 @@ header.masthead .intro-text .intro-heading {
   #produtos .vidros-item .vidros-caption{
     padding: 15px;
   }
+  #admProdutos .vidros-item .vidros-caption{
+    padding: 15px;
+  }
   .modal-dialog {
     max-width: 500px;
     margin: 0 auto;
@@ -915,7 +1023,15 @@ section#contato {
 section#contato .section-heading {
   color: #fff
 }
+.titulo-adm{
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
 
+.marginbtn{
+  margin-top: 25px;
+  margin-bottom: 25px
+}
 section#contato .form-group {
   margin-bottom: 25px
 }
@@ -1337,4 +1453,78 @@ html, body {
   padding-left: 200px;
   padding-right: 200px;
 }
+}
+
+.textoBranco{
+  color: white !important;
+  text-decoration: none;
+  text-align: center
+}
+
+.bgDark{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  width: 70%;
+  padding-top: 15px;
+  padding-bottom: 75px;
+  background-color:#212529;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+}
+
+.logo2 {
+  height: 120px;
+  width: auto;
+  display: inline-block;
+}
+@media (max-width: 576px) {  
+  .bgDark{
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    padding-top: 15;
+    padding-bottom: 15;
+    background-color:#212529;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+}
+
+.div-button{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.centroImg{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-icon {
+  width: 100%;
+  text-align: center;
+  font-size: 102px;
+  padding-top:20px;
+  padding-bottom:20px;
+  background-color: #212529;
+  
+}
+
+textarea {
+  border: 1 none black;
+  overflow: hidden;
+  padding: 0;
+}
+input {
+  border: 1 none black;
+  overflow: hidden;
+  padding: 0;
+}
+.botao-oco{
+  background-color: transparent !important;
+  color: #fed136;
 }
