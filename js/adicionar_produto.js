@@ -1,16 +1,17 @@
 var observe;
 if (window.attachEvent) {
-    observe = function (element, event, handler) {
+    observe = function(element, event, handler) {
         element.attachEvent('on' + event, handler);
     };
-}
-else {
-    observe = function (element, event, handler) {
+} else {
+    observe = function(element, event, handler) {
         element.addEventListener(event, handler, false);
     };
 }
+
 function init() {
     var text = document.getElementById('texto');
+
     function resize() {
         text.style.height = 'auto';
         text.style.height = text.scrollHeight + 'px';
@@ -45,8 +46,7 @@ function adicionar() {
         http.send(params);
         document.location.href = "produtos.html";
         window.alert("Produto adicionado com sucesso!");
-    }
-    else window.alert("Preencha todos os campos para adicionar o produto");
+    } else window.alert("Preencha todos os campos para adicionar o produto");
 
 
 }
