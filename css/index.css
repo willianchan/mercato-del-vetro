@@ -1386,7 +1386,7 @@ html, body {
 }
 
 .slick-prev:before, .slick-next:before {
-  color: black;
+  color: black !important;
 }
 
 .slick-slide {
