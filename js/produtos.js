@@ -16,7 +16,7 @@ function addProduto(produto) {
                     <i class="fas fa-search-plus fa-3x"></i>
                 </div>
             </div>
-            <img class="img-fluid" src="`+ produto.imagem + `" alt="">
+            <img class="img-fluid fit-image" src="`+ produto.imagem + `" alt="">
         </a>
         <div class="vidros-caption">
             <h4>`+ produto.titulo + `</h4>
@@ -108,5 +108,5 @@ window.onload = function () {
         this.addProduto(produtos[produto]);
         this.addModal(produtos[produto]);
     }
-    this.addAddButton();
+    //this.addAddButton();
 };

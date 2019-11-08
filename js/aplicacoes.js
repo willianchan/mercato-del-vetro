@@ -21,7 +21,7 @@ function addAplicacao(aplicacao) {
     <div id="expand`+ aplicacao.id + `" class="collapse" style="">
         <div style="margin-top: 10px" class="text-center">
         <div style="margin-bottom: 5px" ><a onClick="editar(`+ aplicacao.id + `,` + `'` + aplicacao.nome + `',` + `'` + aplicacao.imagem + `'` + `)" class="btn btn-primary btn-sm textoBranco" style="cursor: pointer;"><i class="fas fa-edit"></i> Editar</a></div>
-        <div><a onClick="deletar(`+ aplicacao.id + `, "aplicacao")" class="btn btn-primary btn-sm textoBranco" style="cursor: pointer; background-color:#d11a2a !important; border-color:#d11a2a !important"><i class="fas fa-trash-alt"></i> Deletar</a></div>
+        <div><a onClick="deletar(`+ aplicacao.id + `, 'aplicacao')" class="btn btn-primary btn-sm textoBranco" style="cursor: pointer; background-color:#d11a2a !important; border-color:#d11a2a !important"><i class="fas fa-trash-alt"></i> Deletar</a></div>
     </div>
         
     `;
@@ -64,7 +64,7 @@ function addImagem(imagem) {
         <a class="open-img fill" data-toggle="modal" href="#imgModal`+ imagem.id + `"><img class="img-produtos img-fluid" src="` + imagem.imagem + `" alt=""></a>
         <div style=" margin-top:-20px"><a href="#expand`+ imagem.id + `" data-toggle="collapse" style="color: black; font-size:15px;"><i class="fas fa-chevron-down"></i></a></div>
         <div id="expand`+ imagem.id + `" class="collapse" style="">
-        <div style="margin-top: 10px" class="text-center"><a onClick="deletar(`+ imagem.id + `, "imagem")" class="btn btn-primary btn-sm textoBranco" style="cursor: pointer; background-color:#d11a2a !important; border-color:#d11a2a !important"><i class="fas fa-trash-alt"></i> Deletar</a></div>
+        <div style="margin-top: 10px" class="text-center"><a onClick="deletar(`+ imagem.id + `, 'imagem')" class="btn btn-primary btn-sm textoBranco" style="cursor: pointer; background-color:#d11a2a !important; border-color:#d11a2a !important"><i class="fas fa-trash-alt"></i> Deletar</a></div>
     </div>
     </div>
     
@@ -136,6 +136,7 @@ function deletar(id, tipo) {
         var ok = "Aplicação deletada com sucesso!";
 
     }
+    var xhr = new XMLHttpRequest();
     xhr.open("DELETE", url, true);
     if (confirm(text)) {
         txt = "You pressed OK!";
@@ -151,19 +152,6 @@ function deletar(id, tipo) {
         }
         xhr.send(null);
     }
-    var xhr = new XMLHttpRequest();
-    xhr.open("DELETE", url, true);
-    xhr.onload = function () {
-        var produtos = JSON.parse(xhr.responseText);
-        if (xhr.readyState == 4 && xhr.status == "200") {
-            console.table(produtos);
-            document.location.href = "aplicacoes.html";
-            window.alert("Produto deletado com sucesso!");
-        } else {
-            console.error(produtos);
-        }
-    }
-    xhr.send(null);
 }
 
 window.onload = async function () {
