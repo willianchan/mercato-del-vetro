@@ -28,35 +28,28 @@
 
 <body onload="init();">
     <script src="./js/adicionar_produto.js"></script>
-    <!--<script src="./js/produtos.js"></script>-->
+    <!-- <script src="./js/produtos.js"></script> -->
     <section class="page-section bg-light" style="min-height: 100vh;">
         <div class="containerInput">
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="section-heading text-uppercase text-center" style="margin-bottom: 50px;">Adicionar produto
                     </h2>
-                    <form action="http://localhost:5000/produtos" method="post" enctype="multipart/form-data">
+                    <form onsubmit="return add()" method="post" enctype="multipart/form-data" name="fileinfo">
                         <div style="margin-bottom: 5px; margin-top: 15px;">Nome do produto</div>
                         <div><input type="text" name="titulo" class="input" rows="1" style="height:1.5em;" id="titulo">
                         </div>
                         <div style="margin-bottom: 5px; margin-top: 15px;">Texto de descrição</div>
-                        <div><textarea type="text" name="" class="input" rows="1" style="height:1em;" id="texto"></textarea></div>
+                        <div><textarea type="text" name="texto" class="input" rows="1" style="height:1em;" id="texto"></textarea></div>
                         <div style="margin-bottom: 5px; margin-top: 15px;">Imagem</div>
-                        <!-- <div><input type="file" name="files" class="input" rows="1" style="height:1.5em;" id="files"></div> -->
-                        <!-- <div class="custom-file">
-                            <input type="file" name="files" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Escolher arquivo</label>
-                        </div> -->
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" name="files" id="inputGroupFile02">
                             <label class="custom-file-label" for="inputGroupFile02">Escolher arquivo</label>
                         </div>
                         <script>
                             $('#inputGroupFile02').on('change', function() {
-                                //get the file name
                                 var fileName = $(this).val();
                                 var cleanFileName = fileName.replace('C:\\fakepath\\', " ");
-                                //replace the "Choose a file" label
                                 $(this).next('.custom-file-label').html(cleanFileName);
                             })
                         </script>
@@ -71,6 +64,7 @@
             </div>
         </div>
     </section>
+
 </body>
 
 </html>
