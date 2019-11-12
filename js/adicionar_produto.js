@@ -50,3 +50,28 @@ function adicionar() {
 
 
 }
+
+function add() {
+    var form = document.forms.namedItem("fileinfo");
+    oData = new FormData(form);
+    var oReq = new XMLHttpRequest();
+
+    oReq.onload = function() {
+        if (oReq.status == 201) {
+            alert("Produto criado com sucesso!")
+        } else {
+            alert("Erro " + oReq.status + " ao criar produto")
+            return false
+        }
+    }
+
+    if (oData.get("titulo") != "" && oData.get("texto") != "" && document.getElementById("inputGroupFile02").files.length != 0) {
+
+        oReq.open("POST", "http://localhost:5000/produtos", false);
+        oReq.send(oData);
+        window.location.href = "produtos.html";
+    } else {
+        alert("É necessário preencher título, descrição e imagem!")
+    }
+    return false;
+}
