@@ -7,9 +7,10 @@ function getProd(theUrl) {
 
 function addProduto(produto) {
     const div = document.createElement('div');
-    div.className = 'col-md-4 col-sm-6 vidros-item';
+    div.className = 'col-md-4 col-sm-6 vidros-item prodItens';
 
     div.innerHTML = `
+    <div class="prodItens-content">
         <a class="vidros-link" data-toggle="modal" href="#produtoModal`+ produto.id + `">
             <div class="vidros-hover">
                 <div class="vidros-hover-content">
@@ -29,6 +30,7 @@ function addProduto(produto) {
             </div>
         </div>
         </div>
+    </div>
         
     `;
 
@@ -96,7 +98,7 @@ function deletar(id) {
         }
         xhr.send(null);
     }
-    
+
 }
 
 window.onload = function () {
@@ -110,3 +112,37 @@ window.onload = function () {
     }
     //this.addAddButton();
 };
+
+function movimentar() {
+    this.mov = true;
+    console.log(this.mov);
+    const div = document.createElement('div');
+    div.id = "addBotao"
+    div.innerHTML = `
+    <a class="btn btn-primary btn-md botao-oco" style="margin-right: 10px;" href="produtos.html">
+        Cancelar</a>
+    <a class="btn btn-primary btn-md textoBranco" style="background-color: #32CD32 !important; border-color: #32CD32" href="adicionar_produto.html"><i class="fas fa-check-circle"></i> Salvar</a>
+    `
+    document.getElementById("addBotao").remove();
+    document.getElementById("botoes").appendChild(div);
+    $(document).ready(function () {
+        'use strict';
+        $(function () {
+            $("#getProdutos").sortable(
+                {
+                    stop: function (event, ui) {
+                        var data = $(this).sortable('serialize');
+                        console.log($('span').text(data));
+                        /*$.ajax({
+                                data: oData,
+                            type: 'POST',
+                            url: '/your/url/here'
+                        });*/
+                    }
+                }
+            );
+
+        });
+    });
+
+}

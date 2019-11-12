@@ -165,3 +165,4 @@ window.onload = async function () {
     }
     $('.slider')[0].slick.refresh();
 };
+
