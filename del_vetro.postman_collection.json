@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "8323a2b4-59ca-44d4-856d-9ac3f8f24073",
+		"name": "del_vetro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:5000/admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NzM1NjI1NDgsIm5iZiI6MTU3MzU2MjU0OCwianRpIjoiYTNiNzU5OTEtNTlkNi00YWM3LThhNjYtODgzMWRkNjExMjkxIiwiZXhwIjoxNTczNTYzNDQ4LCJpZGVudGl0eSI6InRlc3QyIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.dhrL007Sr2E3_pQdaLUEZMSGLdvaq8x8FyqVa9tRHVY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"test2\",\n\t\"password\": \"test2\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"test2\",\n\t\"password\":\"test2\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"test3\",\n\t\"password\":\"test3\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/registration",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"registration"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

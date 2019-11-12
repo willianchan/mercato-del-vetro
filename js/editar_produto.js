@@ -29,7 +29,7 @@ function init() {
     text.focus();
     text.select();
     resize();
-    const urlParams = new URLSearchParams(window.location.search);
+    urlParams = new URLSearchParams(window.location.search);
     this.id = urlParams.get('id');
     this.document.getElementById("titulo").value = urlParams.get('titulo');
     this.document.getElementById("texto").value = urlParams.get('texto');

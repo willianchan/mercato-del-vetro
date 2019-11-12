@@ -6,7 +6,7 @@ function getProd(theUrl) {
 }
 
 function addProduto(produto) {
-    const div = document.createElement('div');
+    div = document.createElement('div');
     div.className = 'col-md-4 col-sm-6 vidros-item';
 
     div.innerHTML = `

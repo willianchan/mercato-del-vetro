@@ -16,12 +16,18 @@
         "@fortawesome/fontawesome-free": "^5.8.2",
         "bootstrap": "^4.3.1",
         "jquery": "^3.4.1",
-        "slick-carousel": "^1.8.1"
+        "jquery.easing": "^1.4.1",
+        "slick-carousel": "^1.8.1",
+        "yarn": "^1.19.1"
     },
     "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
         "browser-sync": "^2.26.7",
         "del": "4.1.1",
         "gulp": "4.0.2",
+        "gulp-babel": "^8.0.0",
         "gulp-clean-css": "4.2.0",
         "gulp-htmlmin": "^5.0.1",
         "gulp-imagemin": "^5.0.3",

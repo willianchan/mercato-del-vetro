@@ -8,6 +8,7 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
+var babel = require('gulp-babel');
 
 // BrowserSync
 function browserSync(done) {
@@ -42,7 +43,9 @@ function modules() {
     '!./node_modules/jquery/dist/core.js'
   ])
     .pipe(gulp.dest('./dist/vendor/jquery'));
-  return merge(bootstrap, fontAwesome, slick, jquery);
+  var jqueryEasing = gulp.src('./node_modules/jquery.easing/**')
+    .pipe(gulp.dest('./dist/vendor/jquery-easing'));
+  return merge(bootstrap, fontAwesome, slick, jquery, jqueryEasing);
 }
 
 // HTML task
@@ -89,6 +92,7 @@ function js() {
       './js/*.js',
       '!./js/*.min.js'
     ])
+    .pipe(babel({presets: ['es2015']}))
     .pipe(uglify())
     .pipe(rename({
       suffix: '.min'
