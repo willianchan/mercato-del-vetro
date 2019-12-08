@@ -8,6 +8,7 @@ function getProd(theUrl) {
 function addProduto(produto) {
     div = document.createElement('div');
     div.className = 'col-md-4 col-sm-6 vidros-item';
+    div.id = `produtoModal_`+ produto.id
 
     div.innerHTML = `
         <a class="vidros-link" data-toggle="modal" href="#produtoModal`+ produto.id + `">
@@ -76,10 +77,10 @@ function addAddButton() {
 }
 
 function editar(idv, titulov, textov, imagemv) {
-    document.location.href = `editar_produto.html?id=` + idv + `&titulo=` + titulov + `&texto=` + textov + `&imagem=` + imagemv;
+    document.location.href = `editar_produto?id=` + idv + `&titulo=` + titulov + `&texto=` + textov + `&imagem=` + imagemv;
 }
 function deletar(id) {
-    var url = "http://localhost:5000/produtos/" + id;
+    var url = "produtos/" + id;
     var xhr = new XMLHttpRequest();
     xhr.open("DELETE", url, true);
     if (confirm("Após deletado o produto não poderá ser recuperado. Deseja mesmo deletar?")) {
@@ -88,7 +89,7 @@ function deletar(id) {
             var produtos = JSON.parse(xhr.responseText);
             if (xhr.readyState == 4 && xhr.status == "200") {
                 console.table(produtos);
-                document.location.href = "produtos.html";
+                document.location.href = "admin_produtos";
                 alert("Produto deletado com sucesso!")
             } else {
                 console.error(produtos);
@@ -98,7 +99,18 @@ function deletar(id) {
     }
     
 }
-
+function movimentar() {
+    console.log(this.mov);
+    const div = document.createElement('div');
+    div.id = "addBotao";
+    div.innerHTML = `
+    <a class="btn btn-primary btn-md botao-oco" style="margin-right: 10px;" href="produtos.html">
+        Cancelar</a>
+    <a class="btn btn-primary btn-md textoBranco" style="background-color: #32CD32 !important; border-color: #32CD32" href="adicionar_produto.html"><i class="fas fa-check-circle"></i> Salvar</a>
+    `
+    document.getElementById("addBotao").remove();
+    document.getElementById("botoes").appendChild(div);
+}
 window.onload = function () {
     var produtos = getProd('http://localhost:5000/produtos');
     produtos = JSON.parse(produtos);

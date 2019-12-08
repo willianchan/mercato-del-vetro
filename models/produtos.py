@@ -10,6 +10,7 @@ class ProdutosModel(db.Model):
     titulo = db.Column(db.String(120), nullable=False)
     texto = db.Column(db.String(120), nullable=False)
     imagem = db.Column(db.String(120), nullable=False)
+    posicao = db.Column(db.Integer)
 
     def save(self):
         db.session.add(self)
@@ -26,6 +27,7 @@ class ProdutosModel(db.Model):
     @classmethod
     def return_all(cls):
         return cls.query.all()
+    
 
     def delete(self):
         db.session.delete(self)

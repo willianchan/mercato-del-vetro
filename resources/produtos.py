@@ -15,7 +15,7 @@ class Produtos(Resource):
     def post(self):
         titulo = request.form['titulo']
         texto = request.form['texto']
-
+        posicao = 9999
         if 'files' not in request.files or not titulo or not texto:
                 resp = jsonify({'message' : 'É necessário enviar uma imagem, um título e um texto.'})
                 resp.status_code = 400
@@ -50,7 +50,7 @@ class Produtos(Resource):
             resp.status_code = 500
             return resp
 
-        item = ProdutosModel(titulo = titulo, texto = texto, imagem = os.path.join(UPLOAD_FOLDER, filename))
+        item = ProdutosModel(titulo = titulo, texto = texto, imagem = os.path.join(UPLOAD_FOLDER, filename), posicao = posicao)
 
         try:
             item.save()
@@ -71,62 +71,72 @@ class Produtos(Resource):
             except:
                 return {'mensagem': 'Ocorreu um erro interno'}, 500
         else:
-            try:
                 todos = ProdutosModel.return_all()
                 lista_item = []
                 for item in todos:
                     lista_item.append(item.toDict())
-
+                for j in range(0,len(lista_item)):
+                    for i in range(0,len(lista_item)-1):
+                        if lista_item[i]["posicao"]>lista_item[i+1]["posicao"]:
+                            Aux = lista_item[i+1]
+                            lista_item[i+1] = lista_item[i]
+                            lista_item[i] = Aux
                 return lista_item, 200
-            except:
-                return {'mensagem': 'Ocorreu um erro interno'}, 500
 
-    def put(self, id):
-        try:
-            print(id)
+    def put(self, id, posicao=None):
+        if posicao:
             item = ProdutosModel.return_by_id(id)
-            item.titulo = request.form['titulo']
-            item.texto = request.form['texto']
+            item.posicao = posicao
+            item.commit()
+        else:
+            try:
+                print(id)
+                item = ProdutosModel.return_by_id(id)
+                item.titulo = request.form['titulo']
+                item.texto = request.form['texto']
 
-            files = request.files.getlist('files')
+                files = request.files.getlist('files')
 
-            if len(files) != 0:
-                if len(files) != 1:
-                    resp = jsonify({'message' : 'É necessário enviar apenas uma imagem'})
-                    resp.status_code = 400
-                    return resp
+                if len(files) != 0:
+                    if len(files) != 1:
+                        resp = jsonify({'message' : 'É necessário enviar apenas uma imagem'})
+                        resp.status_code = 400
+                        return resp
 
-                errors = {}
-                success = False
-                caminho = ""
+                    errors = {}
+                    success = False
+                    caminho = ""
 
-                for file in files:		
-                    if file and allowed_file(file.filename):
-                        filename = secure_filename(str(datetime.now()))
-                        caminho = os.path.join(os.getcwd() + UPLOAD_FOLDER, filename)
-                        while os.path.isfile(caminho):
+                    for file in files:		
+                        if file and allowed_file(file.filename):
                             filename = secure_filename(str(datetime.now()))
                             caminho = os.path.join(os.getcwd() + UPLOAD_FOLDER, filename)
-                        file.save(caminho)
-                        success = True
-                    else:
-                        errors[file.filename] = 'Tipo do arquivo não permitido'
-                
-                if errors:
-                    errors['message'] = 'Algo de errado não está certo'
-                    resp = jsonify(errors)
-                    resp.status_code = 500
-                    return resp
+                            while os.path.isfile(caminho):
+                                filename = secure_filename(str(datetime.now()))
+                                caminho = os.path.join(os.getcwd() + UPLOAD_FOLDER, filename)
+                            file.save(caminho)
+                            success = True
+                        else:
+                            errors[file.filename] = 'Tipo do arquivo não permitido'
+                    
+                    if errors:
+                        errors['message'] = 'Algo de errado não está certo'
+                        resp = jsonify(errors)
+                        resp.status_code = 500
+                        return resp
 
 
-                item.imagem = os.path.join(UPLOAD_FOLDER, filename)
-            item.commit()
-            return {
-                'message': 'item alterado',
-            }, 201
-        except:
-            print("deu ruim")
-            return {'mensagem': 'Ocorreu um erro interno'}, 500
+                    item.imagem = os.path.join(UPLOAD_FOLDER, filename)
+                item.commit()
+                return {
+                    'message': 'item alterado',
+                }, 201
+            except:
+                print("deu ruim")
+                return {'mensagem': 'Ocorreu um erro interno'}, 500
+
+        
+
 
     def delete(self, id=None):
         if id:
