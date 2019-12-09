@@ -5,7 +5,9 @@ certifi==2019.9.11
 Click==7.0
 colorama==0.4.1
 Flask==1.1.1
+Flask-Cors==3.0.8
 Flask-HTTPAuth==3.3.0
+Flask-JWT-Extended==3.24.1
 Flask-RESTful==0.3.7
 Flask-SQLAlchemy==2.4.1
 gunicorn==19.9.0
@@ -15,8 +17,10 @@ Jinja2==2.10.1
 lazy-object-proxy==1.4.2
 MarkupSafe==1.1.1
 mccabe==0.6.1
+passlib==1.7.2
 pipenv==2018.11.26
 pycodestyle==2.5.0
+PyJWT==1.7.1
 pylint==2.3.1
 pylint-flask==0.6
 pylint-plugin-utils==0.6
