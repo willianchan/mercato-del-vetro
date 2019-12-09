@@ -1,0 +1,1 @@
+source ./projeto_env/Scripts/activate;export FLASK_APP=app/__init__.py; py -3 app.py

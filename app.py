@@ -26,6 +26,15 @@ def create_dir(path):
 app = Flask(__name__)
 api = Api(app)
 
+app.config['JWT_TOKEN_LOCATION'] = ['cookies']
+
+app.config['JWT_COOKIE_SECURE'] = False
+app.config['JWT_ACCESS_COOKIE_PATH'] = '/'
+app.config['JWT_REFRESH_COOKIE_PATH'] = '/'
+app.config['JWT_COOKIE_CSRF_PROTECT'] = True
+
+
+
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
@@ -49,7 +58,7 @@ def create_tables():
 
 #### APLICAÇÕES ####
 api.add_resource(Aplicacoes, '/aplicacoes/<int:id>', '/aplicacoes' )
-api.add_resource(Produtos, '/produtos/<int:id>', '/produtos')
+api.add_resource(Produtos, '/produtos/<int:id>', '/produtos', '/produtos/<int:id>/<int:posicao>')
 api.add_resource(ImagensAplicacoes, '/imagens_aplicacoes/<int:id>/<int:id_ap>', '/imagens_aplicacoes/<int:id>', '/imagens_aplicacoes' )
 
 api.add_resource(resources.usuarios.UserRegistration, '/registration')
@@ -91,6 +100,11 @@ def editar_produto():
 @app.route('/login')
 def login():
    return render_template('login.html')
+
+@app.route('/autenticado')
+@jwt_required
+def autenticado():
+   return "deu certo"
 
 db.init_app(app)
 
