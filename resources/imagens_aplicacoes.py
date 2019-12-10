@@ -1,13 +1,54 @@
 from flask_restful import Resource, reqparse
-from flask import request
+from flask import request, jsonify
 from models.imagens_aplicacoes import ImagensAplicacoesModel
+from werkzeug.utils import secure_filename
+import os
+from datetime import datetime
+
+UPLOAD_FOLDER = '/static/imagens'
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+
+def allowed_file(filename):
+	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 class ImagensAplicacoes(Resource):
     def post(self):
-        corpo = request.get_json(force=True)
-        item = ImagensAplicacoesModel(**corpo)
-        item.posicao=9999
+        id_ap = request.form['id_ap']
+        posicao = 9999
+        if 'files' not in request.files:
+                resp = jsonify({'mensagem' : 'É necessário enviar uma imagem.'})
+                resp.status_code = 400
+                return resp
+
+        files = request.files.getlist('files')
+
+        if len(files) != 1:
+            resp = jsonify({'mensagem' : 'É necessário enviar apenas uma imagem'})
+            resp.status_code = 400
+            return resp
+
+        errors = {}
+        caminho = ""
+
+        for file in files:		
+            if file and allowed_file(file.filename):
+                filename = secure_filename(str(datetime.now()))
+                caminho = os.getcwd() + UPLOAD_FOLDER + '/' + filename
+                while os.path.isfile(caminho):
+                    filename = secure_filename(str(datetime.now()))
+                    caminho = os.getcwd() + UPLOAD_FOLDER + '/' + filename
+                file.save(caminho)
+            else:
+                errors[file.filename] = 'Tipo do arquivo não permitido'
+        
+        if errors:
+            errors['mensagem'] = 'Algo de errado não está certo'
+            resp = jsonify(errors)
+            resp.status_code = 500
+            return resp
+
+        item = ImagensAplicacoesModel(posicao = posicao, imagem = UPLOAD_FOLDER + '/' + filename, aplicacoes_id = id_ap )
 
         try:
             item.save()
