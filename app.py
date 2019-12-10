@@ -116,20 +116,15 @@ def admin_aplicacoes():
 def adicionar_produto():
     return render_template('adicionar_produto.html')
 
-# @app.route('/editar')
-# def editar():
-#    return render_template('editar.html')
-
 @app.route('/editar_produto')
 @jwt_required
 def editar_produto():
     return render_template('editar_produto.html')
 
-
-# @app.route('/autenticado')
-# @jwt_required
-# def autenticado():
-#    return "deu certo"
+@app.route('/adicionar_aplicacoes')
+@jwt_required
+def adicionar_aplicacao():
+    return render_template('adicionar_aplicacao.html')
 
 db.init_app(app)
 
