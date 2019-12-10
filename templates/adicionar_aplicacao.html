@@ -10,7 +10,6 @@
     <meta charset="utf-8" />
     <title>Adicionar aplicação</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
     <link href="static/css/index.min.css" rel="stylesheet">
     <style>
         .custom-file-input~.custom-file-label::after {
@@ -19,8 +18,8 @@
     </style>
 </head>
 
-<body onload="init();">
-    <script src="./js/adicionar_aplicacao.js"></script>
+<body>
+    <script src="./static/js/adicionar_aplicacao.min.js"></script>
     <!--<script src="./js/produtos.js"></script>-->
     <section class="page-section bg-light" style="min-height: 100vh;">
         <div class="containerInput">
@@ -29,16 +28,11 @@
                     <h2 class="section-heading text-uppercase text-center" style="margin-bottom: 50px;">Adicionar
                         aplicação
                     </h2>
-                    <form action="/aplicacoes" method="post" enctype="multipart/form-data">
+                    <form onsubmit="return add()" method="post" enctype="multipart/form-data" name="fileinfo">
                         <div style="margin-bottom: 5px; margin-top: 15px;">Nome da aplicação</div>
-                        <div><input type="text" name="titulo" class="input" rows="1" style="height:1.5em;" id="titulo">
+                        <div><input type="text" name="nome" class="input" rows="1" style="height:1.5em;" id="nome">
                         </div>
                         <div style="margin-bottom: 5px; margin-top: 15px;">Imagem</div>
-                        <!-- <div><input type="file" name="files" class="input" rows="1" style="height:1.5em;" id="files"></div> -->
-                        <!-- <div class="custom-file">
-                            <input type="file" name="files" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Escolher arquivo</label>
-                        </div> -->
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" name="files" id="inputGroupFile02">
                             <label class="custom-file-label" for="inputGroupFile02">Escolher arquivo</label>
@@ -58,7 +52,7 @@
                                 name="submit">
                         </div>
                         <div style="margin-top: 20px;" class="text-center"><a class="btn btn-primary btn-lg botao-oco"
-                                href="aplicacoes.html">Voltar</a></div>
+                                href="admin_aplicacoes">Voltar</a></div>
 
                     </form>
                 </div>

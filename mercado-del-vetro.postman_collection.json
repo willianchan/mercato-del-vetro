@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "37e67e77-11d5-40a7-ba83-c49eec11af65",
+		"name": "mercado-del-vetro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost/produtos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/produtos",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/aplicacoes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/aplicacoes",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"aplicacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/imagens_aplicacoes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/imagens_aplicacoes",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"imagens_aplicacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/produtos/<int:id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/produtos/<int:id>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"produtos",
+						"<int:id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/aplicacoes/<int:id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/aplicacoes/<int:id>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"aplicacoes",
+						"<int:id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/imagens_aplicacoes/<int:id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/imagens_aplicacoes/<int:id>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"imagens_aplicacoes",
+						"<int:id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/imagens_aplicacoes/0/<int:id_ap>",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost/imagens_aplicacoes/0/<int:id_ap>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"imagens_aplicacoes",
+						"0",
+						"<int:id_ap>"
+					]
+				},
+				"description": "para dar get em todas as imagens com mesma chave estrangeira. Ou seja, todas as imagens pertencentes a mesma categoria de aplicação para exibir no modal"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/produtos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "titulo",
+							"value": "Vidro balanceado",
+							"type": "text"
+						},
+						{
+							"key": "texto",
+							"value": "Perfeitamente equilibrado, porém caro",
+							"type": "text"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/Marcello_Gamer/Pictures/thanosjudeu.jpeg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/produtos",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/aplicacoes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Sacada",
+							"type": "text"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/Marcello_Gamer/Pictures/sacada.jpg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/aplicacoes",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"aplicacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/imagens_aplicacoes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost/imagens_aplicacoes",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"imagens_aplicacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/produtos/<int:id>",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "titulo",
+							"value": "colorido",
+							"type": "text"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/Marcello_Gamer/Pictures/colorido.jpg"
+						},
+						{
+							"key": "texto",
+							"value": "muito bonito e pode te deixar gay",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/produtos/<int:id>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"produtos",
+						"<int:id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/aplicacoes/<int:id>",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "boxes",
+							"type": "text"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/Marcello_Gamer/Pictures/boxe.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/aplicacoes/<int:id>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"aplicacoes",
+						"<int:id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/produtos/<int:id>/<int:posicao>",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost/produtos/<int:id>/<int:posicao>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"produtos",
+						"<int:id>",
+						"<int:posicao>"
+					]
+				},
+				"description": "Rota para editar a posição de exibição de um produto. Apenas o id e a posição são referidos. Não é colocado nada no corpo"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/aplicacoes/<int:id>/<int:posicao>",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost/aplicacoes/<int:id>/<int:posicao>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"aplicacoes",
+						"<int:id>",
+						"<int:posicao>"
+					]
+				},
+				"description": "Rota para editar a posição de exibição de uma aplicação. Apenas o id e a posição são referidos. Não é colocado nada no corpo"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/imagens_aplicacoes/<int:id>/<int:posicao>",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost/imagens_aplicacoes/<int:id>/<int:posicao>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"imagens_aplicacoes",
+						"<int:id>",
+						"<int:posicao>"
+					]
+				},
+				"description": "Rota para editar a posição de exibição de uma imagem. Apenas o id e a posição são referidos. Não é colocado nada no corpo"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/produtos/<int:id>",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost/produtos/<int:id>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"produtos",
+						"<int:id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/aplicacoes/<int:id>",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost/aplicacoes/<int:id>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"aplicacoes",
+						"<int:id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/imagens_aplicacoes/<int:id>",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost/imagens_aplicacoes/<int:id>",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"imagens_aplicacoes",
+						"<int:id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/aplicacoes Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"nome\":\"Varanda\",\n\"imagem\":\"https://stampavidros.com.br/wp-content/uploads/2019/03/2019-04-11-diferenca-entre-sacada-e-varanda.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/aplicacoes",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"aplicacoes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -29,9 +29,11 @@ def create_dir(path):
 app = Flask(__name__)
 api = Api(app)
 
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
 
 app.config['JWT_TOKEN_LOCATION'] = ['cookies']
 
@@ -51,13 +53,16 @@ app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access', 'refresh']
 
 jwt = JWTManager(app)
 
+
 @jwt.unauthorized_loader
 def unauthorized_response(callback):
     return render_template('login_required.html')
 
+
 @jwt.expired_token_loader
 def expired_token_response(callback):
     return render_template('login_required.html')
+
 
 @jwt.token_in_blacklist_loader
 def check_if_token_in_blacklist(decrypted_token):
@@ -72,9 +77,12 @@ def create_tables():
 
 
 #### APLICAÇÕES ####
-api.add_resource(Aplicacoes, '/aplicacoes/<int:id>', '/aplicacoes', '/aplicacoes/<int:id>/<int:posicao>')
-api.add_resource(Produtos, '/produtos/<int:id>', '/produtos', '/produtos/<int:id>/<int:posicao>')
-api.add_resource(ImagensAplicacoes, '/imagens_aplicacoes/<int:id>/<int:id_ap>', '/imagens_aplicacoes/<int:id>', '/imagens_aplicacoes' )
+api.add_resource(Aplicacoes, '/aplicacoes/<int:id>',
+                 '/aplicacoes', '/aplicacoes/<int:id>/<int:posicao>')
+api.add_resource(Produtos, '/produtos/<int:id>', '/produtos',
+                 '/produtos/<int:id>/<int:posicao>')
+api.add_resource(ImagensAplicacoes, '/imagens_aplicacoes/<int:id>/<int:id_ap>',
+                 '/imagens_aplicacoes/<int:id>', '/imagens_aplicacoes')
 
 api.add_resource(resources.usuarios.UserRegistration, '/registration')
 api.add_resource(resources.usuarios.UserLogin, '/login')
@@ -105,26 +113,34 @@ def admin_produtos():
     return render_template('produtos.html')
 
 
-@app.route('/admin_aplicacoes')
-@jwt_required
-def admin_aplicacoes():
-    return render_template('aplicacoes.html')
-
-
 @app.route('/adicionar_produto')
 @jwt_required
 def adicionar_produto():
     return render_template('adicionar_produto.html')
+
 
 @app.route('/editar_produto')
 @jwt_required
 def editar_produto():
     return render_template('editar_produto.html')
 
-@app.route('/adicionar_aplicacoes')
+
+@app.route('/admin_aplicacoes')
+@jwt_required
+def admin_aplicacoes():
+    return render_template('aplicacoes.html')
+
+
+@app.route('/adicionar_aplicacao')
 @jwt_required
 def adicionar_aplicacao():
     return render_template('adicionar_aplicacao.html')
+
+@app.route('/editar_aplicacao')
+@jwt_required
+def editar_aplicacao():
+    return render_template('editar_aplicacao.html')
+
 
 db.init_app(app)
 

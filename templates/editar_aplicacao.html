@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<link rel="icon" href="./static/img/favicon.png">
+<link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="static/vendor/jquery/jquery.min.js"></script>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Editar Aplicação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="static/css/index.min.css" rel="stylesheet">
+</head>
+
+<body onload="init();">
+    <script src="./static/js/editar_aplicacao.min.js"></script>
+    <section class="page-section bg-light" style="min-height: 100vh;">
+        <div class="containerInput">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-heading text-uppercase text-center" style="margin-bottom: 50px;">Editar
+                        aplicação</h2>
+                    <form onsubmit="return editar()" method="post" enctype="multipart/form-data" name="fileinfo">
+                        <div style="margin-bottom: 5px; margin-top: 15px;">Nome da aplicação</div>
+                        <div>
+                            <input type="text" name="nome" class="input" rows="1" style="height:1.5em;" id="nome">
+                        </div>
+                        <div style="margin-bottom: 5px; margin-top: 15px;">Imagem</div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="files" id="inputGroupFile02">
+                            <label class="custom-file-label" for="inputGroupFile02" id="ref_imagem">Escolher
+                                arquivo</label>
+                        </div>
+                        <script>
+                            $('#inputGroupFile02').on('change', function () {
+                                var fileName = $(this).val();
+                                var cleanFileName = fileName.replace('C:\\fakepath\\', " ");
+                                $(this).next('.custom-file-label').html(cleanFileName);
+                            })
+                        </script>
+
+                        <div style="margin-top: 20px;" class="text-center">
+                            <input type="submit" class="btn btn-primary btn-lg textoBranco" value="Adicionar"
+                                name="submit">
+                        </div>
+                        <div style="margin-top: 20px;" class="text-center"><a class="btn btn-primary btn-lg botao-oco"
+                                href="admin_aplicacoes">Voltar</a></div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

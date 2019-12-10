@@ -6,7 +6,7 @@ import os
 from datetime import datetime
 
 UPLOAD_FOLDER = '/static/imagens'
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -29,7 +29,6 @@ class Produtos(Resource):
             return resp
 
         errors = {}
-        success = False
         caminho = ""
 
         for file in files:		
@@ -40,7 +39,6 @@ class Produtos(Resource):
                     filename = secure_filename(str(datetime.now()))
                     caminho = os.path.join(os.getcwd() + UPLOAD_FOLDER, filename)
                 file.save(caminho)
-                success = True
             else:
                 errors[file.filename] = 'Tipo do arquivo não permitido'
         
@@ -96,7 +94,6 @@ class Produtos(Resource):
                 return {'mensagem': 'Ocorreu um erro interno'}, 500
         else:
             try:
-                print(id)
                 item = ProdutosModel.return_by_id(id)
                 item.titulo = request.form['titulo']
                 item.texto = request.form['texto']
@@ -110,7 +107,6 @@ class Produtos(Resource):
                         return resp
 
                     errors = {}
-                    success = False
                     caminho = ""
 
                     for file in files:		
@@ -121,7 +117,6 @@ class Produtos(Resource):
                                 filename = secure_filename(str(datetime.now()))
                                 caminho = os.path.join(os.getcwd() + UPLOAD_FOLDER, filename)
                             file.save(caminho)
-                            success = True
                         else:
                             errors[file.filename] = 'Tipo do arquivo não permitido'
                     
