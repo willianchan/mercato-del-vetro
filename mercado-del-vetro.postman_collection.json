@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "37e67e77-11d5-40a7-ba83-c49eec11af65",
+		"_postman_id": "83065d61-7e0b-47b4-ac47-5518be8eb2ec",
 		"name": "mercado-del-vetro",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -254,6 +254,21 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_ap",
+							"value": "11",
+							"type": "text"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/Chan/Pictures/2.png"
+						}
+					]
+				},
 				"url": {
 					"raw": "localhost/imagens_aplicacoes",
 					"host": [
