@@ -12,7 +12,7 @@ class Aplicacoes(Resource):
         try:
             item.save()
             return {
-                'message': 'item criado',
+                'mensagem': 'item criado',
             }, 201
         except:
             return {'mensagem': 'Ocorreu um erro interno'}, 500
@@ -46,7 +46,7 @@ class Aplicacoes(Resource):
             item.imagem = corpo['imagem']
             item.commit()
             return {
-                'message': 'item alterado',
+                'mensagem': 'item alterado',
             }, 201
         except:
             return {'mensagem': 'Ocorreu um erro interno'}, 500

@@ -17,14 +17,14 @@ class Produtos(Resource):
         texto = request.form['texto']
         posicao = 9999
         if 'files' not in request.files or not titulo or not texto:
-                resp = jsonify({'message' : 'É necessário enviar uma imagem, um título e um texto.'})
+                resp = jsonify({'mensagem' : 'É necessário enviar uma imagem, um título e um texto.'})
                 resp.status_code = 400
                 return resp
 
         files = request.files.getlist('files')
 
         if len(files) != 1:
-            resp = jsonify({'message' : 'É necessário enviar apenas uma imagem'})
+            resp = jsonify({'mensagem' : 'É necessário enviar apenas uma imagem'})
             resp.status_code = 400
             return resp
 
@@ -45,7 +45,7 @@ class Produtos(Resource):
                 errors[file.filename] = 'Tipo do arquivo não permitido'
         
         if errors:
-            errors['message'] = 'Algo de errado não está certo'
+            errors['mensagem'] = 'Algo de errado não está certo'
             resp = jsonify(errors)
             resp.status_code = 500
             return resp
@@ -55,7 +55,7 @@ class Produtos(Resource):
         try:
             item.save()
             return {
-                'message': 'item criado',
+                'mensagem': 'item criado',
             }, 201
         except:
             return {'mensagem': 'Ocorreu um erro interno'}, 500
@@ -99,7 +99,7 @@ class Produtos(Resource):
 
                 if len(files) != 0:
                     if len(files) != 1:
-                        resp = jsonify({'message' : 'É necessário enviar apenas uma imagem'})
+                        resp = jsonify({'mensagem' : 'É necessário enviar apenas uma imagem'})
                         resp.status_code = 400
                         return resp
 
@@ -120,7 +120,7 @@ class Produtos(Resource):
                             errors[file.filename] = 'Tipo do arquivo não permitido'
                     
                     if errors:
-                        errors['message'] = 'Algo de errado não está certo'
+                        errors['mensagem'] = 'Algo de errado não está certo'
                         resp = jsonify(errors)
                         resp.status_code = 500
                         return resp
@@ -129,7 +129,7 @@ class Produtos(Resource):
                     item.imagem = os.path.join(UPLOAD_FOLDER, filename)
                 item.commit()
                 return {
-                    'message': 'item alterado',
+                    'mensagem': 'item alterado',
                 }, 201
             except:
                 print("deu ruim")

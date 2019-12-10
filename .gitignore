@@ -1,7 +1,8 @@
 node_modules/
 .vscode
-dist
+dist/
 __pycache__/
 *.pyc
 projeto/
 projeto_env/
+*.db

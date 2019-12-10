@@ -8,11 +8,13 @@ class ImagensAplicacoes(Resource):
         corpo = request.get_json(force=True)
         item = ImagensAplicacoesModel(**corpo)
 
-        item.save()
-        return {
-            'message': 'item criado',
-        }, 201
-        return {'mensagem': 'Ocorreu um erro interno'}, 500
+        try:
+            item.save()
+            return {
+                'mensagem': 'item criado',
+            }, 201
+        except:
+            return {'mensagem': 'Ocorreu um erro interno'}, 500
 
     def get(self, id=None, id_ap=None):
         if id_ap:
@@ -54,7 +56,7 @@ class ImagensAplicacoes(Resource):
             item.imagem = corpo['imagem']
             item.commit()
             return {
-                'message': 'item alterado',
+                'mensagem': 'item alterado',
             }, 201
         except:
             return {'mensagem': 'Ocorreu um erro interno'}, 500

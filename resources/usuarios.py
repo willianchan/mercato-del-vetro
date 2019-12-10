@@ -7,9 +7,9 @@ import json
 
 parser = reqparse.RequestParser()
 parser.add_argument(
-    'username', help='This field cannot be blank', required=True)
+    'username', help='O campo não pode ser branco', required=True)
 parser.add_argument(
-    'password', help='This field cannot be blank', required=True)
+    'password', help='O campo não pode ser branco', required=True)
 
 
 class UserRegistration(Resource):
@@ -17,7 +17,7 @@ class UserRegistration(Resource):
         data = parser.parse_args()
 
         if UserModel.find_by_username(data['username']):
-            return {'message': 'User {} already exists'. format(data['username'])}
+            return {'mensagem': 'Usuário {} já existe'. format(data['username'])}
 
         new_user = UserModel(
             username=data['username'],
@@ -29,12 +29,12 @@ class UserRegistration(Resource):
             access_token = create_access_token(identity=data['username'])
             refresh_token = create_refresh_token(identity=data['username'])
             return {
-                'message': 'User {} was created'.format(data['username']),
+                'mensagem': 'Usuário {} foi criado'.format(data['username']),
                 'access_token': access_token,
                 'refresh_token': refresh_token
             }
         except:
-            return {'message': 'Something went wrong'}, 500
+            return {'mensagem': 'Ocorreu um erro interno'}, 500
 
 
 class UserLogin(Resource):
@@ -43,13 +43,13 @@ class UserLogin(Resource):
         current_user = UserModel.find_by_username(data['username'])
 
         if not current_user:
-            return {'message': 'User {} doesn\'t exist'.format(data['username'])}, 400
+            return {'mensagem': 'User {} doesn\'t exist'.format(data['username'])}, 400
 
         if UserModel.verify_hash(data['password'], current_user.password):
             access_token = create_access_token(identity=data['username'])
             refresh_token = create_refresh_token(identity=data['username'])
 
-            resp = jsonify({'message': 'Logged in as {}'.format(current_user.username),
+            resp = jsonify({'mensagem': 'Logado como {}'.format(current_user.username),
                             'access_token': access_token,
                             'refresh_token': refresh_token})
             set_access_cookies(resp, access_token)
@@ -57,7 +57,7 @@ class UserLogin(Resource):
             return resp
 
         else:
-            return {'message': 'Wrong credentials'}, 400
+            return {'mensagem': 'Credenciais inválidas'}, 400
 
 
 class UserLogoutAccess(Resource):
@@ -67,9 +67,9 @@ class UserLogoutAccess(Resource):
         try:
             revoked_token = RevokedTokenModel(jti=jti)
             revoked_token.add()
-            return {'message': 'Access token has been revoked'}
+            return {'mensagem': 'Token de acesso foi revogado'}
         except:
-            return {'message': 'Something went wrong'}, 500
+            return {'mensagem': 'Ocorreu um erro interno'}, 500
 
 
 class UserLogoutRefresh(Resource):
@@ -79,9 +79,9 @@ class UserLogoutRefresh(Resource):
         try:
             revoked_token = RevokedTokenModel(jti=jti)
             revoked_token.add()
-            return {'message': 'Refresh token has been revoked'}
+            return {'mensagem': 'Refresh Token foi revogado'}
         except:
-            return {'message': 'Something went wrong'}, 500
+            return {'mensagem': 'Ocorreu um erro interno'}, 500
 
 
 class TokenRefresh(Resource):
@@ -89,7 +89,7 @@ class TokenRefresh(Resource):
     def post(self):
         current_user = get_jwt_identity()
         access_token = create_access_token(identity=current_user)
-        resp = jsonify({'message': 'Logged in as {}'.format(current_user.username),
+        resp = jsonify({'mensagem': 'Logado como {}'.format(current_user.username),
                 'access_token': access_token})
         set_access_cookies(resp, access_token)
         return resp

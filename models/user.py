@@ -32,9 +32,9 @@ class UserModel(db.Model):
         try:
             num_rows_deleted = db.session.query(cls).delete()
             db.session.commit()
-            return {'message': '{} row(s) deleted'.format(num_rows_deleted)}
+            return {'mensagem': '{} linha(s) deletadas'.format(num_rows_deleted)}
         except:
-            return {'message': 'Something went wrong'}
+            return {'mensagem': 'Ocorreu um erro interno'}
 
     @staticmethod
     def generate_hash(password):

@@ -2,6 +2,14 @@
 
 Projeto para a matéria Linguagens de Programação II - Website da empresa Mercato Del Vetro
 
+Projeto pode ser acessado pelo seguinte endereço: [ec2-52-207-210-38.compute-1.amazonaws.com](ec2-52-207-210-38.compute-1.amazonaws.com)
+
+A área administrativa é acessada por: [ec2-52-207-210-38.compute-1.amazonaws.com/admin](ec2-52-207-210-38.compute-1.amazonaws.com/admin) com as seguintes credenciais:  
+Login: admin  
+Senha: admin
+
+### Desenvolvedores
+
 * Willian Chan 16.01095-7
 * Marcello Scatena Junior 16.01472-3
 
@@ -10,9 +18,12 @@ Projeto para a matéria Linguagens de Programação II - Website da empresa Merc
 ### Instalação de dependêcias
 
 ```bash
+# Comandos baseados em distro CentOS
 sudo yum install git
 
 sudo yum install docker
+
+sudo service docker start
 ```
 
 ### Rodando aplicação
@@ -22,11 +33,27 @@ git clone https://github.com/willianchan/mercato-del-vetro.git
 
 cd mercato-del-vetro
 
-sudo docker build -t del-vetro.
+sudo docker build -t del-vetro .
 
 sudo docker run --rm -it -d -p 80:80 --name del-vetro del-vetro
-
 ```
+
+## Instalação Local
+
+```bash
+git clone https://github.com/willianchan/mercato-del-vetro.git
+
+cd mercato-del-vetro
+
+python3 -m virtualenv projeto_env
+
+source .\projeto_env\Scripts\activate
+
+pip3 install -r requirements.txt
+
+python3 app.py
+```
+
 ## Gulp
 
 ```bash
@@ -57,10 +84,14 @@ Roboto foi usada em todos os textos de descrição do site.
 Droid Serif foi usado junto com Montserrat no texto de introdução do site. Essa combinação causou um efeito diferente ao site, deixando o usuário mais confortável.
 
 ## Acompanhamento de horas
+
+### 1º Semestre
 * Reuniões: 8 horas
 * Ideação: 10 horas
 * UX: 4 horas
 * Testes e Tutoriais: 20 horas
 * Desenvolvimento: 50 horas
 
-Total de horas do grupo: 92 horas
+### 2º Semestre
+
+Total de horas do grupo: X horas
