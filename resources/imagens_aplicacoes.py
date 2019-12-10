@@ -7,6 +7,7 @@ class ImagensAplicacoes(Resource):
     def post(self):
         corpo = request.get_json(force=True)
         item = ImagensAplicacoesModel(**corpo)
+        posicao=9999
 
         try:
             item.save()
@@ -24,6 +25,14 @@ class ImagensAplicacoes(Resource):
                 for item in todos:
                     if(item.aplicacoes_id == id_ap):
                         lista_item.append(item.toDict())
+                        
+                #ordena as aplicações pelo valor da posição, a ser melhorado
+                for j in range(0,len(lista_item)):
+                    for i in range(0,len(lista_item)-1):
+                        if lista_item[i]["posicao"]>lista_item[i+1]["posicao"]:
+                            Aux = lista_item[i+1]
+                            lista_item[i+1] = lista_item[i]
+                            lista_item[i] = Aux
                 return lista_item, 200
             except:
                 return {'mensagem': 'Ocorreu um erro interno'}, 500
@@ -49,17 +58,27 @@ class ImagensAplicacoes(Resource):
             except:
                 return {'mensagem': 'Ocorreu um erro interno'}, 500
 
-    def put(self, id):
-        try:
-            corpo = request.get_json(force=True)
-            item = ImagensAplicacoesModel.return_by_id(id)
-            item.imagem = corpo['imagem']
-            item.commit()
-            return {
-                'mensagem': 'item alterado',
-            }, 201
-        except:
-            return {'mensagem': 'Ocorreu um erro interno'}, 500
+    def put(self, id, id_ap=None):
+        #esse condicional serve apenas para salvar novas posições, nada a ser mexido
+        # id_ap deveria ser posição, mas devido a um erro do flask de endereçamento, tive que manter esse nome
+        if id_ap:
+            try:
+                item = ImagensAplicacoesModel.return_by_id(id)
+                item.posicao = id_ap
+                item.commit()
+            except:
+                return {'mensagem': 'Ocorreu um erro interno'}, 500
+        else:
+            try:
+                corpo = request.get_json(force=True)
+                item = ImagensAplicacoesModel.return_by_id(id)
+                item.imagem = corpo['imagem']
+                item.commit()
+                return {
+                    'message': 'item alterado',
+                }, 201
+            except:
+                return {'mensagem': 'Ocorreu um erro interno'}, 500
 
     def delete(self, id=None):
         if id:

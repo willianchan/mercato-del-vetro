@@ -75,19 +75,25 @@ class Produtos(Resource):
                 lista_item = []
                 for item in todos:
                     lista_item.append(item.toDict())
+                #ordena as aplicações pelo valor da posição, a ser melhorado
                 for j in range(0,len(lista_item)):
                     for i in range(0,len(lista_item)-1):
                         if lista_item[i]["posicao"]>lista_item[i+1]["posicao"]:
                             Aux = lista_item[i+1]
                             lista_item[i+1] = lista_item[i]
                             lista_item[i] = Aux
+                            
                 return lista_item, 200
 
     def put(self, id, posicao=None):
+        #esse condicional serve apenas para salvar novas posições, nada a ser mexido
         if posicao:
-            item = ProdutosModel.return_by_id(id)
-            item.posicao = posicao
-            item.commit()
+            try:
+                item = ProdutosModel.return_by_id(id)
+                item.posicao = posicao
+                item.commit()
+            except:
+                return {'mensagem': 'Ocorreu um erro interno'}, 500
         else:
             try:
                 print(id)

@@ -72,11 +72,9 @@ def create_tables():
 
 
 #### APLICAÇÕES ####
-api.add_resource(Aplicacoes, '/aplicacoes/<int:id>', '/aplicacoes')
-api.add_resource(Produtos, '/produtos/<int:id>', '/produtos',
-                 '/produtos/<int:id>/<int:posicao>')
-api.add_resource(ImagensAplicacoes, '/imagens_aplicacoes/<int:id>/<int:id_ap>',
-                 '/imagens_aplicacoes/<int:id>', '/imagens_aplicacoes')
+api.add_resource(Aplicacoes, '/aplicacoes/<int:id>', '/aplicacoes', '/aplicacoes/<int:id>/<int:posicao>')
+api.add_resource(Produtos, '/produtos/<int:id>', '/produtos', '/produtos/<int:id>/<int:posicao>')
+api.add_resource(ImagensAplicacoes, '/imagens_aplicacoes/<int:id>/<int:id_ap>', '/imagens_aplicacoes/<int:id>', '/imagens_aplicacoes' )
 
 api.add_resource(resources.usuarios.UserRegistration, '/registration')
 api.add_resource(resources.usuarios.UserLogin, '/login')

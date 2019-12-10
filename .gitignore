@@ -6,3 +6,4 @@ __pycache__/
 projeto/
 projeto_env/
 *.db
+db.db

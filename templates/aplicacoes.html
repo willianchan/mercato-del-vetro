@@ -20,31 +20,39 @@
             <div>
                 <a style="float: left" class="btn btn-primary btn-md textoBranco" href="administracao"><i
                         class="fas fa-long-arrow-alt-left"></i> Voltar</a>
-                <div style="float: right;" class="row">
-                    <a class="btn btn-primary btn-md textoBranco" style="margin-right: 10px;"
-                        href="adicionar_aplicacao.html"><i class="fas fa-plus-circle"></i> Adicionar</a>
-                    <a class="btn btn-primary btn-md textoBranco" href="editar.html"><i class="fas fa-edit"></i>
-                        Editar</a>
+                <div style="float: right;" class="row" id=botoes>
+                    <div id="addBotao">
+                        <a onClick="movimentar()" class="btn btn-primary btn-md textoBranco"
+                            style="margin-right: 10px; cursor: pointer;"><i class="fas fa-arrows-alt"></i>
+                            Movimentar</a>
+                        <a class="btn btn-primary btn-md textoBranco" href="adicionar_produto"><i
+                                class="fas fa-plus-circle"></i> Adicionar</a>
+                    </div>
                 </div>
             </div>
             <div style="margin-top:100px" id="" class="row"></div>
             <section class="page-section" id="aplicacoes">
-                <div class="container slider" id="getAplicacoes">
+                <div class="container">
+                    <div class="row" id="getAplicacoes"></div>
                 </div>
             </section>
         </div>
     </section>
     <div id="getModal"></div>
-    <script src="./static/js/aplicacoes.min.js"></script>
+
     <!-- Bootstrap/Jquery -->
-    <script src="./static/vendor/jquery/jquery.min.js"></script>
-    <script src="./static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/jquery-ui/jquery-ui.min.js"></script>
+
+    <script src="static/js/aplicacoes.min.js"></script>
+
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="./static/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- slick -->
-    <script type="text/javascript" src="./static/vendor/slick/slick.min.js"></script>
+    <script type="text/javascript" src="static/vendor/slick/slick.min.js"></script>
 
     <!-- Custom scripts -->
     <script src="./static/js/index.min.js"></script>
