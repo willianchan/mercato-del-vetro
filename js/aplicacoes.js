@@ -93,7 +93,7 @@ function addModalImagem(imagem) {
 }
 
 function addImagens(id) {
-    var imagens = getProd('http://localhost:5000/imagens_aplicacoes/0/' + id);
+    var imagens = getProd('http://localhost/imagens_aplicacoes/0/' + id);
     imagens = JSON.parse(imagens);
     console.log(imagens);
     var html = '';
@@ -126,12 +126,12 @@ function editar(idv, titulov, textov, imagemv) {
 }
 function deletar(id, tipo) {
     if (tipo == "imagem") {
-        var url = "http://localhost:5000/imagens_aplicacoes/" + id;
+        var url = "http://localhost/imagens_aplicacoes/" + id;
         var text = "Após deletada a imagem não poderá ser recuperada. Deseja mesmo deletar?";
         var ok = "Imagem deletada com sucesso!";
     }
     else{ 
-        var url = "http://localhost:5000/aplicacoes/" + id;
+        var url = "http://localhost/aplicacoes/" + id;
         var text = "Ao deletar a aplicação todas suas imagens serão deletadas juntas. Deseja mesmo deletar?";
         var ok = "Aplicação deletada com sucesso!";
 
@@ -155,7 +155,7 @@ function deletar(id, tipo) {
 }
 
 window.onload = async function () {
-    var aplicacoes = getProd('http://localhost:5000/aplicacoes');
+    var aplicacoes = getProd('http://localhost/aplicacoes');
     aplicacoes = JSON.parse(aplicacoes);
     console.log(aplicacoes);
     for (aplicacao in aplicacoes) {

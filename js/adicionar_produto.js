@@ -34,7 +34,7 @@ function init() {
 
 function adicionar() {
     var http = new XMLHttpRequest();
-    var url = 'http://localhost:5000/produtos';
+    var url = 'http://localhost/produtos';
     var titulo = document.getElementById("titulo").value;
     var texto = document.getElementById("texto").value;
     var imagem = document.getElementById("imagem").value;
@@ -67,7 +67,7 @@ function add() {
 
     if (oData.get("titulo") != "" && oData.get("texto") != "" && document.getElementById("inputGroupFile02").files.length != 0) {
 
-        oReq.open("POST", "http://localhost:5000/produtos", false);
+        oReq.open("POST", "http://localhost/produtos", false);
         oReq.send(oData);
         window.location.href = "produtos.html";
     } else {

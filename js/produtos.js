@@ -112,7 +112,7 @@ function movimentar() {
     document.getElementById("botoes").appendChild(div);
 }
 window.onload = function () {
-    var produtos = getProd('http://localhost:5000/produtos');
+    var produtos = getProd('http://localhost/produtos');
     produtos = JSON.parse(produtos);
     console.log(produtos);
     for (produto in produtos) {
