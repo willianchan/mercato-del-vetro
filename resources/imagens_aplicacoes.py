@@ -7,7 +7,7 @@ class ImagensAplicacoes(Resource):
     def post(self):
         corpo = request.get_json(force=True)
         item = ImagensAplicacoesModel(**corpo)
-        posicao=9999
+        item.posicao=9999
 
         try:
             item.save()

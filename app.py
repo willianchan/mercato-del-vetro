@@ -141,6 +141,11 @@ def adicionar_aplicacao():
 def editar_aplicacao():
     return render_template('editar_aplicacao.html')
 
+@app.route('/adicionar_imagem_aplicacao')
+@jwt_required
+def adicionar_imagem_aplicacao():
+    return render_template('adicionar_imagem_aplicacao.html')
+adicionar_imagem_aplicacao
 
 db.init_app(app)
 
