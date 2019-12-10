@@ -8,6 +8,7 @@ class AplicacoesModel(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     nome = db.Column(db.String(120), nullable = False)
     imagem = db.Column(db.String(120), nullable = False)
+    posicao = db.Column(db.Integer)
     
     def save(self):
         db.session.add(self)
@@ -30,4 +31,4 @@ class AplicacoesModel(db.Model):
         db.session.commit()
 
     def toDict(self):
-        return {'id':self.id, 'nome':self.nome, 'imagem':self.imagem}
+        return {'id':self.id, 'nome':self.nome, 'imagem':self.imagem, 'posicao':self.posicao}

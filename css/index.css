@@ -651,7 +651,7 @@ header.masthead .intro-text .intro-heading {
     margin: 0 0 40px
   }
   #admProdutos .vidros-item {
-    margin: 0 0 40px
+    margin: 0 0 10px
   }
 }
 
@@ -1402,11 +1402,11 @@ html, body {
 }
 @media (min-width:768px) {
   .fill {
-    min-width: 285px;
+    min-width: 248px;
     min-height: 160px;
-    width: 285px;
+    width: 248px;
     height: 160px;
-    max-width: 285px;
+    max-width: 248px;
     max-height: 160px;
     display: flex;
     justify-content: center;
@@ -1622,4 +1622,61 @@ input {
   width:100%; 
   height:100%; 
   object-fit:cover; 
+}
+
+.largura-adm {
+  position: relative;
+  display: block;
+  width: 169px;
+  margin: 0 auto;
+  cursor: pointer
+}
+
+@media (min-width: 576px) {
+  .largura-adm {
+    position: relative;
+    display: block;
+    width: 169px;
+    margin: 0 auto;
+    cursor: pointer
+  }
+}
+
+@media (min-width: 768px) {
+  .largura-adm {
+    position: relative;
+    display: block;
+    width: 169px;
+    margin: 0 auto;
+    cursor: pointer
+  }
+  
+  #admProdutos .vidros-item .vidros-link {
+    position: relative;
+    display: block;
+    width: 169px;
+    margin: 0 auto;
+    cursor: pointer
+  }
+
+}
+@media (min-width: 992px) {
+  .largura-adm{
+    position: relative;
+    display: block;
+    width: 169px;
+    margin: 0 auto;
+    cursor: pointer
+  }
+
+}
+@media (min-width: 1200px){
+  .largura-adm {
+    position: relative;
+    display: block;
+    width: 169px;
+    margin: 0 auto;
+    cursor: pointer
+  }
+
 }
