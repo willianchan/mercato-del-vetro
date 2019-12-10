@@ -34,7 +34,7 @@ function init() {
 
 function adicionar() {
     var http = new XMLHttpRequest();
-    var url = 'http://localhost:5000/produtos';
+    var url = 'http://localhost/produtos';
     var titulo = document.getElementById("titulo").value;
     var texto = document.getElementById("texto").value;
     var imagem = document.getElementById("imagem").value;

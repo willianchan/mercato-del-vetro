@@ -39,7 +39,7 @@ function init() {
 
 function editar() {
     var http = new XMLHttpRequest();
-    var url = 'http://localhost:5000/produtos/'+this.id;
+    var url = 'http://localhost/produtos/'+this.id;
     var titulo = document.getElementById("titulo").value;
     var texto = document.getElementById("texto").value;
     var imagem = document.getElementById("imagem").value;

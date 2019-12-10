@@ -5,20 +5,28 @@ Projeto para a matéria Linguagens de Programação II - Website da empresa Merc
 * Willian Chan 16.01095-7
 * Marcello Scatena Junior 16.01472-3
 
-## Instalação
+## Instalação em servidor
+
+### Instalação de dependêcias
+
+```bash
+sudo yum install git
+
+sudo yum install docker
+```
+
+### Rodando aplicação
 
 ```bash
 git clone https://github.com/willianchan/mercato-del-vetro.git
-npm install
+
+cd mercato-del-vetro
+
+sudo docker build -t del-vetro.
+
+sudo docker run --rm -it -d -p 80:80 --name del-vetro del-vetro
+
 ```
-
-## Uso
-
-```bash
-npm start
-```
-Ao rodar npm start, o script padrão de inicialização começa a rodar(gulp watch).
-
 ## Gulp
 
 ```bash
@@ -47,8 +55,6 @@ Montserrat foi usada para a maioria dos títulos e em itens da navbar, sendo aju
 Roboto foi usada em todos os textos de descrição do site.
 
 Droid Serif foi usado junto com Montserrat no texto de introdução do site. Essa combinação causou um efeito diferente ao site, deixando o usuário mais confortável.
-
-
 
 ## Acompanhamento de horas
 * Reuniões: 8 horas

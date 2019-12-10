@@ -43,7 +43,7 @@ class UserLogin(Resource):
         current_user = UserModel.find_by_username(data['username'])
 
         if not current_user:
-            return {'message': 'User {} doesn\'t exist'.format(data['username'])}
+            return {'message': 'User {} doesn\'t exist'.format(data['username'])}, 400
 
         if UserModel.verify_hash(data['password'], current_user.password):
             access_token = create_access_token(identity=data['username'])
@@ -57,7 +57,7 @@ class UserLogin(Resource):
             return resp
 
         else:
-            return {'message': 'Wrong credentials'}
+            return {'message': 'Wrong credentials'}, 400
 
 
 class UserLogoutAccess(Resource):
@@ -89,20 +89,7 @@ class TokenRefresh(Resource):
     def post(self):
         current_user = get_jwt_identity()
         access_token = create_access_token(identity=current_user)
-        return {'access_token': access_token}
-
-
-class AllUsers(Resource):
-    def get(self):
-        return UserModel.return_all()
-
-    def delete(self):
-        return UserModel.delete_all()
-
-
-class SecretResource(Resource):
-    @jwt_required
-    def get(self):
-        return {
-            'answer': 42
-        }
+        resp = jsonify({'message': 'Logged in as {}'.format(current_user.username),
+                'access_token': access_token})
+        set_access_cookies(resp, access_token)
+        return resp

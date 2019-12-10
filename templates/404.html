@@ -17,39 +17,24 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Login</title>
+    <title>Login Obrigatório</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="static/css/index.min.css" rel="stylesheet">
 </head>
 
 <body style="background-color: #f2f2f2;">
-    <script src="./static/js/login.js"></script>
     <div class="container-fluid">
         <div class="row" style="margin-top: 20vh;">
             <div class="col-12 col-xl-4 col-lg-5 col-md-6 col-sm-8 mx-auto">
                 <div class="borda" style="background-color: #212529; height: 35vh; border-radius: 10px;">
                     <div class="row h-100">
                         <div class="col-8 mx-auto my-auto">
-                            <div class="login-form">
-                                <form onsubmit="autenticate()" method="post" id="login" name="login">
-                                    <h2 class="text-center mb-5" style="color:white">ADMINISTRAÇÃO</h2>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nome de usuário"
-                                            required="required" id="username" name="username">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Senha"
-                                            required="required" id="password" name="password">
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit"
-                                            class="btn btn-primary btn-block w-50 mx-auto mt-5">Login</button>
-                                    </div>
-                                    <!-- <div class="clearfix">
-                            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-                            <a href="#" class="pull-right">Forgot Password?</a>
-                        </div> -->
-                                </form>
+                            <div class="login-required">
+                                <h1 class="mb-5" style="color: #fed136; text-align: center;">404</h1>
+                                <h3 style="color: #fed136; text-align: justify;">Essa não é a página que você está
+                                    procurando!</h3>
+                                <button onclick="redirect()"
+                                    class="btn btn-primary btn-block w-50 mx-auto mt-5">Home</button>
                             </div>
                         </div>
                     </div>
@@ -57,6 +42,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function redirect() {
+            location.replace("/")
+        }
+    </script>
 
 </body>
 
