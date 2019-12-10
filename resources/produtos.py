@@ -15,7 +15,7 @@ class Produtos(Resource):
     def post(self):
         titulo = request.form['titulo']
         texto = request.form['texto']
-        posicao = 9999
+        posicao=9999
         if 'files' not in request.files or not titulo or not texto:
                 resp = jsonify({'mensagem' : 'É necessário enviar uma imagem, um título e um texto.'})
                 resp.status_code = 400
