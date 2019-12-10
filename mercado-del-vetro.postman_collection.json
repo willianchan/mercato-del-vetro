@@ -81,13 +81,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost/produtos/<int:id>",
+					"raw": "localhost/produtos/48",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"produtos",
-						"<int:id>"
+						"48"
 					]
 				}
 			},
@@ -99,13 +99,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost/aplicacoes/<int:id>",
+					"raw": "localhost/aplicacoes/20",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"aplicacoes",
-						"<int:id>"
+						"20"
 					]
 				}
 			},
@@ -117,13 +117,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost/imagens_aplicacoes/<int:id>",
+					"raw": "localhost/imagens_aplicacoes/9",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"imagens_aplicacoes",
-						"<int:id>"
+						"9"
 					]
 				}
 			},
@@ -142,14 +142,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost/imagens_aplicacoes/0/<int:id_ap>",
+					"raw": "localhost/imagens_aplicacoes/0/20",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"imagens_aplicacoes",
 						"0",
-						"<int:id_ap>"
+						"20"
 					]
 				},
 				"description": "para dar get em todas as imagens com mesma chave estrangeira. Ou seja, todas as imagens pertencentes a mesma categoria de aplicação para exibir no modal"
@@ -173,18 +173,18 @@
 					"formdata": [
 						{
 							"key": "titulo",
-							"value": "Vidro balanceado",
+							"value": "pote",
 							"type": "text"
 						},
 						{
 							"key": "texto",
-							"value": "Perfeitamente equilibrado, porém caro",
+							"value": "pode de marmita",
 							"type": "text"
 						},
 						{
 							"key": "files",
 							"type": "file",
-							"src": "/C:/Users/Marcello_Gamer/Pictures/thanosjudeu.jpeg"
+							"src": "/C:/Users/Chan/Pictures/4.png"
 						}
 					],
 					"options": {
@@ -222,13 +222,13 @@
 					"formdata": [
 						{
 							"key": "nome",
-							"value": "Sacada",
+							"value": "Lareira",
 							"type": "text"
 						},
 						{
 							"key": "files",
 							"type": "file",
-							"src": "/C:/Users/Marcello_Gamer/Pictures/sacada.jpg"
+							"src": "/C:/Users/Chan/Pictures/2.png"
 						}
 					],
 					"options": {
@@ -259,13 +259,13 @@
 					"formdata": [
 						{
 							"key": "id_ap",
-							"value": "11",
+							"value": "21",
 							"type": "text"
 						},
 						{
 							"key": "files",
 							"type": "file",
-							"src": "/C:/Users/Chan/Pictures/2.png"
+							"src": "/C:/Users/Chan/Desktop/DelVetro/mercato-del-vetro/static/img/tempo.jpeg"
 						}
 					]
 				},
@@ -297,7 +297,7 @@
 						{
 							"key": "files",
 							"type": "file",
-							"src": "/C:/Users/Marcello_Gamer/Pictures/colorido.jpg"
+							"src": "/C:/Users/Chan/Desktop/DelVetro/mercato-del-vetro/static/img/qualidade.jpeg"
 						},
 						{
 							"key": "texto",
@@ -307,13 +307,13 @@
 					]
 				},
 				"url": {
-					"raw": "localhost/produtos/<int:id>",
+					"raw": "localhost/produtos/3",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"produtos",
-						"<int:id>"
+						"3"
 					]
 				}
 			},
@@ -335,18 +335,18 @@
 						{
 							"key": "files",
 							"type": "file",
-							"src": "/C:/Users/Marcello_Gamer/Pictures/boxe.jpg"
+							"src": "/C:/Users/Chan/Desktop/DelVetro/mercato-del-vetro/static/img/produtos/box.jpg"
 						}
 					]
 				},
 				"url": {
-					"raw": "localhost/aplicacoes/<int:id>",
+					"raw": "localhost/aplicacoes/20",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"aplicacoes",
-						"<int:id>"
+						"20"
 					]
 				}
 			},
@@ -358,14 +358,14 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "localhost/produtos/<int:id>/<int:posicao>",
+					"raw": "localhost/produtos/48/2",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"produtos",
-						"<int:id>",
-						"<int:posicao>"
+						"48",
+						"2"
 					]
 				},
 				"description": "Rota para editar a posição de exibição de um produto. Apenas o id e a posição são referidos. Não é colocado nada no corpo"
@@ -378,14 +378,14 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "localhost/aplicacoes/<int:id>/<int:posicao>",
+					"raw": "localhost/aplicacoes/20/1",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"aplicacoes",
-						"<int:id>",
-						"<int:posicao>"
+						"20",
+						"1"
 					]
 				},
 				"description": "Rota para editar a posição de exibição de uma aplicação. Apenas o id e a posição são referidos. Não é colocado nada no corpo"
@@ -398,14 +398,14 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "localhost/imagens_aplicacoes/<int:id>/<int:posicao>",
+					"raw": "localhost/imagens_aplicacoes/9/1",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"imagens_aplicacoes",
-						"<int:id>",
-						"<int:posicao>"
+						"9",
+						"1"
 					]
 				},
 				"description": "Rota para editar a posição de exibição de uma imagem. Apenas o id e a posição são referidos. Não é colocado nada no corpo"
@@ -418,13 +418,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost/produtos/<int:id>",
+					"raw": "localhost/produtos/54",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"produtos",
-						"<int:id>"
+						"54"
 					]
 				}
 			},
@@ -436,13 +436,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost/aplicacoes/<int:id>",
+					"raw": "localhost/aplicacoes/26",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"aplicacoes",
-						"<int:id>"
+						"26"
 					]
 				}
 			},
@@ -454,20 +454,20 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost/imagens_aplicacoes/<int:id>",
+					"raw": "localhost/imagens_aplicacoes/27",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"imagens_aplicacoes",
-						"<int:id>"
+						"27"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "localhost/aplicacoes Copy",
+			"name": "localhost/registration",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -480,7 +480,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"nome\":\"Varanda\",\n\"imagem\":\"https://stampavidros.com.br/wp-content/uploads/2019/03/2019-04-11-diferenca-entre-sacada-e-varanda.jpg\"\n}",
+					"raw": "{\n\t\"username\": \"teste\",\n\t\"password\": \"teste\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -488,12 +488,106 @@
 					}
 				},
 				"url": {
-					"raw": "localhost/aplicacoes",
+					"raw": "localhost/registration",
 					"host": [
 						"localhost"
 					],
 					"path": [
-						"aplicacoes"
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"teste\",\n\t\"password\": \"teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/login",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/logout/access",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/logout/access",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"logout",
+						"access"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/logout/refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost/logout/refresh",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"logout",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/token/refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost/token/refresh",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"token",
+						"refresh"
 					]
 				}
 			},

@@ -1,12 +1,11 @@
 from flask import Flask, Request, jsonify, render_template
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
-from flask_jwt_extended import (JWTManager, create_access_token, create_refresh_token, jwt_required, jwt_refresh_token_required,
-                                get_jwt_identity, get_raw_jwt, set_access_cookies, set_refresh_cookies, unset_jwt_cookies)
+from flask_jwt_extended import JWTManager, jwt_required, get_raw_jwt
 from resources.aplicacoes import Aplicacoes
 from resources.produtos import Produtos
 from resources.imagens_aplicacoes import ImagensAplicacoes
-import resources.usuarios
+from resources.usuarios import UserRegistration, UserLogin, UserLogoutAccess, UserLogoutRefresh, TokenRefresh
 from flask_cors import CORS
 import os
 from db import db
@@ -40,7 +39,7 @@ app.config['JWT_TOKEN_LOCATION'] = ['cookies']
 app.config['JWT_COOKIE_SECURE'] = False
 app.config['JWT_ACCESS_COOKIE_PATH'] = '/'
 app.config['JWT_REFRESH_COOKIE_PATH'] = '/'
-app.config['JWT_COOKIE_CSRF_PROTECT'] = True
+app.config['JWT_COOKIE_CSRF_PROTECT'] = False
 
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
@@ -76,21 +75,24 @@ def create_tables():
     db.create_all()
 
 
-#### APLICAÇÕES ####
+#### ROTAS API ####
 api.add_resource(Aplicacoes, '/aplicacoes/<int:id>',
-                 '/aplicacoes', '/aplicacoes/<int:id>/<int:posicao>')
+                    '/aplicacoes', '/aplicacoes/<int:id>/<int:posicao>')
 api.add_resource(Produtos, '/produtos/<int:id>', '/produtos',
-                 '/produtos/<int:id>/<int:posicao>')
+                    '/produtos/<int:id>/<int:posicao>')
 api.add_resource(ImagensAplicacoes, '/imagens_aplicacoes/<int:id>/<int:id_ap>',
-                 '/imagens_aplicacoes/<int:id>', '/imagens_aplicacoes')
+                    '/imagens_aplicacoes/<int:id>', '/imagens_aplicacoes')
+####################
 
-api.add_resource(resources.usuarios.UserRegistration, '/registration')
-api.add_resource(resources.usuarios.UserLogin, '/login')
-api.add_resource(resources.usuarios.UserLogoutAccess, '/logout/access')
-api.add_resource(resources.usuarios.UserLogoutRefresh, '/logout/refresh')
-api.add_resource(resources.usuarios.TokenRefresh, '/token/refresh')
+##### ROTAS AUTENTICAÇÃO #####
+api.add_resource(UserRegistration, '/registration')
+api.add_resource(UserLogin, '/login')
+api.add_resource(UserLogoutAccess, '/logout/access')
+api.add_resource(UserLogoutRefresh, '/logout/refresh')
+api.add_resource(TokenRefresh, '/token/refresh')
+##############################
 
-
+##### ROTAS FRONT #####
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -136,16 +138,19 @@ def admin_aplicacoes():
 def adicionar_aplicacao():
     return render_template('adicionar_aplicacao.html')
 
+
 @app.route('/editar_aplicacao')
 @jwt_required
 def editar_aplicacao():
     return render_template('editar_aplicacao.html')
 
+
 @app.route('/adicionar_imagem_aplicacao')
 @jwt_required
 def adicionar_imagem_aplicacao():
     return render_template('adicionar_imagem_aplicacao.html')
-adicionar_imagem_aplicacao
+##########################
+
 
 db.init_app(app)
 

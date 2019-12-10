@@ -2,9 +2,9 @@
 
 Projeto para a matéria Linguagens de Programação II - Website da empresa Mercato Del Vetro
 
-Projeto pode ser acessado pelo seguinte endereço: [ec2-52-207-210-38.compute-1.amazonaws.com](ec2-52-207-210-38.compute-1.amazonaws.com)
+Projeto pode ser acessado pelo seguinte endereço: [http://ec2-52-207-210-38.compute-1.amazonaws.com](http://ec2-52-207-210-38.compute-1.amazonaws.com)
 
-A área administrativa é acessada por: [ec2-52-207-210-38.compute-1.amazonaws.com/admin](ec2-52-207-210-38.compute-1.amazonaws.com/admin) com as seguintes credenciais:  
+A área administrativa é acessada por: [http://ec2-52-207-210-38.compute-1.amazonaws.com/admin](http://ec2-52-207-210-38.compute-1.amazonaws.com/admin) com as seguintes credenciais:  
 Login: admin  
 Senha: admin
 
@@ -38,6 +38,8 @@ sudo docker build -t del-vetro .
 sudo docker run --rm -it -d -p 80:80 --name del-vetro del-vetro
 ```
 
+* Será criado um banco de dados novo no local da aplicação.
+
 ## Instalação Local
 
 ```bash
@@ -53,6 +55,8 @@ pip3 install -r requirements.txt
 
 python3 app.py
 ```
+
+* Será criado um banco de dados novo no local da aplicação.
 
 ## Gulp
 
@@ -83,6 +87,12 @@ Roboto foi usada em todos os textos de descrição do site.
 
 Droid Serif foi usado junto com Montserrat no texto de introdução do site. Essa combinação causou um efeito diferente ao site, deixando o usuário mais confortável.
 
+* OBS: Todas as fontes foram baixadas em compactadas em um pacote de fontes, desse modo estando disponíveis localmente.
+
+## BackEnd
+
+Para o lado do servidor foi usado python, com as bibliotecas flask, flask restful para padrão de recursos, SQLAlchemy como ORM e definição de modelos de persistência, flask_jwt_extended para a autenticação com JWT. 
+
 ## Acompanhamento de horas
 
 ### 1º Semestre
@@ -92,6 +102,15 @@ Droid Serif foi usado junto com Montserrat no texto de introdução do site. Ess
 * Testes e Tutoriais: 20 horas
 * Desenvolvimento: 50 horas
 
+Total de horas do grupo no 1º semestre: 92 horas
+
 ### 2º Semestre
 
-Total de horas do grupo: X horas
+* Reuniões: 4 horas
+* Ideação: 5 horas
+* Testes e Tutoriais: 25 horas
+* Desenvolvimento: 35 horas
+
+Total de horas do grupo no 2º semestre: 69 horas
+#
+Total de horas do grupo no projeto: 161 horas

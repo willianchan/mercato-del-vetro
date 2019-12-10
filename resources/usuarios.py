@@ -1,8 +1,8 @@
 from flask_restful import Resource, reqparse
 from flask import request, jsonify
-from models.user import UserModel
-from flask_jwt_extended import (create_access_token, create_refresh_token, jwt_required, jwt_refresh_token_required,
-                                get_jwt_identity, get_raw_jwt, set_access_cookies, set_refresh_cookies, unset_jwt_cookies)
+from models.user import UserModel, RevokedTokenModel
+from flask_jwt_extended import (jwt_required, create_access_token, create_refresh_token, jwt_refresh_token_required,
+                                get_jwt_identity, get_raw_jwt, set_access_cookies, set_refresh_cookies)
 import json
 
 parser = reqparse.RequestParser()
@@ -71,7 +71,6 @@ class UserLogoutAccess(Resource):
         except:
             return {'mensagem': 'Ocorreu um erro interno'}, 500
 
-
 class UserLogoutRefresh(Resource):
     @jwt_refresh_token_required
     def post(self):
@@ -89,7 +88,7 @@ class TokenRefresh(Resource):
     def post(self):
         current_user = get_jwt_identity()
         access_token = create_access_token(identity=current_user)
-        resp = jsonify({'mensagem': 'Logado como {}'.format(current_user.username),
+        resp = jsonify({'mensagem': 'Logado como {}'.format(current_user),
                 'access_token': access_token})
         set_access_cookies(resp, access_token)
         return resp
