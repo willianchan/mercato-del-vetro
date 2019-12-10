@@ -34,12 +34,12 @@ class Aplicacoes(Resource):
                     lista_item.append(item.toDict())
 
                 #ordena as aplicações pelo valor da posição, a ser melhorado
-                '''for j in range(0,len(lista_item)):
+                for j in range(0,len(lista_item)):
                     for i in range(0,len(lista_item)-1):
                         if lista_item[i]["posicao"]>lista_item[i+1]["posicao"]:
                             Aux = lista_item[i+1]
                             lista_item[i+1] = lista_item[i]
-                            lista_item[i] = Aux'''
+                            lista_item[i] = Aux
                             
                 return lista_item, 200
 
