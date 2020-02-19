@@ -17,6 +17,7 @@ Senha: admin
 
 ### Instalação de dependêcias
 
+
 ```bash
 # Comandos baseados em distro CentOS
 sudo yum install git
@@ -41,6 +42,10 @@ sudo docker run --rm -it -d -p 80:80 --name del-vetro del-vetro
 * Será criado um banco de dados novo no local da aplicação.
 
 ## Instalação Local
+
+### Requerimentos
+* Python 3
+* [virtualenvwrapper](https://medium.com/@otaviobn/ambiente-virtual-python-com-virtualenv-virtualenvwrapper-no-ubuntu-instala%C3%A7%C3%A3o-e-uso-5e6691b92695)
 
 ```bash
 git clone https://github.com/willianchan/mercato-del-vetro.git

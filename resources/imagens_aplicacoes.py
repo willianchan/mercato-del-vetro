@@ -33,10 +33,10 @@ class ImagensAplicacoes(Resource):
 
         for file in files:		
             if file and allowed_file(file.filename):
-                filename = secure_filename(str(datetime.now()))
+                filename = secure_filename(str(datetime.now()).replace(".","_")) + ".jpg"
                 caminho = os.getcwd() + UPLOAD_FOLDER + '/' + filename
                 while os.path.isfile(caminho):
-                    filename = secure_filename(str(datetime.now()))
+                    filename = secure_filename(str(datetime.now()).replace(".","_")) + ".jpg"
                     caminho = os.getcwd() + UPLOAD_FOLDER + '/' + filename
                 file.save(caminho)
             else:

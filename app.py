@@ -11,6 +11,9 @@ import os
 from db import db
 from models.user import UserModel, RevokedTokenModel
 
+from models.produtos import ProdutosModel
+from models.aplicacoes import AplicacoesModel
+from models.imagens_aplicacoes import ImagensAplicacoesModel
 
 def create_dir(path):
     try:
@@ -95,13 +98,16 @@ api.add_resource(TokenRefresh, '/token/refresh')
 ##### ROTAS FRONT #####
 @app.route('/')
 def index():
-    return render_template('index.html')
+    produtos = ProdutosModel.return_all()
+    aplicacoes = AplicacoesModel.return_all()
+    imagens_aplicacoes = ImagensAplicacoesModel.return_all()
+
+    return render_template('index.html', produtos = produtos, aplicacoes = aplicacoes, imagens_aplicacoes = imagens_aplicacoes)
 
 
 @app.route('/admin')
 def login():
     return render_template('login.html')
-
 
 @app.route('/administracao')
 @jwt_required
@@ -155,4 +161,4 @@ def adicionar_imagem_aplicacao():
 db.init_app(app)
 
 if __name__ == "__main__":
-    app.run(port=80, host='0.0.0.0', debug=True)
+    app.run(port=8080, host='0.0.0.0', debug=True)

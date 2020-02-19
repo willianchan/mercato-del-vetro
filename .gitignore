@@ -7,3 +7,6 @@ projeto/
 projeto_env/
 *.db
 db.db
+
+__pycache__/
+*.jpg

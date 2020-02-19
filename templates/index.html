@@ -93,9 +93,7 @@
                         <i class="fas fa-medal fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Qualidade</h4>
-                    <p class="text-muted">Na <strong>Del Vetro</strong> visamos qualidade em primeiro lugar.<br><a
-                            href="#qualidadeModal" data-toggle="modal" class="click-link">Saiba mais <i
-                                class="fas fa-search-plus"></i></a>
+                    <p class="text-muted">Na <strong>Del Vetro</strong> visamos qualidade em primeiro lugar.<br>
                     </p>
                 </div>
                 <div class="col-md-4">
@@ -104,8 +102,7 @@
                         <i class="fas fa-money-bill-alt fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Preço</h4>
-                    <p class="text-muted">Preços <strong>competitivos</strong> no mercado<br><a href="#precoModal"
-                            data-toggle="modal" class="click-link">Saiba mais <i class="fas fa-search-plus"></i></a></p>
+                    <p class="text-muted">Preços <strong>competitivos</strong> no mercado<br></p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -113,14 +110,13 @@
                         <i class="far fa-clock fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Tempo</h4>
-                    <p class="text-muted">Tempo de entrega diferenciado para cada produto<br><a href="#tempoModal"
-                            data-toggle="modal" class="click-link">Saiba mais <i class="fas fa-search-plus"></i></a></p>
+                    <p class="text-muted">Tempo de entrega diferenciado para cada produto<br></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Vidros Grid -->
+    <!-- Produtos -->
     <section class="bg-light page-section" id="produtos">
         <div class="container">
             <div class="row">
@@ -130,17 +126,44 @@
                 </div>
             </div>
             <div class="row" id="getProdutos">
+                {% for produto in produtos %}
+                <div class="col-md-4 col-sm-6 vidros-item" id="{{produto.id}}">
+                    <a class="vidros-link" data-toggle="modal" href="#produtoModal{{produto.id}}">
+                        <div class="vidros-hover">
+                            <div class="vidros-hover-content">
+                                <i class="fas fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid fit-image" src="{{produto.imagem}}" alt="">
+                    </a>
+                    <div class="vidros-caption">
+                        <h4>{{produto.titulo}}</h4>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
+
         </div>
     </section>
 
-    <!-- Produtos -->
+    <!-- Aplicações -->
     <section class="page-section" id="aplicacoes">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Aplicações</h2>
             <h3 class="section-subheading text-muted">Como nossos produtos são utilizados</h3>
         </div>
         <div class="container slider" id="getAplicacoes">
+            {% for aplicacao in aplicacoes %}
+            <div id="{{aplicacao.id}}">
+                <div class="zoom">
+                    <a a class="vidros-link" data-toggle="modal" href="#modalaplicacoes{{aplicacao.id}}">
+                        <div class="img-fluid imgSlider" style="background-image: url({{aplicacao.imagem}})">
+                            <h4 class="texto-produtos">{{aplicacao.nome}}</h4 class="texto-produtos">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </section>
 
@@ -252,7 +275,8 @@
                 <div class="col-md-6 col-sm-12 padding-ajust">
                     <h1 style="font-family: Montserrat; color: white; font-size: 30px"><i
                             class="fas fa-map-marker-alt"></i> Localização</h1>
-                    <p style="font-family: Roboto Slab; color: rgb(238, 234, 234); margin-bottom: 20px">Rua Indonésia, 298, Barueri,
+                    <p style="font-family: Roboto Slab; color: rgb(238, 234, 234); margin-bottom: 20px">Rua Indonésia,
+                        298, Barueri,
                         Brasil
                         06408160</p>
                     <div id="map"></div>
@@ -299,8 +323,94 @@
 
     <!-- Vidros Modals -->
 
-    <div id="getModal"></div>
-    
+    <div id="getModal">
+        {% for produto in produtos %}
+        <div class="vidros-modal modal fade" id="produtoModal{{produto.id}}" tabindex="-1" role="dialog"
+            aria-hidden="true">
+            <div class="close-modal" data-dismiss="modal">
+                <i class="fas fa-times externo"></i>
+            </div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="modal-body modal-reduce-width">
+                            <h2 class="text-uppercase">{{produto.titulo}}</h2>
+                            <img class="img-fluid d-block mx-auto vidros-moldura" src="{{produto.imagem}}" alt="">
+                            <p>{{produto.texto}}</p>
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fas fa-times"></i>
+                                Fechar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% for aplicacao in aplicacoes %}
+        <div class="vidros-modal modal fade" id="modalaplicacoes{{aplicacao.id}}" tabindex="-1" role="dialog"
+            aria-hidden="true">
+            <div class="close-modal" data-dismiss="modal">
+                <i class="fas fa-times externo"></i>
+            </div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="container small-modal-container">
+                        <div class="modal-body">
+                            <div id="top{{aplicacao.id}}">
+                                <div class="row" id="rm1{{aplicacao.id}}">
+                                </div>
+                                <div class="row text-center" id="rm2{{aplicacao.id}}">
+                                    <h2 id="titulo" class="text-uppercase text-center w-100">{{aplicacao.nome}}</h2>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row justify-content-center" id="getImagens{{aplicacao.id}}">
+                                    {% for imagem_aplicacao in imagens_aplicacoes%}
+                                    {% if imagem_aplicacao.aplicacoes_id == aplicacao.id %}
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 vidros-item"
+                                        style="margin-bottom: 10px" id="{{imagem_aplicacao.id}}">
+                                        <a class="open-img fill" data-toggle="modal"
+                                            href="#imgModal{{imagem_aplicacao.id}}"><img class="img-produtos img-fluid"
+                                                src="{{imagem_aplicacao.imagem}}" alt=""></a>
+                                        <div id="expand{{imagem_aplicacao.id}}" class="collapse">
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fas fa-times"></i>
+                                Fechar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% for imagem_aplicacao in imagens_aplicacoes%}
+        <div class="vidros-modal img-modal modal fade" id="imgModal{{imagem_aplicacao.id}}" tabindex="-1" role="dialog"
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="close-modal" data-dismiss="modal">
+                <i class="fas fa-times externo"></i>
+            </div>
+            <div class="modal-dialog">
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <span class="height-ajust"></span><img class="img-open-modal" src="{{imagem_aplicacao.imagem}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
 
 
     <!-- Bootstrap/Jquery -->
@@ -314,7 +424,6 @@
     <script type="text/javascript" src="static/vendor/slick/slick.min.js"></script>
 
     <!-- Custom scripts -->
-    <script src="static/js/index.min.js"></script>
     <script src="static/js/slick.min.js"></script>
 
 </body>
