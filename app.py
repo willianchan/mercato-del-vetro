@@ -136,7 +136,10 @@ def editar_produto():
 @app.route('/admin_aplicacoes')
 @jwt_required
 def admin_aplicacoes():
-    return render_template('aplicacoes.html')
+    aplicacoes = AplicacoesModel.return_all()
+    imagens_aplicacoes = ImagensAplicacoesModel.return_all()
+
+    return render_template('aplicacoes.html', aplicacoes = aplicacoes, imagens_aplicacoes = imagens_aplicacoes)
 
 
 @app.route('/adicionar_aplicacao')
@@ -161,4 +164,4 @@ def adicionar_imagem_aplicacao():
 db.init_app(app)
 
 if __name__ == "__main__":
-    app.run(port=8080, host='0.0.0.0', debug=True)
+    app.run(port=80, host='0.0.0.0', debug=True)
