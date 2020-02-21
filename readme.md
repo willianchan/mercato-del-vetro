@@ -2,9 +2,9 @@
 
 Projeto para a matéria Linguagens de Programação II - Website da empresa Mercato Del Vetro
 
-Projeto pode ser acessado pelo seguinte endereço: [http://ec2-52-207-210-38.compute-1.amazonaws.com](http://ec2-52-207-210-38.compute-1.amazonaws.com)
+Projeto pode ser acessado pelo seguinte endereço: [ec2-54-164-123-55.compute-1.amazonaws.com](http://ec2-52-207-210-38.compute-1.amazonaws.com)
 
-A área administrativa é acessada por: [http://ec2-52-207-210-38.compute-1.amazonaws.com/admin](http://ec2-52-207-210-38.compute-1.amazonaws.com/admin) com as seguintes credenciais:  
+A área administrativa é acessada por: [ec2-54-164-123-55.compute-1.amazonaws.com/admin](http://ec2-52-207-210-38.compute-1.amazonaws.com/admin) com as seguintes credenciais:  
 Login: admin  
 Senha: admin
 
@@ -19,12 +19,10 @@ Senha: admin
 
 
 ```bash
-# Comandos baseados em distro CentOS
-sudo yum install git
+# Comandos baseados em distro Ubuntu 18.04
+sudo apt-get install git
 
-sudo yum install docker
-
-sudo service docker start
+sudo apt-get install docker.io
 ```
 
 ### Rodando aplicação
@@ -52,11 +50,27 @@ git clone https://github.com/willianchan/mercato-del-vetro.git
 
 cd mercato-del-vetro
 
-python3 -m virtualenv projeto_env
+mkvirtualenv del-vetro
 
-source .\projeto_env\Scripts\activate
+workon del-vetro
 
 pip3 install -r requirements.txt
+
+npm i
+
+mkdir ./static/vendor/
+mkdir ./static/vendor/fontawesome-free
+mkdir ./static/vendor/jquery
+mkdir ./static/vendor/jquery-easing
+mkdir ./static/vendor/slick
+mkdir ./static/vendor/jquery-ui
+
+cp -r node_modules/bootstrap/dist ./static/vendor/bootstrap
+cp -r node_modules/@fortawesome/fontawesome-free ./static/vendor/fontawesome-free
+cp -r node_modules/jquery/dist ./static/vendor/jquery
+cp -r node_modules/jquery.easing ./static/vendor/jquery-easing
+cp -r node_modules/slick-carousel/slick ./static/vendor/slick
+cp -r node_modules/jquery-ui-dist ./static/vendor/jquery-ui
 
 python3 app.py
 ```
