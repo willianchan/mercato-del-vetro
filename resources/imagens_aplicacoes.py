@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
 from flask import request, jsonify
+from flask_jwt_extended import jwt_required
 from models.imagens_aplicacoes import ImagensAplicacoesModel
 from werkzeug.utils import secure_filename
 import os
@@ -13,6 +14,7 @@ def allowed_file(filename):
 
 
 class ImagensAplicacoes(Resource):
+    @jwt_required
     def post(self):
         id_ap = request.form['id_ap']
         posicao = 9999
@@ -58,6 +60,7 @@ class ImagensAplicacoes(Resource):
         except:
             return {'mensagem': 'Ocorreu um erro interno'}, 500
 
+    @jwt_required
     def get(self, id=None, id_ap=None):
         if id_ap:
             try:
@@ -99,6 +102,7 @@ class ImagensAplicacoes(Resource):
             except:
                 return {'mensagem': 'Ocorreu um erro interno'}, 500
 
+    @jwt_required
     def put(self, id, id_ap=None):
         #esse condicional serve apenas para salvar novas posições, nada a ser mexido
         # id_ap deveria ser posição, mas devido a um erro do flask de endereçamento, tive que manter esse nome
@@ -121,6 +125,7 @@ class ImagensAplicacoes(Resource):
             except:
                 return {'mensagem': 'Ocorreu um erro interno'}, 500
 
+    @jwt_required
     def delete(self, id=None):
         if id:
             try:

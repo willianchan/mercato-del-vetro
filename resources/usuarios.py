@@ -4,6 +4,7 @@ from models.user import UserModel, RevokedTokenModel
 from flask_jwt_extended import (jwt_required, create_access_token, create_refresh_token, jwt_refresh_token_required,
                                 get_jwt_identity, get_raw_jwt, set_access_cookies, set_refresh_cookies)
 import json
+import datetime
 
 parser = reqparse.RequestParser()
 parser.add_argument(
@@ -71,6 +72,7 @@ class UserLogoutAccess(Resource):
         except:
             return {'mensagem': 'Ocorreu um erro interno'}, 500
 
+
 class UserLogoutRefresh(Resource):
     @jwt_refresh_token_required
     def post(self):
@@ -87,8 +89,10 @@ class TokenRefresh(Resource):
     @jwt_refresh_token_required
     def post(self):
         current_user = get_jwt_identity()
-        access_token = create_access_token(identity=current_user)
+        expires = datetime.timedelta(hours=16)
+        access_token = create_access_token(
+            identity=current_user, expires_delta=expires)
         resp = jsonify({'mensagem': 'Logado como {}'.format(current_user),
-                'access_token': access_token})
+                        'access_token': access_token})
         set_access_cookies(resp, access_token)
         return resp

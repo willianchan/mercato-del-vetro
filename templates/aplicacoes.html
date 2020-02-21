@@ -50,7 +50,7 @@
                                 <div style="margin-top: 10px" class="text-center">
                                     <div style="margin-bottom: 5px"><a onClick="editar('{{aplicacao.id}}', '{{aplicacao.nome}}', '{{aplicacao.imagem}}')" class="btn btn-primary btn-sm textoBranco" style="cursor: pointer;"><i
                                                 class="fas fa-edit"></i> Editar</a></div>
-                                    <div><a onClick="deletar({{aplicacao.id}}, 'aplicacao')" class="btn btn-primary btn-sm textoBranco" style="cursor: pointer; background-color:#d11a2a !important; border-color:#d11a2a !important"><i
+                                    <div><a onClick="deletar('{{aplicacao.id}}', 'aplicacao')" class="btn btn-primary btn-sm textoBranco" style="cursor: pointer; background-color:#d11a2a !important; border-color:#d11a2a !important"><i
                                                 class="fas fa-trash-alt"></i> Deletar</a></div>
                                 </div>
                             </div>
@@ -94,10 +94,10 @@
                                         {% for imagem_aplicacao in imagens_aplicacoes%} {% if imagem_aplicacao.aplicacoes_id == aplicacao.id %}
                                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 vidros-item" style="margin-bottom: 10px" id="{{imagem_aplicacao.id}}">
                                             <a class="open-img fill" data-toggle="modal" href="#imgModal{{imagem_aplicacao.id}}"><img class="img-produtos img-fluid" src="{{imagem_aplicacao.imagem}}" alt=""></a>
-                                            <div style=" margin-top:-20px"><a href="#expand{{imagem_aplicacao.id}}" data-toggle="collapse" style="color: black; font-size:15px;"><i
+                                            <div style=" margin-top:-20px"><a href="#expandModal{{imagem_aplicacao.id}}" data-toggle="collapse" style="color: black; font-size:15px;"><i
                                                         class="fas fa-chevron-down"></i></a></div>
-                                            <div id="expand{{imagem_aplicacao.id}}" class="collapse" style="">
-                                                <div style="margin-top: 10px" class="text-center"><a onClick="deletar({{imagem_aplicacao.id}}, 'imagem')" class="btn btn-primary btn-sm textoBranco" style="cursor: pointer; background-color:#d11a2a !important; border-color:#d11a2a !important"><i
+                                            <div id="expandModal{{imagem_aplicacao.id}}" class="collapse">
+                                                <div style="margin-top: 10px" class="text-center"><a onClick="deletar('{{imagem_aplicacao.id}}', 'imagem')" class="btn btn-primary btn-sm textoBranco" style="cursor: pointer; background-color:#d11a2a !important; border-color:#d11a2a !important"><i
                                                             class="fas fa-trash-alt"></i> Deletar</a></div>
                                             </div>
                                         </div>

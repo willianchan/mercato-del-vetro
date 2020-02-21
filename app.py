@@ -1,7 +1,7 @@
-from flask import Flask, Request, jsonify, render_template
+from flask import Flask, Request, jsonify, render_template,redirect
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
-from flask_jwt_extended import JWTManager, jwt_required, get_raw_jwt
+from flask_jwt_extended import JWTManager, jwt_required, get_raw_jwt, get_jwt_identity, get_jwt_identity, verify_jwt_in_request_optional
 from resources.aplicacoes import Aplicacoes
 from resources.produtos import Produtos
 from resources.imagens_aplicacoes import ImagensAplicacoes
@@ -14,6 +14,7 @@ from models.user import UserModel, RevokedTokenModel
 from models.produtos import ProdutosModel
 from models.aplicacoes import AplicacoesModel
 from models.imagens_aplicacoes import ImagensAplicacoesModel
+
 
 def create_dir(path):
     try:
@@ -48,8 +49,8 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = '42'
-app.config['JWT_SECRET_KEY'] = '42'
+app.config['SECRET_KEY'] = 'vaprhv94Gavk03HaMT$3'
+app.config['JWT_SECRET_KEY'] = 'pvrvj39vv#KV-3Bzdpvjw;V'
 app.config['JWT_BLACKLIST_ENABLED'] = True
 app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access', 'refresh']
 
@@ -58,7 +59,7 @@ jwt = JWTManager(app)
 
 @jwt.unauthorized_loader
 def unauthorized_response(callback):
-    return render_template('login_required.html')
+    return render_template('login_required.html'), 401
 
 
 @jwt.expired_token_loader
@@ -80,11 +81,11 @@ def create_tables():
 
 #### ROTAS API ####
 api.add_resource(Aplicacoes, '/aplicacoes/<int:id>',
-                    '/aplicacoes', '/aplicacoes/<int:id>/<int:posicao>')
+                 '/aplicacoes', '/aplicacoes/<int:id>/<int:posicao>')
 api.add_resource(Produtos, '/produtos/<int:id>', '/produtos',
-                    '/produtos/<int:id>/<int:posicao>')
+                 '/produtos/<int:id>/<int:posicao>')
 api.add_resource(ImagensAplicacoes, '/imagens_aplicacoes/<int:id>/<int:id_ap>',
-                    '/imagens_aplicacoes/<int:id>', '/imagens_aplicacoes')
+                 '/imagens_aplicacoes/<int:id>', '/imagens_aplicacoes')
 ####################
 
 ##### ROTAS AUTENTICAÇÃO #####
@@ -99,15 +100,25 @@ api.add_resource(TokenRefresh, '/token/refresh')
 @app.route('/')
 def index():
     produtos = ProdutosModel.return_all()
+    produtos = sorted(produtos, key=lambda k: k.posicao)
+
     aplicacoes = AplicacoesModel.return_all()
+    aplicacoes = sorted(aplicacoes, key=lambda k: k.posicao)
+
     imagens_aplicacoes = ImagensAplicacoesModel.return_all()
+    imagens_aplicacoes = sorted(imagens_aplicacoes, key=lambda k: k.posicao)
 
-    return render_template('index.html', produtos = produtos, aplicacoes = aplicacoes, imagens_aplicacoes = imagens_aplicacoes)
-
+    return render_template('index.html', produtos=produtos, aplicacoes=aplicacoes, imagens_aplicacoes=imagens_aplicacoes)
 
 @app.route('/admin')
 def login():
-    return render_template('login.html')
+    verify_jwt_in_request_optional()
+    user = get_jwt_identity()
+    if user:
+        return redirect("/administracao")
+    else:
+        return render_template('login.html')
+
 
 @app.route('/administracao')
 @jwt_required
@@ -118,7 +129,10 @@ def admin():
 @app.route('/admin_produtos')
 @jwt_required
 def admin_produtos():
-    return render_template('produtos.html')
+    produtos = ProdutosModel.return_all()
+    produtos = sorted(produtos, key=lambda k: k.posicao)
+
+    return render_template('produtos.html', produtos=produtos)
 
 
 @app.route('/adicionar_produto')
@@ -137,9 +151,12 @@ def editar_produto():
 @jwt_required
 def admin_aplicacoes():
     aplicacoes = AplicacoesModel.return_all()
-    imagens_aplicacoes = ImagensAplicacoesModel.return_all()
+    aplicacoes = sorted(aplicacoes, key=lambda k: k.posicao)
 
-    return render_template('aplicacoes.html', aplicacoes = aplicacoes, imagens_aplicacoes = imagens_aplicacoes)
+    imagens_aplicacoes = ImagensAplicacoesModel.return_all()
+    imagens_aplicacoes = sorted(imagens_aplicacoes, key=lambda k: k.posicao)
+
+    return render_template('aplicacoes.html', aplicacoes=aplicacoes, imagens_aplicacoes=imagens_aplicacoes)
 
 
 @app.route('/adicionar_aplicacao')
@@ -158,8 +175,6 @@ def editar_aplicacao():
 @jwt_required
 def adicionar_imagem_aplicacao():
     return render_template('adicionar_imagem_aplicacao.html')
-##########################
-
 
 db.init_app(app)
 

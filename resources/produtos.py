@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
 from flask import request, jsonify
+from flask_jwt_extended import jwt_required
 from models.produtos import ProdutosModel
 from werkzeug.utils import secure_filename
 import os
@@ -12,6 +13,7 @@ def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 class Produtos(Resource):
+    @jwt_required
     def post(self):
         titulo = request.form['titulo']
         texto = request.form['texto']
@@ -58,6 +60,7 @@ class Produtos(Resource):
         except:
             return {'mensagem': 'Ocorreu um erro interno'}, 500
 
+    @jwt_required
     def get(self, id=None):
         if id:
             try:
@@ -83,6 +86,7 @@ class Produtos(Resource):
                             
                 return lista_item, 200
 
+    @jwt_required
     def put(self, id, posicao=None):
         #esse condicional serve apenas para salvar novas posições, nada a ser mexido
         if posicao:
@@ -138,7 +142,7 @@ class Produtos(Resource):
 
         
 
-
+    @jwt_required
     def delete(self, id=None):
         if id:
             try:

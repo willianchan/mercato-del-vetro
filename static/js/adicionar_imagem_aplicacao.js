@@ -11,9 +11,7 @@ function add() {
     oData.append("id_ap", id)
 
     oReq.onload = function () {
-        if (oReq.status == 201) {
-            alert("Imagem criada com sucesso!")
-        } else {
+        if (oReq.status != 201) {
             alert("Erro " + oReq.status + " ao criar imagem")
             return false
         }

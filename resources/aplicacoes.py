@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
 from flask import request, jsonify
+from flask_jwt_extended import jwt_required
 from models.aplicacoes import AplicacoesModel
 from werkzeug.utils import secure_filename
 import os
@@ -13,6 +14,7 @@ def allowed_file(filename):
 
 
 class Aplicacoes(Resource):
+    @jwt_required
     def post(self):
         nome = request.form['nome']
         posicao = 9999
@@ -58,6 +60,7 @@ class Aplicacoes(Resource):
         except:
             return {'mensagem': 'Ocorreu um erro interno'}, 500
 
+    @jwt_required
     def get(self, id=None):
         if id:
             try:
@@ -84,6 +87,7 @@ class Aplicacoes(Resource):
                             
                 return lista_item, 200
 
+    @jwt_required
     def put(self, id, posicao=None):
         #esse condicional serve apenas para salvar novas posições, nada a ser mexido
         if posicao:
@@ -135,6 +139,7 @@ class Aplicacoes(Resource):
             except:
                 return {'mensagem': 'Ocorreu um erro interno'}, 500
 
+    @jwt_required
     def delete(self, id=None):
         if id:
             try:
