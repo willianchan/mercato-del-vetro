@@ -1,7 +1,7 @@
-from flask import Flask, Request, jsonify, render_template,redirect
+from flask import Flask, Request, render_template
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
-from flask_jwt_extended import JWTManager, jwt_required, get_raw_jwt, get_jwt_identity, get_jwt_identity, verify_jwt_in_request_optional
+from flask_jwt_extended import JWTManager, jwt_required
 from resources.aplicacoes import Aplicacoes
 from resources.produtos import Produtos
 from resources.imagens_aplicacoes import ImagensAplicacoes
@@ -112,12 +112,8 @@ def index():
 
 @app.route('/admin')
 def login():
-    verify_jwt_in_request_optional()
-    user = get_jwt_identity()
-    if user:
-        return redirect("/administracao")
-    else:
-        return render_template('login.html')
+    #TODO: redirecionar para administracao quando ja logado
+    return render_template('login.html')
 
 
 @app.route('/administracao')
