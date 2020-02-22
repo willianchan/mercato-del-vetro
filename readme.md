@@ -2,9 +2,9 @@
 
 Projeto para a matéria Linguagens de Programação II - Website da empresa Mercato Del Vetro
 
-Projeto pode ser acessado pelo seguinte endereço: [ec2-54-164-123-55.compute-1.amazonaws.com](http://ec2-52-207-210-38.compute-1.amazonaws.com)
+Projeto pode ser acessado pelo seguinte endereço: [ec2-54-164-123-55.compute-1.amazonaws.com](http://ec2-54-164-123-55.compute-1.amazonaws.com)
 
-A área administrativa é acessada por: [ec2-54-164-123-55.compute-1.amazonaws.com/admin](http://ec2-52-207-210-38.compute-1.amazonaws.com/admin) com as seguintes credenciais:  
+A área administrativa é acessada por: [ec2-54-164-123-55.compute-1.amazonaws.com/admin](http://ec2-54-164-123-55.compute-1.amazonaws.com/admin) com as seguintes credenciais:  
 Login: admin  
 Senha: admin
 
