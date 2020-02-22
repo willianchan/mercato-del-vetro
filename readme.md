@@ -59,18 +59,19 @@ pip3 install -r requirements.txt
 npm i
 
 mkdir ./static/vendor/
+mkdir ./static/vendor/bootstrap
 mkdir ./static/vendor/fontawesome-free
 mkdir ./static/vendor/jquery
 mkdir ./static/vendor/jquery-easing
 mkdir ./static/vendor/slick
 mkdir ./static/vendor/jquery-ui
 
-cp -r node_modules/bootstrap/dist ./static/vendor/bootstrap
-cp -r node_modules/@fortawesome/fontawesome-free ./static/vendor/fontawesome-free
-cp -r node_modules/jquery/dist ./static/vendor/jquery
-cp -r node_modules/jquery.easing ./static/vendor/jquery-easing
-cp -r node_modules/slick-carousel/slick ./static/vendor/slick
-cp -r node_modules/jquery-ui-dist ./static/vendor/jquery-ui
+cp -a node_modules/bootstrap/dist/* ./static/vendor/bootstrap
+cp -a node_modules/@fortawesome/fontawesome-free/* ./static/vendor/fontawesome-free
+cp -a node_modules/jquery/dist/* ./static/vendor/jquery
+cp -a node_modules/jquery.easing/* ./static/vendor/jquery-easing
+cp -a node_modules/slick-carousel/slick/* ./static/vendor/slick
+cp -a node_modules/jquery-ui-dist/* ./static/vendor/jquery-ui
 
 python3 app.py
 ```

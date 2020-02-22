@@ -15,7 +15,8 @@ from models.produtos import ProdutosModel
 from models.aplicacoes import AplicacoesModel
 from models.imagens_aplicacoes import ImagensAplicacoesModel
 
-
+import urllib
+import pyodbc
 def create_dir(path):
     try:
         if os.path.isdir(path):
@@ -47,7 +48,11 @@ app.config['JWT_COOKIE_CSRF_PROTECT'] = False
 
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
+params = urllib.parse.quote_plus("DRIVER={ODBC+Driver+17+for+SQL+Server};SERVER=del-vetro.ccmwwejbvzw6.us-east-1.rds.amazonaws.com;DATABASE=del-vetro;UID=admin;PWD=4k9Z9SM#@(><b`2j")
+SQLALCHEMY_DATABASE_URI = "mssql+pyodbc:///?odbc_connect=%s" % params
+
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'vaprhv94Gavk03HaMT$3'
 app.config['JWT_SECRET_KEY'] = 'pvrvj39vv#KV-3Bzdpvjw;V'
@@ -88,7 +93,7 @@ api.add_resource(ImagensAplicacoes, '/imagens_aplicacoes/<int:id>/<int:id_ap>',
                  '/imagens_aplicacoes/<int:id>', '/imagens_aplicacoes')
 ####################
 
-##### ROTAS AUTENTICAÇÃO #####
+##### ROTAS AUTENTICACAO #####
 api.add_resource(UserRegistration, '/registration')
 api.add_resource(UserLogin, '/login')
 api.add_resource(UserLogoutAccess, '/logout/access')
@@ -175,4 +180,4 @@ def adicionar_imagem_aplicacao():
 db.init_app(app)
 
 if __name__ == "__main__":
-    app.run(port=80, host='0.0.0.0', debug=True)
+    app.run(port=8080, host='0.0.0.0', debug=True)
