@@ -17,6 +17,9 @@ from models.imagens_aplicacoes import ImagensAplicacoesModel
 
 import urllib
 import pyodbc
+
+from s3 import sync_from_s3
+
 def create_dir(path):
     try:
         if os.path.isdir(path):
@@ -81,6 +84,7 @@ def check_if_token_in_blacklist(decrypted_token):
 @app.before_first_request
 def create_tables():
     create_dir("./static/imagens")
+    sync_from_s3('del-vetro', 'imagens/', './static/imagens/')
     db.create_all()
 
 

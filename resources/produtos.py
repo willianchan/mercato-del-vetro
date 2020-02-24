@@ -6,6 +6,8 @@ from werkzeug.utils import secure_filename
 import os
 from datetime import datetime
 
+from s3 import upload_to_s3, delete_from_s3
+
 UPLOAD_FOLDER = '/static/imagens'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
@@ -54,6 +56,7 @@ class Produtos(Resource):
 
         try:
             item.save()
+            upload_to_s3(os.getcwd() + UPLOAD_FOLDER + '/' + filename, 'del-vetro', "imagens/" + filename)
             return {
                 'mensagem': 'item criado',
             }, 201
@@ -130,9 +133,13 @@ class Produtos(Resource):
                         resp.status_code = 500
                         return resp
 
-
+                    imagem_old = item.imagem.split("/")[-1]
                     item.imagem = os.path.join(UPLOAD_FOLDER, filename)
+
                 item.commit()
+                delete_from_s3('del-vetro', 'imagens/' + imagem_old)
+                upload_to_s3(os.getcwd() + UPLOAD_FOLDER + '/' + filename, 'del-vetro', 'imagens/' + filename)
+                os.remove(os.path.join(os.getcwd() + UPLOAD_FOLDER, imagem_old))
                 return {
                     'mensagem': 'item alterado',
                 }, 201
@@ -153,8 +160,11 @@ class Produtos(Resource):
             try:
                 if item:
                     item.delete()
+                    delete_from_s3('del-vetro', 'imagens/' + item.imagem.split('/')[-1])
+                    os.remove(os.getcwd() + item.imagem)
                     return {'mensagem': 'Item deletado'}, 200
-            except:
+            except Exception as e:
+                print(e)
                 return {'mensagem': 'Ocorreu um erro interno'}, 500
 
             return {'mensagem': 'Item não encontrado'}, 404

@@ -6,12 +6,13 @@ from werkzeug.utils import secure_filename
 import os
 from datetime import datetime
 
+from s3 import upload_to_s3, delete_from_s3
+
 UPLOAD_FOLDER = '/static/imagens'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
 
 class ImagensAplicacoes(Resource):
     @jwt_required
@@ -54,6 +55,7 @@ class ImagensAplicacoes(Resource):
 
         try:
             item.save()
+            upload_to_s3(os.getcwd() + UPLOAD_FOLDER + '/' + filename, 'del-vetro', "imagens/" + filename)
             return {
                 'mensagem': 'item criado',
             }, 201
@@ -117,8 +119,14 @@ class ImagensAplicacoes(Resource):
             try:
                 corpo = request.get_json(force=True)
                 item = ImagensAplicacoesModel.return_by_id(id)
+
+                imagem_old = item.imagem
                 item.imagem = corpo['imagem']
+
                 item.commit()
+                delete_from_s3('del-vetro', 'imagens/' + imagem_old)
+                upload_to_s3(os.getcwd() + UPLOAD_FOLDER + '/' + filename, 'del-vetro', 'imagens/' + filename)
+                os.remove(os.path.join(os.getcwd() + UPLOAD_FOLDER, imagem_old))
                 return {
                     'message': 'item alterado',
                 }, 201
@@ -136,6 +144,8 @@ class ImagensAplicacoes(Resource):
             try:
                 if item:
                     item.delete()
+                    delete_from_s3('del-vetro', 'imagens/' + item.imagem.split('/')[-1])
+                    os.remove(os.getcwd() + item.imagem)
                     return {'mensagem': 'Item deletado'}, 200
             except:
                 return {'mensagem': 'Ocorreu um erro interno'}, 500

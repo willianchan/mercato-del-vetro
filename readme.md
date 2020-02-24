@@ -34,7 +34,7 @@ cd mercato-del-vetro
 
 sudo docker build -t del-vetro .
 
-sudo docker run --rm -it -d -p 80:80 --name del-vetro del-vetro
+sudo docker run --rm -it -d -p 80:8080 --name del-vetro del-vetro
 ```
 
 * Será criado um banco de dados novo no local da aplicação.

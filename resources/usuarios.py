@@ -13,8 +13,8 @@ parser.add_argument(
 
 
 class UserRegistration(Resource):
+    @jwt_required
     def post(self):
-        @jwt_required
         data = parser.parse_args()
 
         if UserModel.find_by_username(data['username']):

@@ -2,16 +2,18 @@ from flask_restful import Resource
 from flask import request, jsonify
 from flask_jwt_extended import jwt_required
 from models.aplicacoes import AplicacoesModel
+from models.imagens_aplicacoes import ImagensAplicacoesModel
 from werkzeug.utils import secure_filename
 import os
 from datetime import datetime
+
+from s3 import upload_to_s3, delete_from_s3
 
 UPLOAD_FOLDER = '/static/imagens'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
 
 class Aplicacoes(Resource):
     @jwt_required
@@ -54,6 +56,7 @@ class Aplicacoes(Resource):
 
         try:
             item.save()
+            upload_to_s3(os.getcwd() + UPLOAD_FOLDER + '/' + filename, 'del-vetro', "imagens/" + filename)
             return {
                 'mensagem': 'item criado',
             }, 201
@@ -130,9 +133,13 @@ class Aplicacoes(Resource):
                         resp.status_code = 500
                         return resp
 
-
+                    imagem_old = item.imagem.split("/")[-1]
                     item.imagem = UPLOAD_FOLDER + '/' + filename
+
                 item.commit()
+                upload_to_s3(os.getcwd() + UPLOAD_FOLDER + '/' + filename, 'del-vetro', 'imagens/' + filename)
+                delete_from_s3('del-vetro', 'imagens/' + imagem_old)
+                os.remove(os.path.join(os.getcwd() + UPLOAD_FOLDER, imagem_old))
                 return {
                     'mensagem': 'item alterado',
                 }, 201
@@ -149,7 +156,16 @@ class Aplicacoes(Resource):
 
             try:
                 if item:
+                    aplicacoes = ImagensAplicacoesModel.return_all_by_aplicacao_id(item.id)
+                    for aplicacao in aplicacoes:
+                        aplicacao.delete()
+                        delete_from_s3('del-vetro', 'imagens/' + aplicacao.imagem.split('/')[-1])
+                        os.remove(os.getcwd() + aplicacao.imagem)
+
                     item.delete()
+                    delete_from_s3('del-vetro', 'imagens/' + item.imagem.split('/')[-1])
+                    os.remove(os.getcwd() + item.imagem)
+
                     return {'mensagem': 'Item deletado'}, 200
             except:
                 return {'mensagem': 'Ocorreu um erro interno'}, 500

@@ -25,6 +25,10 @@ class ImagensAplicacoesModel(db.Model):
     def return_all(cls):
         return cls.query.all()
 
+    @classmethod
+    def return_all_by_aplicacao_id(cls, aplicacoes_id):
+        return cls.query.filter_by(aplicacoes_id = aplicacoes_id)
+
     def delete(self):
         db.session.delete(self)
         db.session.commit()
