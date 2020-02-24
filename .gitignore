@@ -8,4 +8,4 @@ projeto_env/
 *.db
 db.db
 vendor/
-*.jpg
+imagens/

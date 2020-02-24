@@ -7,9 +7,9 @@ class ProdutosModel(db.Model):
     __tablename__ = 'produtos'
 
     id = db.Column(db.Integer, primary_key=True)
-    titulo = db.Column(db.String(120), nullable=False)
-    texto = db.Column(db.String(120), nullable=False)
-    imagem = db.Column(db.String(120), nullable=False)
+    titulo = db.Column(db.String(50), nullable=False)
+    texto = db.Column(db.String('MAX'), nullable=False)
+    imagem = db.Column(db.String(70), nullable=False)
     posicao = db.Column(db.Integer, nullable=False)
 
     def save(self):

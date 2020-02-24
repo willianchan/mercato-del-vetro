@@ -5,7 +5,7 @@ from sqlalchemy import Table, Column, Integer, ForeignKey
 class ImagensAplicacoesModel(db.Model):
     __tablename__ = 'imagens_aplicacoes'
     id = db.Column(db.Integer, primary_key=True)
-    imagem = db.Column(db.String(120), nullable=False)
+    imagem = db.Column(db.String(70), nullable=False)
     aplicacoes_id = db.Column(db.Integer, db.ForeignKey('aplicacoes.id'), nullable=False)
     posicao = db.Column(db.Integer)
 
